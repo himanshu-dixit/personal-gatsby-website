@@ -1,13 +1,24 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link, graphql } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import { Herocomponent } from "../components/homepage/hero"
+import { useTheme } from "../context/Theme"
+import { withTheme } from "../hoc/theme"
+import { css } from "@emotion/react"
 
+const contentCSS = css`
+  background: var(--primaryBackground);
+  height: 1000px;
+      margin-top: -30px;
+`;
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
+  const { theme, toggleTheme } = useTheme()
+  console.log(theme)
 
   if (posts.length === 0) {
     return (
@@ -24,8 +35,21 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
+    <>
+      <div style={{fontSize: 20}} onClick={toggleTheme} >
+        <Herocomponent/>
+        <div css={contentCSS}>
+ds
+        </div>
+      </div>
+
+      </>
+  )
+
+  return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+
+      {/*<SEO title="All posts" />*/}
       <Bio />
       <ol style={{ listStyle: `none` }}>
         {posts.map(post => {
@@ -63,7 +87,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default BlogIndex
+export default withTheme(BlogIndex)
 
 export const pageQuery = graphql`
   query {

@@ -2,9 +2,9 @@
 import "typeface-montserrat"
 import "typeface-merriweather"
 // normalize CSS across browsers
-import "./src/normalize.css"
-// custom CSS styles
-import "./src/style.css"
-
-// Highlighting for code blocks
-import "prismjs/themes/prism.css"
+// import "./src/styling/normalize.css"
+// // custom CSS styles
+import "./src/styling/style.css"
+//
+// // Highlighting for code blocks
+// import "prismjs/themes/prism.css"
