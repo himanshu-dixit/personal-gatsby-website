@@ -14,7 +14,10 @@ const contentCSS = css`
   background: var(--primaryBackground);
   height: 1000px;
   margin-top: -36rem;
+  position: relative;
 `
+
+
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -37,10 +40,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-      <div>
         <Herocomponent />
         <div css={contentCSS}>ds</div>
-      </div>
     </>
   )
 

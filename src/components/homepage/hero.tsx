@@ -2,7 +2,9 @@
 import React from "react"
 import { css } from "@emotion/react"
 import { LogoComponent } from "../atoms/logo"
-import { BookMark, ThemeToggle, Speaker } from "../../constants/svg/topBar"
+import { Speaker } from "../atoms/navbar/speaker"
+import { ThemeToggle } from "../atoms/navbar/themetoggle"
+import { BookMark } from "../atoms/navbar/bookmark"
 
 export const Curvy = () => (
   <div css={waveContainer}>
@@ -51,26 +53,45 @@ function RightSection() {
   )
 }
 
+function Navbar() {
+  return <div css={topBar}>
+    <div>
+      <LogoComponent />
+    </div>
+    <MenuComponent />
+    <RightSection />
+  </div>
+}
+
 export const Herocomponent = (): JSX.Element => {
   return (
     <>
       <section css={heroSection}>
-        <div css={topBar}>
-          <div>
-            <LogoComponent />
-          </div>
-          <MenuComponent />
-          <RightSection />
+        <Navbar />
+
+        <div id={"hero-content"}>
+          <img src={"/images/standing_person.png"} css={personalIllustration}/>
         </div>
       </section>
+
       <Curvy />
     </>
   )
 }
 
+const personalIllustration= css`
+  position: absolute;
+  bottom: -80rem;
+  height: 400px;
+  right: -96rem;
+    pointer-events: none;
+    user-select: none;
+`
+
 const topBar = css`
   display: flex;
   justify-content: space-between;
+  height: 53rem;
 `
 
 const menu = css`
@@ -105,12 +126,18 @@ const rightSection = css`
   > :last-child {
     margin-right: 0rem;
   }
+  
+  #hero-content{
+    position: relative;
+    height: 300px;
+  }
 `
 
 const heroSection = css`
   width: 100%;
   height: 480rem;
   padding-top: 36rem;
+  position: relative;
   background: var(--heroBackground);
   color: var(--heroPrimaryTextColor);
   > div {
@@ -121,6 +148,12 @@ const heroSection = css`
       padding: 0 26rem;
     }
   }
+  
+  #hero-content{
+  height: 428px;
+    position: relative;
+    }
+    
 `
 
 const waveContainer = css`
@@ -128,6 +161,7 @@ const waveContainer = css`
   width: 100%;
   height: 66rem;
   overflow: hidden;
+  position: relative;
 `
 
 const curve = css`
