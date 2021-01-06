@@ -12,8 +12,8 @@ import { css } from "@emotion/react"
 const contentCSS = css`
   background: var(--primaryBackground);
   height: 1000px;
-      margin-top: -30px;
-`;
+  margin-top: -36rem;
+`
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
@@ -36,19 +36,15 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-      <div style={{fontSize: 20}} onClick={toggleTheme} >
-        <Herocomponent/>
-        <div css={contentCSS}>
-ds
-        </div>
+      <div>
+        <Herocomponent />
+        <div css={contentCSS}>ds</div>
       </div>
-
-      </>
+    </>
   )
 
   return (
     <Layout location={location} title={siteTitle}>
-
       {/*<SEO title="All posts" />*/}
       <Bio />
       <ol style={{ listStyle: `none` }}>

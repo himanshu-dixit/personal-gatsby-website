@@ -1,10 +1,28 @@
 /* CSS Custom Properties Definitions */
-html,body{
+html,
+body {
   font-size: 1px !important;
+  font-family: "Gilroy";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cera Pro";
 }
 
 body {
   margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+
 }
 
 /*:root {*/

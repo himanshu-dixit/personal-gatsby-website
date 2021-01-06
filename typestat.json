@@ -1,25 +1,21 @@
 [
-    {
-        "files": {
-            "renameExtensions": true
-        },
-        "fixes": {
-            "importExtensions": true
-        },
-        "include": [
-            "*.{js,jsx}"
-        ],
-        "project": "./tsconfig.json"
+  {
+    "files": {
+      "renameExtensions": true
     },
-    {
-        "fixes": {
-            "incompleteTypes": true,
-            "missingProperties": true,
-            "noImplicitAny": true
-        },
-        "include": [
-            "*.{js,jsx}"
-        ],
-        "project": "./tsconfig.json"
-    }
+    "fixes": {
+      "importExtensions": true
+    },
+    "include": ["*.{js,jsx}"],
+    "project": "./tsconfig.json"
+  },
+  {
+    "fixes": {
+      "incompleteTypes": true,
+      "missingProperties": true,
+      "noImplicitAny": true
+    },
+    "include": ["*.{js,jsx}"],
+    "project": "./tsconfig.json"
+  }
 ]
