@@ -7,7 +7,8 @@ import SEO from "../components/seo"
 import { Herocomponent } from "../components/homepage/hero"
 import { useTheme } from "../context/Theme"
 import { withTheme } from "../hoc/theme"
-import { css } from "@emotion/react"
+import { withSound } from "../hoc/sound"
+import { css  } from "@emotion/react"
 
 const contentCSS = css`
   background: var(--primaryBackground);
@@ -83,7 +84,7 @@ const BlogIndex = ({ data, location }) => {
   )
 }
 
-export default withTheme(BlogIndex)
+export default withSound(withTheme(BlogIndex))
 
 export const pageQuery = graphql`
   query {
