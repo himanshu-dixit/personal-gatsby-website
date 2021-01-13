@@ -13,6 +13,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   themeSwitchContainer = "#29333B",
   themeSwitchButton = "#F2F2F2",
   themeSwitchSun = "#0C1115",
+  makeText = "#00C4EB",
+  breakText = "#FA2F90",
+  linkText = "#00C4EB",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -30,6 +33,9 @@ export enum GLOBAL_CSS_VAR_DARK {
   themeSwitchContainer = "#29333B",
   themeSwitchButton = "#0C1115",
   themeSwitchSun = "#F2F2F2",
+  makeText = "#00C4EB",
+  breakText = "#FA2F90",
+  linkText = "#00C4EB",
 }
 
 export const convertThemeObjectToStyle = object => {

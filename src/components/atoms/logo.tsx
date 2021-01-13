@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 const logoSVG = css`
-  height: 18rem;
+  height: 20rem;
   path {
     fill: var(--heroLogoFill);
   }

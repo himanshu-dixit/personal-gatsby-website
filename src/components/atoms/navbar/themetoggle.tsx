@@ -19,9 +19,11 @@ const toggleButton = css`
   border-radius: 100px;
   display: flex;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 1rem;
   cursor: pointer;
+
   svg {
+    margin-top: 1rem;
     transition: all ease 0.35s;
   }
 `
@@ -34,7 +36,9 @@ const lightModeButton = css`
 export function ThemeToggle(props) {
   const { theme, toggleTheme } = useTheme()
 
-  const soundObject = getSoundInstance(theme == Theme.Dark ? "/sound/theme_light.m4a" : "/sound/theme_dark.m4a")
+  const soundObject = getSoundInstance(
+    theme == Theme.Dark ? "/sound/theme_light.m4a" : "/sound/theme_dark.m4a"
+  )
 
   const handleClick = () => {
     playSound(soundObject)
@@ -46,8 +50,8 @@ export function ThemeToggle(props) {
       onClick={handleClick}
     >
       <svg
-        width={16}
-        height={16}
+        width={19}
+        height={19}
         viewBox="0 0 20 19"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -71,8 +75,7 @@ export function ThemeToggle(props) {
           strokeLinejoin="round"
           className="sun-icon"
         >
-          <path
-            d="M9.942 10.48a1.98 1.98 0 100-3.96 1.98 1.98 0 000 3.96zM9.942 4.145v.792M9.942 12.063v.791M6.863 5.42l.562.563M12.46 11.017l.562.562M5.588 8.5h.792M13.505 8.5h.791M6.863 11.58l.562-.563M12.46 5.983l.562-.563" />
+          <path d="M9.942 10.48a1.98 1.98 0 100-3.96 1.98 1.98 0 000 3.96zM9.942 4.145v.792M9.942 12.063v.791M6.863 5.42l.562.563M12.46 11.017l.562.562M5.588 8.5h.792M13.505 8.5h.791M6.863 11.58l.562-.563M12.46 5.983l.562-.563" />
         </g>
         <defs className="sun-icon">
           <clipPath id="prefix__clip0">

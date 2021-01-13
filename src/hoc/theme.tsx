@@ -8,8 +8,8 @@ import {
 } from "../constants/styling"
 
 const transition = css`
-  *{
-    transition: all 180ms,color 150ms;
+  * {
+    transition: all 180ms, color 150ms;
   }
 `
 export const withTheme = (Component: ReactElement): ReactElement => {
@@ -22,11 +22,11 @@ export const withTheme = (Component: ReactElement): ReactElement => {
 
     const cssVariableForTheme = css`
       ${convertThemeObjectToStyle(
-      theme === Theme.Dark ? GLOBAL_CSS_VAR_DARK : GLOBAL_CSS_VAR_LIGHT
-    )}
+        theme === Theme.Dark ? GLOBAL_CSS_VAR_DARK : GLOBAL_CSS_VAR_LIGHT
+      )}
     `
     return (
-      <div css={[cssVariableForTheme,transition]}>
+      <div css={[cssVariableForTheme, transition]}>
         <ThemeContext.Provider value={contextValue}>
           <Component {...props} />
         </ThemeContext.Provider>

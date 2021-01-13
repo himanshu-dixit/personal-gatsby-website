@@ -8,7 +8,7 @@ import { Herocomponent } from "../components/homepage/hero"
 import { useTheme } from "../context/Theme"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
-import { css  } from "@emotion/react"
+import { css } from "@emotion/react"
 
 const contentCSS = css`
   background: var(--primaryBackground);
@@ -16,7 +16,6 @@ const contentCSS = css`
   margin-top: -36rem;
   position: relative;
 `
-
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -40,8 +39,8 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <>
-        <Herocomponent />
-        <div css={contentCSS}>ds</div>
+      <Herocomponent />
+      <div css={contentCSS}>ds</div>
     </>
   )
 
