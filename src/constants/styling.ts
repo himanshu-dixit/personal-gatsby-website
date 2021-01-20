@@ -16,6 +16,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   makeText = "#00C4EB",
   breakText = "#FA2F90",
   linkText = "#00C4EB",
+  playerIcon1 = "#FF46B5",
+  playerIcon2 = "#46FFB1",
+  playerIcon3 = "#46F4FF",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -36,6 +39,9 @@ export enum GLOBAL_CSS_VAR_DARK {
   makeText = "#00C4EB",
   breakText = "#FA2F90",
   linkText = "#00C4EB",
+  playerIcon1 = "#FF46B5",
+  playerIcon2 = "#46FFB1",
+  playerIcon3 = "#46F4FF",
 }
 
 export const convertThemeObjectToStyle = object => {

@@ -399,3 +399,18 @@ body {
     color: var(--heroPrimaryTextColor);
   }
 }
+
+
+
+@keyframes playerAnimation {
+  from,
+  to {
+    fill: var(--playerIcon1);
+  }
+  33% {
+    fill: var(--playerIcon2);
+  }
+  66% {
+    fill: var(--playerIcon3);
+  }
+}
