@@ -1,6 +1,8 @@
 ---
 title: My Second Post!
+description: Writing to create value
 date: "2015-05-06T23:46:37.121Z"
+rating: 300
 ---
 
 Wow! I love blogging so much already.

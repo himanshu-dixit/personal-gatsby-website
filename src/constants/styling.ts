@@ -1,7 +1,8 @@
 export enum GLOBAL_CSS_VAR_LIGHT {
-  heroBackground = " linear-gradient(0deg, #E9F8FF, #E9F8FF)",
+  heroBackground = "#E9F8FF",
   waveBackground = "#fff",
   primaryBackground = "#fff",
+  tagsBackground = "#e9f8ff",
   primary = "black",
   contentContainerWidth = "1080px",
   heroPrimaryTextColor = "#1D2022",
@@ -19,12 +20,23 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   playerIcon1 = "#FF46B5",
   playerIcon2 = "#46FFB1",
   playerIcon3 = "#46F4FF",
+  descText = "#5E7D9C",
+  desc1Text = "#DAD8D8",
+  newsLetterText = "#869BAD",
+  newsLetterInputBackground = "#1E2831",
+  newsLetterInputText = "#E7E7E7",
+  newsLetterInputBorder = "#283746",
+  newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
+  newsLetterJoinBorder = "#9E1858",
+  newLabelTextColor = "#969CA3",
+  footerCopyrightTextColor = "#6E7377"
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
-  heroBackground = "linear-gradient(129.35deg, #0E0F14 0.97%, #0B1115 72.53%)",
+  heroBackground = "#0E0F14",
   waveBackground = "#090C0F",
   primaryBackground = "#090C0F",
+  tagsBackground = "#0B1116",
   primary = "yellow",
   contentContainerWidth = "1080px",
   heroPrimaryTextColor = "#FFFFFF",
@@ -42,6 +54,16 @@ export enum GLOBAL_CSS_VAR_DARK {
   playerIcon1 = "#FF46B5",
   playerIcon2 = "#46FFB1",
   playerIcon3 = "#46F4FF",
+  descText = "#5E7D9C",
+  desc1Text = "#DAD8D8",
+  newsLetterText = "#869BAD",
+  newsLetterInputBackground = "#1E2831",
+  newsLetterInputText = "#E7E7E7",
+  newsLetterInputBorder = "#283746",
+  newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
+  newsLetterJoinBorder = "#9E1858",
+  newLabelTextColor = "#969CA3",
+  footerCopyrightTextColor = "#6E7377"
 }
 
 export const convertThemeObjectToStyle = object => {

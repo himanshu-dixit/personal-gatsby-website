@@ -1,13 +1,11 @@
 ---
-title: New Beginnings
+title: Full-stack and creating user-friendly products
 date: "2015-05-28T22:40:32.169Z"
-description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+description: Writing to create value
+rating: 743
 ---
 
-Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.
+An in-depth tutorial that teaches how to create one of the most adorable interactions I've ever created.
 
 ## On deer horse aboard tritely yikes and much
 

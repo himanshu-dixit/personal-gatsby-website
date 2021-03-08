@@ -3,6 +3,7 @@ html,
 body {
   font-size: 1px !important;
   font-family: "Gilroy";
+  overflow-x: hidden;
 }
 #___gatsby {
   font-size: 15rem;
