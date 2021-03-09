@@ -29,7 +29,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
   newsLetterJoinBorder = "#9E1858",
   newLabelTextColor = "#969CA3",
-  footerCopyrightTextColor = "#6E7377"
+  footerCopyrightTextColor = "#6E7377",
+  articleNewsLetterBorderColor = "#253546",
+  buttonFollowBorderColor = "#134E59"
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -63,7 +65,9 @@ export enum GLOBAL_CSS_VAR_DARK {
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
   newsLetterJoinBorder = "#9E1858",
   newLabelTextColor = "#969CA3",
-  footerCopyrightTextColor = "#6E7377"
+  footerCopyrightTextColor = "#6E7377",
+  articleNewsLetterBorderColor = "#253546",
+  buttonFollowBorderColor = "#134E59"
 }
 
 export const convertThemeObjectToStyle = object => {

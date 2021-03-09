@@ -1,5 +1,6 @@
 ---
 title: Full-stack and creating user-friendly products
+type: Snippet
 date: "2015-05-28T22:40:32.169Z"
 description: Writing to create value
 rating: 743
