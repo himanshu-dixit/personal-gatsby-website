@@ -541,8 +541,6 @@ const sidebarContainerCSS = css`
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-  const { theme, toggleTheme } = useTheme()
-  console.log(data, "IS THIS")
 
   if (posts.length === 0) {
     return (

@@ -12,7 +12,7 @@ import { LogoComponent } from "../atoms/logo"
 import { Speaker } from "../atoms/navbar/speaker"
 import { ThemeToggle } from "../atoms/navbar/themetoggle"
 import { BookMark } from "../atoms/navbar/bookmark"
-import { Curvy } from "../homepage/curvy"
+import {Link} from "@reach/router";
 
 function MenuComponent() {
   return (
@@ -64,33 +64,35 @@ function Tagline() {
   // Handle Animation
   useEffect(() => {
     // Can be made clean with. Text to show and text shown
-    const currentCursor1 = span1.length
-    const currentCursor2 = currentCursor1 + span2.length
-    const currentCursor3 = currentCursor2 + span3.length
-    const currentCursor4 = currentCursor3 + span4.length
+    const textLength1 = span1.length
+    const textLength2 = textLength1 + span2.length
+    const textLength3 = textLength2 + span3.length
+    const textLength4 = textLength3 + span4.length
 
-    const keyStokeTime = 500
-    if (currentCursor1 < 2) {
+    if (textLength1 < 2) {
       setTimeout(() => {
-        setSpan1(span1 + textToShowInOrder[currentCursor1])
+        setSpan1(span1 + textToShowInOrder[textLength1])
       }, 500)
     }
 
-    if (currentCursor1 >= 2 && currentCursor2 < 7) {
+    // After first text section is completed
+    if (textLength1 >= 2 && textLength2 < 7) {
       setTimeout(() => {
-        setSpan2(span2 + textToShowInOrder[currentCursor2])
+        setSpan2(span2 + textToShowInOrder[textLength2])
       }, 150)
     }
 
-    if (currentCursor2 >= 7 && currentCursor3 < 12) {
+    // After second text section is completed
+    if (textLength2 >= 7 && textLength3 < 12) {
       setTimeout(() => {
-        setSpan3(span3 + textToShowInOrder[currentCursor3])
+        setSpan3(span3 + textToShowInOrder[textLength3])
       }, 200)
     }
 
-    if (currentCursor4 >= 12 && currentCursor4 < 20) {
+    // After first text section is completed
+    if (textLength4 >= 12 && textLength4 < 20) {
       setTimeout(() => {
-        setSpan4(span4 + textToShowInOrder[currentCursor4])
+        setSpan4(span4 + textToShowInOrder[textLength4])
       }, 200)
     }
   })
@@ -114,7 +116,11 @@ function Navbar() {
     <>
       <div css={topBar}>
         <div>
-          <LogoComponent />
+          <Link to="/">
+            <a href={"/"}>
+              <LogoComponent />
+            </a>
+          </Link>
         </div>
         <MenuComponent />
         <RightSection />
