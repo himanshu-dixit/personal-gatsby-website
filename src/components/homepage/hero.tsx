@@ -7,9 +7,9 @@ import { ThemeToggle } from "../atoms/navbar/themetoggle"
 import { BookMark } from "../atoms/navbar/bookmark"
 import { Curvy } from "./curvy"
 
-function MenuComponent() {
+function MenuComponent({isMobile}) {
   return (
-    <div css={menu}>
+    <div css={[menu,isMobile?mobileMenu:desktopMenu]}>
       <a href={"google.com"}>Blog</a>
       <a>Career</a>
       <a>Essays</a>
@@ -109,10 +109,11 @@ function Navbar() {
         <div>
           <LogoComponent />
         </div>
-        <MenuComponent />
+        <MenuComponent isMobile={false}/>
         <RightSection />
       </div>
       <Tagline />
+      <MenuComponent isMobile={true} />
     </>
   )
 }
@@ -132,7 +133,9 @@ export const Herocomponent = (): JSX.Element => {
             </div>
           </div>
           <div css={jammingText}>
-            Jamming to <MusicSVG/><span>Mera man lage - 3:00</span>
+            Jamming to <div>
+            <MusicSVG/><span>Mera man lage - 3:00</span>
+          </div>
           </div>
           <img src={"/images/standing_person.png"} css={personalIllustration} />
         </div>
@@ -212,6 +215,21 @@ const jammingText = css`
       animation: 10.2s playerAnimation step-end infinite;
        animation-fill-mode: forwards;
     }
+    @media (max-width: 600px) {
+      margin: 0 12rem 0 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    
+    display: block;
+    >div{
+      margin-top: 20px;
+    }
+  }
+
+  >div{
+    display: flex;
   }
 `
 
@@ -223,6 +241,13 @@ const personalIllustration = css`
   right: -96rem;
   pointer-events: none;
   user-select: none;
+
+
+  @media (max-width: 600px) {
+    bottom: -30rem;
+    right: -72rem;
+    height: 321px;
+  }
 `
 
 const topBar = css`
@@ -240,6 +265,9 @@ const menu = css`
     margin-left: 25rem;
     text-decoration: none;
     margin-right: 25rem;
+    @media (max-width: 600px) {
+      margin-right: 12rem;
+    }
     color: var(--heroPrimaryTextColor);
   }
   > :first-child {
@@ -248,13 +276,38 @@ const menu = css`
   > :last-child {
     margin-right: 0rem;
   }
-`
+`;
+
+const mobileMenu = css`
+  @media (max-width: 600px) {
+    display: block;
+    margin-top: 24px !important;
+  }
+  display: none;
+`;
+
+const desktopMenu = css`
+  @media (max-width: 600px) {
+    display: none;
+  }
+  display: block;
+`;
+
+
 const rightSection = css`
+  @media (max-width: 600px) {
+
+  }
   display: flex;
 
   > div {
     margin-left: 20rem;
     margin-right: 20rem;
+
+    @media (max-width: 600px) {
+      margin-left: 15rem;
+      margin-right: 15rem;
+    }
   }
   > :first-child {
     margin-left: 0rem;
@@ -272,6 +325,10 @@ const rightSection = css`
 const heroSection = css`
   width: 100%;
   height: 452rem;
+
+  @media (max-width: 600px) {
+    height: 652rem;
+  }
   padding-top: 38rem;
   position: relative;
   background: var(--heroBackground);

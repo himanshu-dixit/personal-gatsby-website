@@ -1,10 +1,5 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Herocomponent } from "../components/homepage/hero"
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
 import BlogFeaturedSection from "../components/blog/featuredSection"
@@ -108,15 +103,18 @@ const newsLetterHeaderFollowTextCSS = css`
   color: var(--newsLetterText);
   margin-left: 4rem;
 `;
+
 const newsLetterHeaderCSS = css`
   display: flex;
   align-items: center;
   font-weight: bold;
 `;
+
 const newsLetterHeaderLikedThisArticleCSS = css`
   font-weight: 17rem;
   color: var(--heroPrimaryTextColor);
 `;
+
 const newsLetterCardContainerCSS = css`
   border: 2rem solid var(--articleNewsLetterBorderColor);
   border-radius: 12rem;
@@ -130,7 +128,6 @@ const newsLetterCardContainerCSS = css`
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const { previous, next } = data
 
   return (
     <>

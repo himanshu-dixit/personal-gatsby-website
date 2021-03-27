@@ -68,6 +68,7 @@ const footerMainContainerCSS = css`
 `;
 const footerLinksSectionCSS = css`
   display: flex;
+  justify-content: flex-end;
 `;
 const tutorialsLinksListCSS = css`
 `;

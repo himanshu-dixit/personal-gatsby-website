@@ -56,7 +56,6 @@ for(let i = 0; i < 4; i++){
   ARTICLES.push({...ARTICLES[0]});
 }
 
-ARTICLES[0].highlighted = true;
 
 const ArticleItem = (props: any) => {
   const {item} = props;
@@ -65,7 +64,7 @@ const ArticleItem = (props: any) => {
   return (
     <div css={articleItemContainerCSS}>
       <Link to={link}>
-      <div css={articleItemTitleCSS(!!item.highlighted)}>{title}</div>
+      <div css={articleItemTitleCSS()} id={"article-title"}>{title}</div>
       <div css={articleInfoContainerCSS}>
         <div css={articleInfoMetaContainerCSS}>
           <div>{meta}</div>
@@ -78,7 +77,7 @@ const ArticleItem = (props: any) => {
           {desc}
         </div>
         <div css={articleItemReadMoreCSS}>
-          <a href={link}>Read More <ArrowSVG color={"var(--heroPrimaryTextColor)"}/></a>
+          <a href={link} id={"article-read-more"}>Read More <ArrowSVG color={"var(--heroPrimaryTextColor)"} id={"article-arrow"}/></a>
         </div>
       </div>
       </Link>
@@ -90,6 +89,9 @@ const articleItemReadMoreCSS = css`
   margin-top: 4rem;
   a {
     color: inherit;
+  }
+  #article-arrow{
+    display: none;
   }
 `;
 const articleInfoContainerCSS = css`
@@ -116,16 +118,27 @@ const articleDescCSS = css`
 
 `;
 const articleItemContainerCSS = css`
+  :hover  #article-title, :hover  #article-read-more{
+    color: var(--playerIcon1);
+  }
+  :hover  #article-title{
+    color: var(--playerIcon1);
+  }
+  :hover  #article-arrow{
+    display: initial;
+  }
+  
   &:not(:first-child){
     margin-top: 54rem;
   }
 `;
-const articleItemTitleCSS = (isHighlighted) => (css`
-  color: ${isHighlighted ? "var(--playerIcon1)" : "var(--heroPrimaryTextColor)"};
+const articleItemTitleCSS = () => (css`
+  color: var(--heroPrimaryTextColor);
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
+  
 `);
 
 const TAGS = [{title: "Next", link: "#"}, {title: "Devops", link: "#"}, {title: "Frontend", link: "#"}, {title: "Next", link: "#"}, {title: "Devops", link: "#"}, {title: "Frontend", link: "#"}]
@@ -355,14 +368,25 @@ const newsLetterInputCSS = css`
   }
 `;
 
-const PAST_PROJECTS = [{
+const PAST_PROJECTS = [
+  {
+    name: "Cofounder",
+    desc: "Crusher",
+    isNew: true
+  },
+  ,{
     name: "Consultant",
     desc: "Signoz | YC S21",
     isNew: true
   },
   {
-    name: "Writing to create value",
-    desc: "Frontend | Headout",
+    name: "Full stack engineer",
+    desc: "Headout",
+    isNew: true
+  },
+  {
+    name: "FS Engineer",
+    desc: "Rizort",
     isNew: true
   },
   {
@@ -371,8 +395,8 @@ const PAST_PROJECTS = [{
     isNew: true
   },
   {
-    name: "Writing to create value",
-    desc: "Frontend | Headout",
+    name: "Cofounder",
+    desc: "Crusher",
     isNew: true
   }
 ];

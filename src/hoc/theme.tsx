@@ -14,9 +14,11 @@ const transition = css`
 `
 export const withTheme = (Component: ReactElement): ReactElement => {
   return props => {
-    const [theme, setTheme] = useState(Theme.Dark)
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || Theme.Dark)
     const toggleTheme = () => {
-      theme === Theme.Dark ? setTheme(Theme.Light) : setTheme(Theme.Dark)
+      const nextTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark;
+      setTheme(nextTheme);
+      localStorage.setItem('theme',nextTheme)
     }
     const contextValue = { theme, toggleTheme }
 

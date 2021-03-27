@@ -23,13 +23,13 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   descText = "#5E7D9C",
   desc1Text = "#1D2022",
   newsLetterText = "#869BAD",
-  newsLetterInputBackground = "#1E2831",
+  newsLetterInputBackground = "#ffffff",
   newsLetterInputText = "#E7E7E7",
-  newsLetterInputBorder = "#283746",
+  newsLetterInputBorder = "#95a5b3",
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
-  newsLetterJoinBorder = "#9E1858",
+  newsLetterJoinBorder = "#ffffff",
   newLabelTextColor = "#969CA3",
-  footerCopyrightTextColor = "#6E7377",
+  footerCopyrightTextColor = "#253546",
   articleNewsLetterBorderColor = "#253546",
   buttonFollowBorderColor = "#134E59"
 }

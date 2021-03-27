@@ -1,11 +1,13 @@
 import React, { ReactElement, useState } from "react"
-import { SoundContext } from "../context/Sound"
-import { Sound } from "../context/Sound"
+import { Sound, SoundContext } from "../context/Sound"
+
 export const withSound = (Component: ReactElement): ReactElement => {
   return props => {
-    const [sound, setSound] = useState(Sound.On)
+    const [sound, setSound] = useState( localStorage.getItem('sound') || Sound.On)
     const toggleSound = () => {
-      sound === Sound.On ? setSound(Sound.Off) : setSound(Sound.On)
+      const nextSound = sound === Sound.On ? Sound.Off : Sound.On;
+      setSound(nextSound);
+      localStorage.setItem('sound',nextSound)
     }
     const contextValue = { sound, toggleSound }
     return (
