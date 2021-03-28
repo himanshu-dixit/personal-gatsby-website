@@ -7,7 +7,7 @@ export const withSound = (
 ): ((props: ReactPropTypes) => ReactElement) => {
   return props => {
     const [sound, setSound] = useState(
-      localStorage.getItem("sound") || Sound.On
+      typeof(localStorage) !== "undefined" ? localStorage.getItem("sound") : Sound.On
     )
     const toggleSound = () => {
       const nextSound = sound === Sound.On ? Sound.Off : Sound.On
@@ -22,7 +22,7 @@ export const withSound = (
       const soundEventListener = document.addEventListener("click", e => {
         e.stopPropagation()
         let element: any = e.target
-        while (element.tagName !== "BODY") {
+        while (element && element.tagName !== "BODY") {
           element = element.parentElement
           if (element && element.tagName === "A") {
             if (sound === Sound.On) {
