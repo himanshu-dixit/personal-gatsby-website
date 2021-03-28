@@ -31,7 +31,7 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   newLabelTextColor = "#969CA3",
   footerCopyrightTextColor = "#253546",
   articleNewsLetterBorderColor = "#253546",
-  buttonFollowBorderColor = "#134E59"
+  buttonFollowBorderColor = "#134E59",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -67,7 +67,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   newLabelTextColor = "#969CA3",
   footerCopyrightTextColor = "#6E7377",
   articleNewsLetterBorderColor = "#253546",
-  buttonFollowBorderColor = "#134E59"
+  buttonFollowBorderColor = "#134E59",
 }
 
 export const convertThemeObjectToStyle = object => {

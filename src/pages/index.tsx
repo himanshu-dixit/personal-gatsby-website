@@ -11,11 +11,10 @@ import { withSound } from "../hoc/sound"
 import { css } from "@emotion/react"
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/center"
-import { Footer } from "../components/footer"
+import { Footer } from "../components/common/footer"
 import { HappySvg } from "../constants/icons"
 
-
-const FireSVG = (props : any) => {
+const FireSVG = (props: any) => {
   return (
     <svg
       height={16}
@@ -44,59 +43,67 @@ const FireSVG = (props : any) => {
   )
 }
 
-const ARTICLES = [{
-  title: "Full-stack and creating user-friendly products",
-  meta: "Writing to create value",
-  desc: "An in-depth tutorial that teaches how to create one of the most adorable interactions I've ever created.",
-  link: "http://google.com",
-  rating: 320
-}];
+const ARTICLES = [
+  {
+    title: "Full-stack and creating user-friendly products",
+    meta: "Writing to create value",
+    desc:
+      "An in-depth tutorial that teaches how to create one of the most adorable interactions I've ever created.",
+    link: "http://google.com",
+    rating: 320,
+  },
+]
 
-for(let i = 0; i < 4; i++){
-  ARTICLES.push({...ARTICLES[0]});
+for (let i = 0; i < 4; i++) {
+  ARTICLES.push({ ...ARTICLES[0] })
 }
 
-
 const ArticleItem = (props: any) => {
-  const {item} = props;
-  const {title, meta, desc, link, rating} = item;
+  const { item } = props
+  const { title, meta, desc, link, rating } = item
 
   return (
     <div css={articleItemContainerCSS}>
       <Link to={link}>
-      <div css={articleItemTitleCSS()} id={"article-title"}>{title}</div>
-      <div css={articleInfoContainerCSS}>
-        <div css={articleInfoMetaContainerCSS}>
-          <div>{meta}</div>
-          <div css={articleRatingCSS}>
-            <FireSVG height={15}/>
-            <span>{rating}</span>
+        <div css={articleItemTitleCSS()} id={"article-title"}>
+          {title}
+        </div>
+        <div css={articleInfoContainerCSS}>
+          <div css={articleInfoMetaContainerCSS}>
+            <div>{meta}</div>
+            <div css={articleRatingCSS}>
+              <FireSVG height={24} />
+              <span>{rating}</span>
+            </div>
+          </div>
+          <div css={articleDescCSS}>{desc}</div>
+          <div css={articleItemReadMoreCSS}>
+            <a href={link} id={"article-read-more"}>
+              Read More{" "}
+              <ArrowSVG
+                color={"var(--heroPrimaryTextColor)"}
+                id={"article-arrow"}
+              />
+            </a>
           </div>
         </div>
-        <div css={articleDescCSS}>
-          {desc}
-        </div>
-        <div css={articleItemReadMoreCSS}>
-          <a href={link} id={"article-read-more"}>Read More <ArrowSVG color={"var(--heroPrimaryTextColor)"} id={"article-arrow"}/></a>
-        </div>
-      </div>
       </Link>
     </div>
   )
-};
+}
 
 const articleItemReadMoreCSS = css`
   margin-top: 4rem;
   a {
     color: inherit;
   }
-  #article-arrow{
+  #article-arrow {
     display: none;
   }
-`;
+`
 const articleInfoContainerCSS = css`
   margin-top: 10rem;
-`;
+`
 const articleInfoMetaContainerCSS = css`
   display: flex;
   color: var(--descText);
@@ -104,55 +111,63 @@ const articleInfoMetaContainerCSS = css`
   font-style: normal;
   font-weight: 500;
   font-size: 16rem;
-`;
+`
 const articleRatingCSS = css`
   margin-left: auto;
   span {
     margin-left: 8rem;
   }
-`;
+`
 const articleDescCSS = css`
   margin-top: 12rem;
   font-family: Gilroy;
   font-size: 16px;
-
-`;
+`
 const articleItemContainerCSS = css`
-  :hover  #article-title, :hover  #article-read-more{
+  :hover #article-title,
+  :hover #article-read-more {
     color: var(--playerIcon1);
   }
-  :hover  #article-title{
+  :hover #article-title {
     color: var(--playerIcon1);
   }
-  :hover  #article-arrow{
+  :hover #article-arrow {
     display: initial;
   }
-  
-  &:not(:first-child){
+
+  &:not(:first-child) {
     margin-top: 54rem;
   }
-`;
-const articleItemTitleCSS = () => (css`
+`
+const articleItemTitleCSS = () => css`
   color: var(--heroPrimaryTextColor);
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
-  
-`);
+`
 
-const TAGS = [{title: "Next", link: "#"}, {title: "Devops", link: "#"}, {title: "Frontend", link: "#"}, {title: "Next", link: "#"}, {title: "Devops", link: "#"}, {title: "Frontend", link: "#"}]
+const TAGS = [
+  { title: "Next", link: "#" },
+  { title: "Devops", link: "#" },
+  { title: "Frontend", link: "#" },
+  { title: "Next", link: "#" },
+  { title: "Devops", link: "#" },
+  { title: "Frontend", link: "#" },
+]
 
 const TagsSection = () => {
   const tagsOut = TAGS.map(tag => {
-    return (<div css={tagItemCSS}><a href={tag.link}>{tag.title}</a></div>)
+    return (
+      <div css={tagItemCSS}>
+        <a href={tag.link}>{tag.title}</a>
+      </div>
+    )
   })
   return (
     <div css={tagsContainerCSS}>
       <div css={tagsHeadingCSS}>Tags</div>
-      <div css={tagsListCSS}>
-        {tagsOut}
-      </div>
+      <div css={tagsListCSS}>{tagsOut}</div>
     </div>
   )
 }
@@ -162,19 +177,19 @@ const tagsHeadingCSS = css`
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
-`;
+`
 const tagsContainerCSS = css`
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
-`;
+`
 const tagsListCSS = css`
   margin-top: 24rem;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 14.5rem 10rem;
-`;
+`
 
 const tagItemCSS = css`
   background: var(--tagsBackground);
@@ -187,12 +202,18 @@ const tagItemCSS = css`
   font-family: Cera Pro;
   text-align: center;
   cursor: pointer;
-`;
+`
 
-const POPULAR_ARTICLES = [{title: "Writing to create value", link: "#"},{title: "Writing to create value", link: "#"},{title: "Writing to create value", link: "#"},{title: "Writing to create value", link: "#"},{title: "Writing to create value", link: "#"}];
+const POPULAR_ARTICLES = [
+  { title: "Writing to create value", link: "#" },
+  { title: "Writing to create value", link: "#" },
+  { title: "Writing to create value", link: "#" },
+  { title: "Writing to create value", link: "#" },
+  { title: "Writing to create value", link: "#" },
+]
 
 const ArrowSVG = (props: any) => {
-  const {color} = props;
+  const { color } = props
   return (
     <svg
       height={6}
@@ -203,28 +224,31 @@ const ArrowSVG = (props: any) => {
     >
       <path
         d="M10.936 2.335L8.492.107a.204.204 0 00-.223-.032.185.185 0 00-.12.185v1.426H.203c-.06 0-.109.019-.147.057A.198.198 0 000 1.889v1.223c0 .059.02.108.057.146a.199.199 0 00.147.057h7.944v1.426c0 .085.04.147.121.185.08.034.155.02.223-.038l2.444-2.254a.208.208 0 000-.299z"
-        fill={color ? color :"#FF46B5"}
+        fill={color ? color : "#FF46B5"}
       />
     </svg>
   )
 }
 const PopularContentSection = () => {
   const contentOut = POPULAR_ARTICLES.map((article, index) => {
-    return (<li key={index} css={popularContentItemCSS}><ArrowSVG/><a href={article.link}>{article.title}</a></li>)
-  });
+    return (
+      <li key={index} css={popularContentItemCSS}>
+        <ArrowSVG />
+        <a href={article.link}>{article.title}</a>
+      </li>
+    )
+  })
   return (
     <div css={popularContentContainerCSS}>
       <div css={popularContentHeadingCSS}>Popular Content</div>
-      <ul css={popularContentListCSS}>
-        {contentOut}
-      </ul>
+      <ul css={popularContentListCSS}>{contentOut}</ul>
     </div>
   )
-};
+}
 const popularContentListCSS = css`
   margin: 0;
   margin-top: 24rem;
-`;
+`
 const popularContentItemCSS = css`
   display: flex;
   align-items: center;
@@ -237,101 +261,125 @@ const popularContentItemCSS = css`
     color: inherit;
     margin-left: 14rem;
   }
-  &:not(:first-child){
+  &:not(:first-child) {
     margin-top: 18rem;
   }
-`;
+`
 const popularContentHeadingCSS = css`
   color: var(--linkText);
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
-`;
+`
 
 const popularContentContainerCSS = css`
-  margin-top: 26rem;
+  margin-top: 48rem;
   ul {
     list-style: none;
     padding: 0;
   }
-`;
-
+`
 
 const NewsLetterCard = () => {
   return (
     <div css={newsLetterContainerCSS}>
       <div css={newsLetterInfoCSS}>
         <div css={newsLetterInfoTextCSS}>
-          <div css={newsLetterHeadingCSS}>Follow my journey of building tech products</div>
+          <div css={newsLetterHeadingCSS}>
+            Follow my journey of building tech products
+          </div>
           <div css={newsLetterFollowInfoCSS}>
-          <div>30+ community of engineers, developers, product makers</div>
-          <div>Content for nerds on engineering and product</div>
-          <div>In-depth resources from <span css={newsLetterHighlightedInfoCSS}>idea, tech and building product</span></div>
+            <div>30+ community of engineers, developers, product makers</div>
+            <div>Content for nerds on engineering and product</div>
+            <div>
+              In-depth resources from{" "}
+              <span css={newsLetterHighlightedInfoCSS}>
+                idea, tech and building product
+              </span>
+            </div>
           </div>
         </div>
         <div css={newsLetterEmojiCSS}>
-          <HappySvg/>
+          <HappySvg />
         </div>
       </div>
       <div css={newsLetterInputContainerCSS}>
         <div css={newsLetterInputParentCSS}>
-          <input css={newsLetterInputCSS} placeholder={"Your Email"}/>
+          <input css={newsLetterInputCSS} placeholder={"Your Email"} />
         </div>
         <div css={newsLetterJoinButtonCSS}>Join</div>
       </div>
-      <div css={newsLetterFooterCSS}>And join whatsapp group to communicate</div>
+      <div css={newsLetterFooterCSS}>
+        And join whatsapp group to communicate
+      </div>
     </div>
   )
 }
 
 const newsLetterContainerCSS = css`
-  margin-top: 88rem;
-`;
+  margin-top: 56rem;
+  margin-bottom: 20rem;
+`
 const newsLetterInfoCSS = css`
   display: flex;
-`;
-const newsLetterInfoTextCSS  =css`
+  @media (max-width: 600px) {
+    flex-wrap: wrap-reverse;
+  }
+`
+const newsLetterInfoTextCSS = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
   font-size: 16rem;
   line-height: 21px;
+  @media (max-width: 600px) {
+    min-width: 100%;
+    padding-right: 20rem;
+  }
 
   color: var(--newsLetterText);
-`;
+`
 const newsLetterEmojiCSS = css`
   margin-left: 80rem;
   margin-top: -8rem;
-`;
-const newsLetterHeadingCSS  =css`
+
+  @media (max-width: 600px) {
+    margin-left: 0rem;
+    margin-top: 20rem;
+  }
+`
+const newsLetterHeadingCSS = css`
   font-size: 20rem;
   font-weight: 900;
-  color: var(--heroPrimaryTextColor)
-`;
-const newsLetterFollowInfoCSS= css`
+  color: var(--heroPrimaryTextColor);
+`
+const newsLetterFollowInfoCSS = css`
   margin-top: 12rem;
   > div {
-    &:not(:first-child){
+    &:not(:first-child) {
       margin-top: 1rem;
     }
   }
-`;
+`
 const newsLetterHighlightedInfoCSS = css`
   color: var(--heroPrimaryTextColor);
-  border-bottom-color: #FA2F90;
+  border-bottom-color: #fa2f90;
   border-bottom-width: 2rem;
   border-bottom-style: solid;
   padding-bottom: 8rem;
-`;
+`
 const newsLetterInputContainerCSS = css`
   display: flex;
   margin-top: 52rem;
   align-items: center;
-`;
-const newsLetterInputParentCSS = css`;
-
-`;
-const newsLetterJoinButtonCSS  =css`
+  @media (max-width: 600px) {
+    flex-wrap: wrap;
+  }
+`
+const newsLetterInputParentCSS = css`
+   ;
+`
+const newsLetterJoinButtonCSS = css`
   font-family: "Cera Pro";
   margin-left: 20rem;
   background: var(--newsLetterJoinBackground);
@@ -343,7 +391,12 @@ const newsLetterJoinButtonCSS  =css`
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
-`;
+
+  @media (max-width: 600px) {
+    margin-left: 0rem;
+    margin-top: 20rem;
+  }
+`
 const newsLetterFooterCSS = css`
   font-family: Cera Pro;
   font-style: normal;
@@ -351,13 +404,13 @@ const newsLetterFooterCSS = css`
   margin-top: 18rem;
   font-size: 16rem;
   color: var(--newsLetterInputText);
-`;
+`
 const newsLetterInputCSS = css`
   background: var(--newsLetterInputBackground);
   border: 2px solid var(--newsLetterInputBorder);
   border-radius: 8rem;
   padding: 8rem 20rem;
-  min-width: 300rem;
+  min-width: 340rem;
   font-family: Cera Pro;
   font-style: normal;
   font-size: 15rem;
@@ -366,71 +419,68 @@ const newsLetterInputCSS = css`
   &:focus {
     outline: none;
   }
-`;
+`
 
 const PAST_PROJECTS = [
   {
     name: "Cofounder",
     desc: "Crusher",
-    isNew: true
+    isNew: true,
   },
-  ,{
+  ,
+  {
     name: "Consultant",
     desc: "Signoz | YC S21",
-    isNew: true
+    isNew: true,
   },
   {
     name: "Full stack engineer",
     desc: "Headout",
-    isNew: true
+    isNew: true,
   },
   {
     name: "FS Engineer",
     desc: "Rizort",
-    isNew: true
+    isNew: true,
   },
   {
     name: "Writing to create value",
     desc: "Frontend | Headout",
-    isNew: true
+    isNew: true,
   },
   {
     name: "Cofounder",
     desc: "Crusher",
-    isNew: true
-  }
-];
+    isNew: true,
+  },
+]
 
 const ProjectItem = (props: any) => {
-  const {item} = props;
-  const {name, desc, isNew} = item;
+  const { item } = props
+  const { name, desc, isNew } = item
 
   return (
-    (
-      <div css={projectsItemContainerCSS}>
-        <div css={projectsItemHeaderCSS}>
-          <div css={projectItemTitleCSS}>{name}</div>
-          <div css={projectItemNewLabelCSS}>{isNew ? "| New" : ""}</div>
-        </div>
-        <div css={projectItemDescCSS}>
-          {desc}
-        </div>
+    <div css={projectsItemContainerCSS}>
+      <div css={projectsItemHeaderCSS}>
+        <div css={projectItemTitleCSS}>{name}</div>
+        <div css={projectItemNewLabelCSS}>{isNew ? "| New" : ""}</div>
       </div>
-    )
+      <div css={projectItemDescCSS}>{desc}</div>
+    </div>
   )
-};
+}
 
 const projectItemDescCSS = css`
   margin-top: 3rem;
   color: var(--descText);
-`;
+`
 const projectItemTitleCSS = css`
   font-weight: bold;
-`;
+`
 const projectItemNewLabelCSS = css`
   margin-left: auto;
   color: var(--newLabelTextColor);
-`;
+`
 const projectsItemContainerCSS = css`
   background: var(--tagsBackground);
   padding: 12rem 14rem;
@@ -441,71 +491,76 @@ const projectsItemContainerCSS = css`
   font-style: normal;
   font-weight: 500;
   font-size: 15rem;
-`;
+`
 const projectsItemHeaderCSS = css`
   display: flex;
-`;
-const MainContainer = ({data}) => {
-  const [posts, setPosts] =  useState([]);
+`
+const MainContainer = ({ data }) => {
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
-    const {allMarkdownRemark: _posts} = data;
+    const { allMarkdownRemark: _posts } = data
     console.log()
-    const postsArr = [];
-    for(let i = 0; i < _posts.nodes.length; i++){
-      const post = _posts.nodes[i];
-      const title = post.frontmatter.title;
-      const meta = post.frontmatter.description;
-      const desc = post.excerpt;
-      const rating = post.frontmatter.rating;
-      const slug = post.fields.slug;
+    const postsArr = []
+    for (let i = 0; i < _posts.nodes.length; i++) {
+      const post = _posts.nodes[i]
+      const title = post.frontmatter.title
+      const meta = post.frontmatter.description
+      const desc = post.excerpt
+      const rating = post.frontmatter.rating
+      const slug = post.fields.slug
 
       postsArr.push({
-          title: title,
-          meta: meta,
-          desc: desc,
-          link: slug,
-          rating: rating
-      });
+        title: title,
+        meta: meta,
+        desc: desc,
+        link: slug,
+        rating: rating,
+      })
     }
-    setPosts([...postsArr]);
-  }, [data]);
+    setPosts([...postsArr])
+  }, [data])
 
   const articlesOut = posts.map(item => {
-    return (<ArticleItem item={item}/>);
-  });
+    return <ArticleItem item={item} />
+  })
 
   const projectsOut = PAST_PROJECTS.map(item => {
-    return (<ProjectItem item={item}/>)
-  });
+    return <ProjectItem item={item} />
+  })
 
   return (
     <div css={mainContainerCSS}>
       <Center>
         <div>
-          <div css={pastWorkHeadingCSS}>Past work <a href={"#"}>View my projects</a></div>
-          <div css={projectsItemListCSS}>
-            {projectsOut}
+          <div css={pastWorkHeadingCSS}>
+            Past work <a href={"#"}>View my projects</a>
           </div>
+          <div css={projectsItemListCSS}>{projectsOut}</div>
         </div>
-        <div css={{display: "flex", marginTop: "72rem", justifyContent: "space-between"}}>
-        <div css={contentCSS}>
-          <div css={articlesContainerCSS}>
-            <div css={articlesContentHeadingCSS}>Recently published</div>
-            <div css={articlesListCSS}>
-              {articlesOut}
+        <div
+          css={{
+            display: "flex",
+            marginTop: "72rem",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+          }}
+        >
+          <div css={contentCSS}>
+            <div css={articlesContainerCSS}>
+              <div css={articlesContentHeadingCSS}>Recently published</div>
+              <div css={articlesListCSS}>{articlesOut}</div>
             </div>
+            <NewsLetterCard />
           </div>
-          <NewsLetterCard/>
-        </div>
-        <div css={sidebarContainerCSS}>
-          <TagsSection/>
-          <PopularContentSection/>
-        </div>
+          <div css={sidebarContainerCSS}>
+            <TagsSection />
+            <PopularContentSection />
+          </div>
         </div>
       </Center>
     </div>
-  );
+  )
 }
 
 const pastWorkHeadingCSS = css`
@@ -518,29 +573,29 @@ const pastWorkHeadingCSS = css`
   align-items: center;
   a {
     margin-left: 14rem;
-    color: #BFBFBF;
+    color: #bfbfbf;
     text-decoration-line: underline;
     font-weight: 500;
     font-size: 14rem;
   }
-`;
+`
 
-const projectsItemListCSS =css`
+const projectsItemListCSS = css`
   display: flex;
-  margin-top: 32rem;
+  margin-top: 20rem;
   > div {
     &:not(:first-child) {
       margin-left: 42rem;
     }
   }
-`;
+`
 const articlesListCSS = css`
   margin-top: 44rem;
-  a{
+  a {
     text-decoration: none;
     color: inherit;
   }
-`;
+`
 const mainContainerCSS = css`
   background: var(--primaryBackground);
   margin-top: -36rem;
@@ -548,19 +603,23 @@ const mainContainerCSS = css`
   padding-top: 28rem;
   position: relative;
   color: var(--heroPrimaryTextColor);
+  flex-wrap: wrap;
 `
-const contentCSS = css``;
+const contentCSS = css``
 const articlesContainerCSS = css`
   max-width: 712rem;
-`;
+`
 const articlesContentHeadingCSS = css`
   font-family: Cera Pro;
   color: var(--playerIcon1);
   font-size: 19rem;
   font-weight: bold;
-`;
+`
 const sidebarContainerCSS = css`
-`;
+  @media (max-width: 600px) {
+    margin-top: 48rem;
+  }
+`
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -583,9 +642,9 @@ const BlogIndex = ({ data, location }) => {
   return (
     <>
       <Herocomponent />
-      <MainContainer data={data}/>
-      <Curvy isHeroBackground={true}/>
-      <Footer/>
+      <MainContainer data={data} />
+      <Curvy isHeroBackground={true} />
+      <Footer />
     </>
   )
 }
@@ -608,7 +667,7 @@ export const pageQuery = graphql`
         frontmatter {
           date(formatString: "MMMM DD, YYYY")
           title
-          description,
+          description
           rating
         }
       }

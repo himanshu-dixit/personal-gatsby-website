@@ -45,7 +45,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       const previousPostId = index === 0 ? null : posts[index - 1].id
       const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
 
-      if(post.fields) {
+      if (post.fields) {
         createPage({
           path: post.fields.slug,
           component: blogPost,

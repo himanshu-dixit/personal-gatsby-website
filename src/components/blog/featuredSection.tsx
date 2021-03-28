@@ -8,138 +8,18 @@
 // @ts-ignore
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
-import { LogoComponent } from "../atoms/logo"
-import { Speaker } from "../atoms/navbar/speaker"
-import { ThemeToggle } from "../atoms/navbar/themetoggle"
-import { BookMark } from "../atoms/navbar/bookmark"
-import {Link} from "@reach/router";
+import { AppNavbar } from "../common/appNavbar"
 
-function MenuComponent() {
-  return (
-    <div css={menu}>
-      <a href={"google.com"}>Blog</a>
-      <a>Career</a>
-      <a>Essays</a>
-    </div>
-  )
-}
-
-function RightSection() {
-  return (
-    <div css={rightSection}>
-      <div>
-        <BookMark />
-      </div>
-      <div>
-        <Speaker />
-      </div>
-      <ThemeToggle />
-    </div>
-  )
-}
-
-const tagline = css`
-  font-size: 16rem;
-  height: 20rem;
-  font-family: "Cera Pro";
-  margin-top: -22rem;
-  font-weight: 600;
-  span {
-  }
-  #make-text {
-    color: var(--makeText);
-  }
-  #break-text {
-    color: var(--breakText);
-  }
-`
-
-function Tagline() {
-  const textToShowInOrder = "I make stuff & break"
-  const [span1, setSpan1] = useState("")
-  const [span2, setSpan2] = useState("")
-  const [span3, setSpan3] = useState("")
-  const [span4, setSpan4] = useState("")
-
-  // Handle Animation
-  useEffect(() => {
-    // Can be made clean with. Text to show and text shown
-    const textLength1 = span1.length
-    const textLength2 = textLength1 + span2.length
-    const textLength3 = textLength2 + span3.length
-    const textLength4 = textLength3 + span4.length
-
-    if (textLength1 < 2) {
-      setTimeout(() => {
-        setSpan1(span1 + textToShowInOrder[textLength1])
-      }, 500)
-    }
-
-    // After first text section is completed
-    if (textLength1 >= 2 && textLength2 < 7) {
-      setTimeout(() => {
-        setSpan2(span2 + textToShowInOrder[textLength2])
-      }, 150)
-    }
-
-    // After second text section is completed
-    if (textLength2 >= 7 && textLength3 < 12) {
-      setTimeout(() => {
-        setSpan3(span3 + textToShowInOrder[textLength3])
-      }, 200)
-    }
-
-    // After first text section is completed
-    if (textLength4 >= 12 && textLength4 < 20) {
-      setTimeout(() => {
-        setSpan4(span4 + textToShowInOrder[textLength4])
-      }, 200)
-    }
-  })
-
-  return (
-    <div>
-      <div css={tagline} style={{ width: "200rem" }}>
-        <span>{span1}</span>
-        <span id={"make-text"}>{span2}</span>
-        <span id={"break-text"}>{span4}</span>
-        {span4.length > 0 && <span className="blinking-cursor">|</span>}
-        <span>{span3}</span>
-        {span4.length < 1 && <span className="blinking-cursor">|</span>}
-      </div>
-    </div>
-  )
-}
-
-function Navbar() {
-  return (
-    <>
-      <div css={topBar}>
-        <div>
-          <Link to="/">
-            <a href={"/"}>
-              <LogoComponent />
-            </a>
-          </Link>
-        </div>
-        <MenuComponent />
-        <RightSection />
-      </div>
-      <Tagline />
-    </>
-  )
-}
-
-export const BlogFeaturedSection = ({data}): JSX.Element => {
-  const {markdownRemark: post} = data;
-  const postTitle = post.frontmatter.title;
-  const postDate = post.frontmatter.date;
-  const postType = post.frontmatter.type;
+export const BlogFeaturedSection = ({ data }): JSX.Element => {
+  const { markdownRemark: post } = data
+  const postTitle = post.frontmatter.title
+  const postDate = post.frontmatter.date
+  const postType = post.frontmatter.type
 
   return (
     <>
       <section css={heroSection}>
-        <Navbar />
+        <AppNavbar />
 
         <div css={heroMainContentCSS}>
           <div css={postTypeCSS}>{postType}</div>
@@ -147,7 +27,6 @@ export const BlogFeaturedSection = ({data}): JSX.Element => {
           <div css={postDateCSS}>{postDate}</div>
         </div>
       </section>
-
     </>
   )
 }
@@ -159,7 +38,7 @@ const postTypeCSS = css`
   font-size: 16rem;
 
   color: var(--playerIcon1);
-`;
+`
 
 const heroMainContentCSS = css`
   display: flex;
@@ -168,7 +47,7 @@ const heroMainContentCSS = css`
   justify-content: center;
   text-align: center;
   height: 100%;
-`;
+`
 const postTitleCSS = css`
   font-family: Cera Pro;
   font-style: normal;
@@ -176,7 +55,7 @@ const postTitleCSS = css`
   font-size: 24rem;
   color: var(--heroPrimaryTextColor);
   margin-top: 14rem;
-`;
+`
 const postDateCSS = css`
   margin-top: 12rem;
   font-family: Cera Pro;
@@ -184,7 +63,7 @@ const postDateCSS = css`
   font-weight: 500;
   font-size: 14rem;
   color: var(--descText);
-`;
+`
 
 function MusicSVG(props) {
   return (
@@ -204,118 +83,11 @@ function MusicSVG(props) {
   )
 }
 
-const heroTagline = css`
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 22re;
-  line-height: 28rem;
-  margin: 0;
-  margin-left: -3rem;
-  margin-top: 64rem;
-`
-const heroTaglineSecondary = css`
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 22px;
-  line-height: 28px;
-  margin: 0;
-  margin-left: -3rem;
-  margin-top: 11rem;
-`
-
-const knowLink = css`
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 19px;
-  /* identical to box height */
-  margin-top: 19rem;
-  margin-bottom: 56rem;
-  text-decoration-line: underline;
-  a {
-    color: var(--linkText);
-  }
-`
-
-const jammingText = css`
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex; 
-  align-items:center;
-  svg{
-    margin: 0 12rem;
-    path{
-      animation: 10.2s playerAnimation step-end infinite;
-       animation-fill-mode: forwards;
-    }
-  }
-`
-
-
-const personalIllustration = css`
-  position: absolute;
-  bottom: 32rem;
-  height: 400px;
-  right: -96rem;
-  pointer-events: none;
-  user-select: none;
-`
-
-const topBar = css`
-  display: flex;
-  justify-content: space-between;
-  height: 53rem;
-`
-
-const menu = css`
-  display: flex;
-  font-family: "Cera Pro";
-  font-weight: 500;
-  font-size: 16rem;
-  > a {
-    margin-left: 25rem;
-    text-decoration: none;
-    margin-right: 25rem;
-    color: var(--heroPrimaryTextColor);
-  }
-  > :first-child {
-    margin-left: 0rem;
-  }
-  > :last-child {
-    margin-right: 0rem;
-  }
-`
-const rightSection = css`
-  display: flex;
-
-  > div {
-    margin-left: 20rem;
-    margin-right: 20rem;
-  }
-  > :first-child {
-    margin-left: 0rem;
-  }
-  > :last-child {
-    margin-right: 0rem;
-  }
-
-  #hero-content {
-    position: relative;
-    height: 300px;
-  }
-`
-
 const heroSection = css`
   width: 100%;
-  height: 372rem;
+  height: 472rem;
   padding-top: 38rem;
-  padding-bottom: 38rem;
+  padding-bottom: 108rem;
   position: relative;
   background: var(--heroBackground);
   color: var(--heroPrimaryTextColor);
@@ -329,7 +101,7 @@ const heroSection = css`
   }
 
   #hero-content {
-    height: 428px;
+    height: 398px;
     position: relative;
   }
 `

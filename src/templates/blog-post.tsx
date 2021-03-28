@@ -6,13 +6,13 @@ import BlogFeaturedSection from "../components/blog/featuredSection"
 import { Center } from "../components/center"
 import { css } from "@emotion/react"
 import { Curvy } from "../components/homepage/curvy"
-import { Footer } from "../components/footer"
+import { Footer } from "../components/common/footer"
 import { HappySvg } from "../constants/icons"
 
-const FireSVG = (props : any) => {
+const FireSVG = (props: any) => {
   return (
     <svg
-      width={16}
+      width={28}
       viewBox="0 0 16 19"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -41,16 +41,26 @@ const FireSVG = (props : any) => {
 const NewsLetterCard = () => {
   return (
     <div css={newsLetterCardContainerCSS}>
-        <div css={newsLetterHeaderCSS}>
-          <HappySvg width={34}/>
-          <span css={newsLetterHeaderLikedThisArticleCSS}>Liked the article?</span>
-          <span css={newsLetterHeaderFollowTextCSS}>Consider following me on</span>
+      <div css={newsLetterHeaderCSS}>
+        <HappySvg width={68} />
+        <div>
+          <span css={newsLetterHeaderLikedThisArticleCSS}>
+            Liked the article?
+          </span>
+          <span css={newsLetterHeaderFollowTextCSS}>
+            Consider following me on
+          </span>
         </div>
+      </div>
+      <span css={newsLetterFollowMobile}>Consider following me on</span>
       <div css={newsLetterContentContainerCSS}>
         <div css={newsLetterContentCSS}>
           <div>Get interesting bits, I share them regulary</div>
-          <div>Join community of 40+ product builder
-            sharing insights and session regularly</div>
+          <div>
+            Join community of 40+ product builder
+            <br />
+            sharing insights and session regularly
+          </div>
         </div>
         <div css={newsLetterActionsCSS}>
           <div css={buttonCSS}>Follow</div>
@@ -59,14 +69,14 @@ const NewsLetterCard = () => {
       </div>
     </div>
   )
-};
+}
 
 const joinButtonCSS = css`
   background: var(--playerIcon1);
-`;
+`
 
 const buttonCSS = css`
-  border: 1rem solid #134E59;
+  border: 1rem solid #134e59;
   border-radius: 8rem;
   background: var(--makeText);
   color: var(--heroPrimaryTextColor);
@@ -75,55 +85,115 @@ const buttonCSS = css`
   text-align: center;
   font-weight: bold;
   font-size: 15rem;
-`;
+`
 
-const newsLetterContentContainerCSS =css`
+const newsLetterContentContainerCSS = css`
   display: flex;
   margin-top: 16rem;
-`;
+
+  @media (min-width: 600px) {
+    margin-top: 8rem;
+    margin-bottom: 26rem;
+  }
+  @media (max-width: 600px) {
+    min-width: 100%;
+    flex-wrap: wrap;
+  }
+`
 const newsLetterContentCSS = css`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding-right: 20rem;
   font-size: 15rem;
-  color: var(--heroPrimaryTextColor);
-  > div { 
-    &:not(:first-child){
-      margin-top: 16rem;
-    }
+  @media (max-width: 600px) {
+    min-width: 100%;
   }
-`;
+  @media (min-width: 600px) {
+    margin-left: 80rem;
+  }
+
+  color: var(--heroPrimaryTextColor);
+`
 const newsLetterActionsCSS = css`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex: 1;
   justify-content: space-between;
-`;
+  @media (min-width: 600px) {
+    margin-top: 0rem;
+    flex-direction: column;
+    align-items: flex-end;
+    div {
+      margin-right: 16rem;
+      min-width: 200px;
+      :first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    min-width: 100%;
+    display: block;
+    margin-top: 32rem;
+    div {
+      min-width: 100%;
+      padding: 10rem;
+      margin-bottom: 16rem;
+    }
+  }
+`
 const newsLetterHeaderFollowTextCSS = css`
   color: var(--newsLetterText);
-  margin-left: 4rem;
-`;
+  margin-left: 20rem;
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
+
+const newsLetterFollowMobile = css`
+  color: var(--newsLetterText);
+  @media (min-width: 600px) {
+    display: none;
+  }
+`
 
 const newsLetterHeaderCSS = css`
   display: flex;
   align-items: center;
   font-weight: bold;
-`;
+  @media (max-width: 600px) {
+    flex-direction: row-reverse;
+  }
+  > div {
+    flex-grow: 1;
+    align-items: center;
+    margin-left: 2rem;
+    @media (min-width: 600px) {
+      margin-left: 12rem;
+    }
+    display: flex;
+  }
+`
 
 const newsLetterHeaderLikedThisArticleCSS = css`
-  font-weight: 17rem;
+  font-size: 22rem;
   color: var(--heroPrimaryTextColor);
-`;
+
+  @media (max-width: 600px) {
+    font-size: 20rem !important;
+  }
+`
 
 const newsLetterCardContainerCSS = css`
   border: 2rem solid var(--articleNewsLetterBorderColor);
   border-radius: 12rem;
-  padding: 22rem 20rem;
-  max-width: 650rem;
+  padding: 12rem 20rem 22rem 20rem;
+  //max-width: 650rem;
   font-family: Cera Pro;
   margin-top: 84rem;
   font-style: normal;
-`;
+`
 
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
@@ -134,56 +204,67 @@ const BlogPostTemplate = ({ data, location }) => {
       <BlogFeaturedSection data={data} />
       {/*<MainContainer data={data}/>*/}
       <div css={mainContentCSS}>
-      <Center customCSS={{display: "flex"}}>
-        <div css={mainContentArticleCSS}>
-        <article
-          className="blog-post"
-          itemScope
-          itemType="http://schema.org/Article"
-        >
-          <section
-            dangerouslySetInnerHTML={{ __html: post.html }}
-            itemProp="articleBody"
-          />
-        </article>
-          <NewsLetterCard/>
-        </div>
-        <div css={fireIconContainerCSS}>
-          <FireSVG width={28}/>
-          <div>{post.frontmatter.rating}</div>
-        </div>
-      </Center>
+        <Center customCSS={{ display: "flex", justifyContent: "center" }}>
+          <div css={mainContentArticleCSS}>
+            <article
+              className="blog-post"
+              itemScope
+              itemType="http://schema.org/Article"
+            >
+              <section
+                dangerouslySetInnerHTML={{ __html: post.html }}
+                itemProp="articleBody"
+              />
+            </article>
+            <NewsLetterCard />
+          </div>
+          <div css={fireIconContainerCSS}>
+            <FireSVG width={28} />
+            <div>{post.frontmatter.rating}</div>
+          </div>
+        </Center>
       </div>
-      <Curvy isHeroBackground={true}/>
-      <Footer/>
+      <Curvy isHeroBackground={true} />
+      <Footer />
     </>
   )
 }
 
 const fireIconContainerCSS = css`
   margin: 0rem 72rem;
+  position: absolute;
+  right: -40px;
+  padding-top: 10rem;
   color: var(--heroPrimaryTextColor);
   text-align: center;
   font-family: Cera Pro;
+
   font-style: normal;
   font-weight: bold;
   font-size: 16rem;
-  >div {
+  > div {
     margin-top: 2rem;
   }
-`;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`
 const mainContentArticleCSS = css`
   flex: 1;
   font-family: Cera Pro;
   font-style: normal;
-  color: var(--desc1Text)
-`;
+  max-width: 720rem;
+  font-size: 16px;
+  line-height: 32px;
+  color: var(--desc1Text);
+`
 const mainContentCSS = css`
   background: var(--primaryBackground);
   color: var(--heroPrimaryTextColor);
   padding-top: 64rem;
   padding-bottom: 108rem;
-`;
+`
 export default withSound(withTheme(BlogPostTemplate))
 
 export const pageQuery = graphql`
@@ -202,9 +283,9 @@ export const pageQuery = graphql`
       excerpt(pruneLength: 160)
       html
       frontmatter {
-        title,
-        type,
-        rating,
+        title
+        type
+        rating
         date(formatString: "MMMM DD, YYYY")
         description
       }

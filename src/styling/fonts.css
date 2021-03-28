@@ -7,7 +7,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Thin_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Thin_Italic.otf")
+    format("opentype");
   font-weight: 200;
   font-style: italic;
 }
@@ -21,7 +22,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Light_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Light_Italic.otf")
+    format("opentype");
   font-weight: 300;
   font-style: italic;
 }
@@ -35,7 +37,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Regular_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Regular_Italic.otf")
+    format("opentype");
   font-weight: 400;
   font-style: italic;
 }
@@ -49,7 +52,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Medium_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Medium_Italic.otf")
+    format("opentype");
   font-weight: 500;
   font-style: italic;
 }
@@ -63,7 +67,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Bold_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Bold_Italic.otf")
+    format("opentype");
   font-weight: 700;
   font-style: italic;
 }
@@ -77,7 +82,8 @@
 
 @font-face {
   font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Black_Italic.otf") format("opentype");
+  src: url("../../static/fonts/CeraPro/Cera_Pro_Black_Italic.otf")
+    format("opentype");
   font-weight: 900;
   font-style: italic;
 }
@@ -105,7 +111,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-UltraLightItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-UltraLightItalic.ttf")
+    format("truetype");
   font-weight: 200;
   font-style: italic;
 }
@@ -119,7 +126,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-LightItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-LightItalic.ttf")
+    format("truetype");
   font-weight: 300;
   font-style: italic;
 }
@@ -133,7 +141,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-RegularItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-RegularItalic.ttf")
+    format("truetype");
   font-weight: 400;
   font-style: italic;
 }
@@ -147,7 +156,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-MediumItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-MediumItalic.ttf")
+    format("truetype");
   font-weight: 500;
   font-style: italic;
 }
@@ -161,7 +171,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-SemiBoldItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-SemiBoldItalic.ttf")
+    format("truetype");
   font-weight: 600;
   font-style: italic;
 }
@@ -189,7 +200,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-ExtraBoldItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-ExtraBoldItalic.ttf")
+    format("truetype");
   font-weight: 800;
   font-style: italic;
 }
@@ -203,7 +215,8 @@
 
 @font-face {
   font-family: "Gilroy";
-  src: url("../../static/fonts/Gilroy/Gilroy-BlackItalic.ttf") format("truetype");
+  src: url("../../static/fonts/Gilroy/Gilroy-BlackItalic.ttf")
+    format("truetype");
   font-weight: 900;
   font-style: italic;
 }

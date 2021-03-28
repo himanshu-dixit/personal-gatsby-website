@@ -1,4 +1,4 @@
-import { Center } from "./center"
+import { Center } from "../center"
 import { css } from "@emotion/react"
 import React from "react"
 
@@ -6,10 +6,12 @@ const Footer = () => {
   return (
     <div css={footerContainerCSS}>
       <Center customCSS={footerMainContainerCSS}>
-        <div>
+        <div id="footer-logo">
           <div>
             <div css={authorNameCSS}>Himanshu Dixit</div>
-            <div css={authorThanksCSS}>Thanks for <span>reading.</span></div>
+            <div css={authorThanksCSS}>
+              Thanks for <span>reading.</span>
+            </div>
           </div>
           <div css={authorCopyRightCSS}>
             <span>© 2020-21. Himanshu Dixit. All rights reserved.</span>
@@ -39,54 +41,70 @@ const Footer = () => {
       </Center>
     </div>
   )
-};
+}
 
 const authorNameCSS = css`
   font-weight: 900;
   font-size: 20rem;
   color: var(--heroPrimaryTextColor);
-`;
+`
 const authorThanksCSS = css`
   margin-top: 2rem;
   span {
-    color: var(--playerIcon1)
+    color: var(--playerIcon1);
   }
-`;
+`
 const authorCopyRightCSS = css`
   margin-top: 52rem;
-  color: #6E7377;
+  color: #6e7377;
   font-size: 15rem;
-  color: var(--footerCopyrightTextColor)
-`;
+  color: var(--footerCopyrightTextColor);
+`
 const footerMainContainerCSS = css`
   display: flex;
   font-family: Cera Pro;
   font-style: normal;
+  flex-wrap: wrap-reverse;
   > div {
     flex: 0.5;
   }
-`;
+
+  @media (max-width: 600px) {
+    > div {
+      flex: 1;
+    }
+    #footer-logo {
+      min-width: 100%;
+    }
+  }
+`
 const footerLinksSectionCSS = css`
   display: flex;
   justify-content: flex-end;
-`;
-const tutorialsLinksListCSS = css`
-`;
+  @media (max-width: 600px) {
+    margin-bottom: 40rem;
+    justify-content: space-between;
+  }
+`
+const tutorialsLinksListCSS = css``
 const tutorialsLinksHeadingCSS = css`
   font-weight: bold;
-`;
+`
 const tutorialsLinksCSS = css`
   margin-top: 20rem;
   display: grid;
   grid-template-columns: auto auto;
   grid-gap: 12rem 44rem;
-`;
-const quickLinksListCSS  =css`
+`
+const quickLinksListCSS = css`
   margin-left: 92rem;
-`;
+  @media (max-width: 600px) {
+    margin-left: 42rem;
+  }
+`
 const quickLinksHeadingCSS = css`
   font-weight: bold;
-`;
+`
 const quickLinksCSS = css`
   margin-top: 20rem;
   > div {
@@ -104,6 +122,6 @@ const footerContainerCSS = css`
   position: relative;
   background: var(--heroBackground);
   color: var(--heroPrimaryTextColor);
-`;
+`
 
-export {Footer}
+export { Footer }
