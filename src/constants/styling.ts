@@ -32,6 +32,19 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   footerCopyrightTextColor = "#253546",
   articleNewsLetterBorderColor = "#253546",
   buttonFollowBorderColor = "#134E59",
+  // Upvote sound
+  fire01 = "#97aec6",
+  fire02 = "#547091",
+  fire03 = "#657e96",
+  fire11 = "#7F5270 ",
+  fire12 = "#7F3464",
+  fire13 = "#65194A",
+  fire21 = "#CE81B0",
+  fire22 = "#CE4E9C",
+  fire23 = "#A32271",
+  fire31 = "#FF9ED8",
+  fire32 = "#FF5FBF",
+  fire33 = "#CA2889",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -68,6 +81,19 @@ export enum GLOBAL_CSS_VAR_DARK {
   footerCopyrightTextColor = "#6E7377",
   articleNewsLetterBorderColor = "#253546",
   buttonFollowBorderColor = "#134E59",
+  // Upvote sound
+  fire01 = "#232C35",
+  fire02 = "#1A2027",
+  fire03 = "#11171D",
+  fire11 = "#7F5270 ",
+  fire12 = "#7F3464",
+  fire13 = "#65194A",
+  fire21 = "#CE81B0",
+  fire22 = "#CE4E9C",
+  fire23 = "#A32271",
+  fire31 = "#FF9ED8",
+  fire32 = "#FF5FBF",
+  fire33 = "#CA2889",
 }
 
 export const convertThemeObjectToStyle = object => {

@@ -19,7 +19,7 @@ export const Herocomponent = (): JSX.Element => {
             </div>
           </div>
           <div css={jammingText}>
-            Jamming to{" "}
+            Last jammed to{" "}
             <div>
               <MusicSVG />
               <span>Mera man lage - 3:00</span>
@@ -56,7 +56,7 @@ const heroTagline = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: bold;
-  font-size: 22re;
+  font-size: 22rem;
   line-height: 28rem;
   margin: 0;
   margin-left: -3rem;

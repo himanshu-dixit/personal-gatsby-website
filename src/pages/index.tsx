@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useState } from "react"
-import { Link, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
+import { graphql, Link } from "gatsby"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Herocomponent } from "../components/homepage/hero"
-import { useTheme } from "../context/Theme"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 import { css } from "@emotion/react"
@@ -13,50 +12,9 @@ import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/center"
 import { Footer } from "../components/common/footer"
 import { HappySvg } from "../constants/icons"
-
-const FireSVG = (props: any) => {
-  return (
-    <svg
-      height={16}
-      viewBox="0 0 16 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M7.99.073c1.49 1.056 5.172 4.332 4.313 10.44 0 0 .96-.513 1.813-1.461.197-.22.593-.135.66.14.148.61.328 1.588.357 2.826.09 3.738-3.202 6.946-7.378 6.952-4.05.007-7.356-2.957-7.356-6.597 0-3.153 1.706-4.8 2.362-7.512.054-.224.341-.33.56-.214.499.265 1.287.762 1.802 1.468 0 0 2.096-2.377 2.26-5.787.013-.276.366-.427.608-.255z"
-        fill="#35414E"
-      />
-      <path
-        d="M11.746 12.342c-.588.79-1.333.97-1.333.97a9.94 9.94 0 00-1.654-6.448c-.08-.117-.281-.086-.314.048-.521 2.166-1.921 3.369-1.921 3.369-.456-.476-.89-.67-1.115-.746a.174.174 0 00-.216.093c-.575 1.381-1.662 2.447-1.91 4.035-.363 2.336 1.532 4.55 4.16 4.713 2.652.165 4.86-1.712 4.86-4.05 0-.94-.14-1.586-.247-1.942-.039-.129-.227-.153-.31-.042z"
-        fill="#18222D"
-      />
-      <path
-        d="M7.876 11.982c-.054-.123-.229-.157-.328-.06-.594.585-2.192 2.295-2.192 3.801 0 1.192 1.08 2.158 2.411 2.158 1.332 0 2.412-.966 2.412-2.158 0-1.133-1.557-2.063-2.303-3.741z"
-        fill="#090C0F"
-      />
-      <path
-        d="M7.69 18.967c-.785-.053-7.544-1.18-5.213-8.793a26.02 26.02 0 001.022-5.428 7.692 7.692 0 00-.178-.099c-.22-.117-.507-.01-.56.214C2.103 7.573.397 9.22.397 12.373c0 3.62 3.259 6.557 7.293 6.594z"
-        fill="#182431"
-      />
-    </svg>
-  )
-}
-
-const ARTICLES = [
-  {
-    title: "Full-stack and creating user-friendly products",
-    meta: "Writing to create value",
-    desc:
-      "An in-depth tutorial that teaches how to create one of the most adorable interactions I've ever created.",
-    link: "http://google.com",
-    rating: 320,
-  },
-]
-
-for (let i = 0; i < 4; i++) {
-  ARTICLES.push({ ...ARTICLES[0] })
-}
+import { SubscribeForm } from "../components/common/subsribeForm"
+import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
+import { PastWork } from "../components/common/projectList"
 
 const ArticleItem = (props: any) => {
   const { item } = props
@@ -71,10 +29,7 @@ const ArticleItem = (props: any) => {
         <div css={articleInfoContainerCSS}>
           <div css={articleInfoMetaContainerCSS}>
             <div>{meta}</div>
-            <div css={articleRatingCSS}>
-              <FireSVG height={24} />
-              <span>{rating}</span>
-            </div>
+            <UpvoteIndicator upvotes={rating} />
           </div>
           <div css={articleDescCSS}>{desc}</div>
           <div css={articleItemReadMoreCSS}>
@@ -112,12 +67,7 @@ const articleInfoMetaContainerCSS = css`
   font-weight: 500;
   font-size: 16rem;
 `
-const articleRatingCSS = css`
-  margin-left: auto;
-  span {
-    margin-left: 8rem;
-  }
-`
+
 const articleDescCSS = css`
   margin-top: 12rem;
   font-family: Gilroy;
@@ -303,12 +253,7 @@ const NewsLetterCard = () => {
           <HappySvg />
         </div>
       </div>
-      <div css={newsLetterInputContainerCSS}>
-        <div css={newsLetterInputParentCSS}>
-          <input css={newsLetterInputCSS} placeholder={"Your Email"} />
-        </div>
-        <div css={newsLetterJoinButtonCSS}>Join</div>
-      </div>
+      {SubscribeForm()}
       <div css={newsLetterFooterCSS}>
         And join whatsapp group to communicate
       </div>
@@ -368,35 +313,6 @@ const newsLetterHighlightedInfoCSS = css`
   border-bottom-style: solid;
   padding-bottom: 8rem;
 `
-const newsLetterInputContainerCSS = css`
-  display: flex;
-  margin-top: 52rem;
-  align-items: center;
-  @media (max-width: 600px) {
-    flex-wrap: wrap;
-  }
-`
-const newsLetterInputParentCSS = css`
-   ;
-`
-const newsLetterJoinButtonCSS = css`
-  font-family: "Cera Pro";
-  margin-left: 20rem;
-  background: var(--newsLetterJoinBackground);
-  border: 2rem solid var(--newsLetterJoinBorder);
-  padding: 8rem 20rem;
-  min-width: 236rem;
-  text-align: center;
-  border-radius: 8rem;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 18rem;
-
-  @media (max-width: 600px) {
-    margin-left: 0rem;
-    margin-top: 20rem;
-  }
-`
 const newsLetterFooterCSS = css`
   font-family: Cera Pro;
   font-style: normal;
@@ -405,96 +321,7 @@ const newsLetterFooterCSS = css`
   font-size: 16rem;
   color: var(--newsLetterInputText);
 `
-const newsLetterInputCSS = css`
-  background: var(--newsLetterInputBackground);
-  border: 2px solid var(--newsLetterInputBorder);
-  border-radius: 8rem;
-  padding: 8rem 20rem;
-  min-width: 340rem;
-  font-family: Cera Pro;
-  font-style: normal;
-  font-size: 15rem;
-  font-weight: 500;
-  color: var(--newsLetterInputText);
-  &:focus {
-    outline: none;
-  }
-`
 
-const PAST_PROJECTS = [
-  {
-    name: "Cofounder",
-    desc: "Crusher",
-    isNew: true,
-  },
-  ,
-  {
-    name: "Consultant",
-    desc: "Signoz | YC S21",
-    isNew: true,
-  },
-  {
-    name: "Full stack engineer",
-    desc: "Headout",
-    isNew: true,
-  },
-  {
-    name: "FS Engineer",
-    desc: "Rizort",
-    isNew: true,
-  },
-  {
-    name: "Writing to create value",
-    desc: "Frontend | Headout",
-    isNew: true,
-  },
-  {
-    name: "Cofounder",
-    desc: "Crusher",
-    isNew: true,
-  },
-]
-
-const ProjectItem = (props: any) => {
-  const { item } = props
-  const { name, desc, isNew } = item
-
-  return (
-    <div css={projectsItemContainerCSS}>
-      <div css={projectsItemHeaderCSS}>
-        <div css={projectItemTitleCSS}>{name}</div>
-        <div css={projectItemNewLabelCSS}>{isNew ? "| New" : ""}</div>
-      </div>
-      <div css={projectItemDescCSS}>{desc}</div>
-    </div>
-  )
-}
-
-const projectItemDescCSS = css`
-  margin-top: 3rem;
-  color: var(--descText);
-`
-const projectItemTitleCSS = css`
-  font-weight: bold;
-`
-const projectItemNewLabelCSS = css`
-  margin-left: auto;
-  color: var(--newLabelTextColor);
-`
-const projectsItemContainerCSS = css`
-  background: var(--tagsBackground);
-  padding: 12rem 14rem;
-  border-radius: 8rem;
-  min-width: 270rem;
-  color: var(--heroPrimaryTextColor);
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 15rem;
-`
-const projectsItemHeaderCSS = css`
-  display: flex;
-`
 const MainContainer = ({ data }) => {
   const [posts, setPosts] = useState([])
 
@@ -525,19 +352,10 @@ const MainContainer = ({ data }) => {
     return <ArticleItem item={item} />
   })
 
-  const projectsOut = PAST_PROJECTS.map(item => {
-    return <ProjectItem item={item} />
-  })
-
   return (
     <div css={mainContainerCSS}>
       <Center>
-        <div>
-          <div css={pastWorkHeadingCSS}>
-            Past work <a href={"#"}>View my projects</a>
-          </div>
-          <div css={projectsItemListCSS}>{projectsOut}</div>
-        </div>
+        <PastWork />
         <div
           css={{
             display: "flex",
@@ -563,32 +381,6 @@ const MainContainer = ({ data }) => {
   )
 }
 
-const pastWorkHeadingCSS = css`
-  color: var(--makeText);
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 18rem;
-  display: flex;
-  align-items: center;
-  a {
-    margin-left: 14rem;
-    color: #bfbfbf;
-    text-decoration-line: underline;
-    font-weight: 500;
-    font-size: 14rem;
-  }
-`
-
-const projectsItemListCSS = css`
-  display: flex;
-  margin-top: 20rem;
-  > div {
-    &:not(:first-child) {
-      margin-left: 42rem;
-    }
-  }
-`
 const articlesListCSS = css`
   margin-top: 44rem;
   a {

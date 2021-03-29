@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link, graphql } from "gatsby"
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
@@ -8,6 +8,8 @@ import { css } from "@emotion/react"
 import { Curvy } from "../components/homepage/curvy"
 import { Footer } from "../components/common/footer"
 import { HappySvg } from "../constants/icons"
+import { SubscribeForm } from "../components/common/subsribeForm"
+import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 
 const FireSVG = (props: any) => {
   return (
@@ -39,6 +41,11 @@ const FireSVG = (props: any) => {
 }
 
 const NewsLetterCard = () => {
+  const [email, setEmail] = useState("")
+  const [joinNewsletter, setJoinNewsLetter] = useState(false)
+  const onSubmit = () => {
+    alert("Email sent")
+  }
   return (
     <div css={newsLetterCardContainerCSS}>
       <div css={newsLetterHeaderCSS}>
@@ -48,7 +55,7 @@ const NewsLetterCard = () => {
             Liked the article?
           </span>
           <span css={newsLetterHeaderFollowTextCSS}>
-            Consider following me on
+            {/*Consider following me on*/}
           </span>
         </div>
       </div>
@@ -64,13 +71,79 @@ const NewsLetterCard = () => {
         </div>
         <div css={newsLetterActionsCSS}>
           <div css={buttonCSS}>Follow</div>
-          <div css={[buttonCSS, joinButtonCSS]}>Join</div>
+          {!joinNewsletter && (
+            <div
+              css={[buttonCSS, joinButtonCSS]}
+              onClick={setJoinNewsLetter.bind(this, true)}
+            >
+              Join
+            </div>
+          )}
         </div>
       </div>
+
+      {joinNewsletter && (
+        <div>
+          <div css={newsLetterInputParentCSS}>
+            <input
+              css={newsLetterInputCSS}
+              placeholder={"Your Email"}
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value)
+              }}
+            />
+            <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
+              Join
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
 
+const newsLetterInputParentCSS = css`
+  margin-left: 72px;
+  display: flex;
+  @media (max-width: 600px) {
+    display: block;
+    margin-left: 0;
+  } ;
+`
+const newsLetterJoinButtonCSS = css`
+  font-family: "Cera Pro";
+  margin-left: 20rem;
+  background: var(--newsLetterJoinBackground);
+  border: 2rem solid var(--newsLetterJoinBorder);
+  padding: 6rem 20rem;
+  min-width: 236rem;
+  text-align: center;
+  border-radius: 8rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18rem;
+
+  @media (max-width: 600px) {
+    margin-left: 0rem;
+    margin-top: 20rem;
+  }
+`
+const newsLetterInputCSS = css`
+  background: var(--newsLetterInputBackground);
+  border: 2px solid var(--newsLetterInputBorder);
+  border-radius: 8rem;
+  padding: 8rem 20rem;
+  min-width: 340rem;
+  font-family: Cera Pro;
+  font-style: normal;
+  font-size: 15rem;
+  font-weight: 500;
+  color: var(--newsLetterInputText);
+  &:focus {
+    outline: none;
+  }
+`
 const joinButtonCSS = css`
   background: var(--playerIcon1);
 `
@@ -191,7 +264,7 @@ const newsLetterCardContainerCSS = css`
   padding: 12rem 20rem 22rem 20rem;
   //max-width: 650rem;
   font-family: Cera Pro;
-  margin-top: 84rem;
+  margin-top: 64rem;
   font-style: normal;
 `
 
@@ -216,37 +289,38 @@ const BlogPostTemplate = ({ data, location }) => {
                 itemProp="articleBody"
               />
             </article>
+            <div css={upvoteMobile}>
+              <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
+            </div>
             <NewsLetterCard />
           </div>
-          <div css={fireIconContainerCSS}>
-            <FireSVG width={28} />
-            <div>{post.frontmatter.rating}</div>
-          </div>
+         <div css={upvoteDesktop}>
+           <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
+         </div>
         </Center>
       </div>
+
       <Curvy isHeroBackground={true} />
       <Footer />
     </>
   )
 }
 
-const fireIconContainerCSS = css`
+const upvoteDesktop = css`
   margin: 0rem 72rem;
   position: absolute;
   right: -40px;
-  padding-top: 10rem;
-  color: var(--heroPrimaryTextColor);
-  text-align: center;
-  font-family: Cera Pro;
-
-  font-style: normal;
-  font-weight: bold;
-  font-size: 16rem;
-  > div {
-    margin-top: 2rem;
-  }
-
   @media (max-width: 600px) {
+    display: none;
+  }
+`
+const upvoteMobile = css`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 32rem 0;
+  @media (min-width: 600px) {
+    font-size: 14rem;
     display: none;
   }
 `

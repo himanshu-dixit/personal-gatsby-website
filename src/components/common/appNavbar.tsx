@@ -1,16 +1,17 @@
-import { css } from "@emotion/react"
+import React, { useEffect, useState } from "react"
+import { Link } from "gatsby"
 import { BookMark } from "../atoms/navbar/bookmark"
 import { Speaker } from "../atoms/navbar/speaker"
 import { ThemeToggle } from "../atoms/navbar/themetoggle"
-import React, { useEffect, useState } from "react"
 import { LogoComponent } from "../atoms/logo"
+import { css } from "@emotion/react"
 
 function MenuComponent({ isMobile }) {
   return (
     <div css={[menu, isMobile ? mobileMenu : desktopMenu]}>
-      <a href={"google.com"}>Blog</a>
-      <a>Career</a>
-      <a>Essays</a>
+      <Link to={"/work"}>Work</Link>
+      <Link to={"/services"}>Services</Link>
+      <Link to={"/contact"}>Contact</Link>
     </div>
   )
 }
@@ -105,7 +106,9 @@ export function AppNavbar() {
     <>
       <div css={topBar}>
         <div>
-          <LogoComponent />
+          <Link to={"/"}>
+            <LogoComponent />
+          </Link>
         </div>
         <MenuComponent isMobile={false} />
         <RightSection />
@@ -126,6 +129,9 @@ const menu = css`
   font-family: "Cera Pro";
   font-weight: 500;
   font-size: 16rem;
+  @media (max-width: 600px) {
+    font-size: 14rem;
+  }
   > a {
     margin-left: 25rem;
     text-decoration: none;

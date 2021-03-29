@@ -15,7 +15,9 @@ const transition = css`
 export const withTheme = (Component: ReactElement): ReactElement => {
   return props => {
     const [theme, setTheme] = useState(
-      typeof(localStorage) !== "undefined" ? localStorage.getItem("theme") : Theme.Dark
+      typeof localStorage !== "undefined"
+        ? localStorage.getItem("theme")
+        : Theme.Dark
     )
     const toggleTheme = () => {
       const nextTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark

@@ -7,7 +7,9 @@ export const withSound = (
 ): ((props: ReactPropTypes) => ReactElement) => {
   return props => {
     const [sound, setSound] = useState(
-      typeof(localStorage) !== "undefined" ? localStorage.getItem("sound") : Sound.On
+      typeof localStorage !== "undefined"
+        ? localStorage.getItem("sound")
+        : Sound.On
     )
     const toggleSound = () => {
       const nextSound = sound === Sound.On ? Sound.Off : Sound.On
