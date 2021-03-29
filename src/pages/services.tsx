@@ -17,37 +17,12 @@ import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
 
 
-const MainContainer = ({ data }) => {
-  const [posts, setPosts] = useState([])
-
-  useEffect(() => {
-    const { allMarkdownRemark: _posts } = data
-    console.log()
-    const postsArr = []
-    for (let i = 0; i < _posts.nodes.length; i++) {
-      const post = _posts.nodes[i]
-      const title = post.frontmatter.title
-      const meta = post.frontmatter.description
-      const desc = post.excerpt
-      const rating = post.frontmatter.rating
-      const slug = post.fields.slug
-
-      postsArr.push({
-        title: title,
-        meta: meta,
-        desc: desc,
-        link: slug,
-        rating: rating,
-      })
-    }
-    setPosts([...postsArr])
-  }, [data])
+const MainContainer = ({  }) => {
 
 
   return (
     <div css={mainContainerCSS}>
       <Center>
-        {/*<PastWork />*/}
         <div
           css={{
             marginTop: "72rem",
