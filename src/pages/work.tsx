@@ -133,6 +133,7 @@ const pinkButton = css`
   margin-right: 20rem;
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
+  color: var(--pinkButtonText);
   padding: 6rem 20rem;
   min-width: 236rem;
   text-align: center;

@@ -51,6 +51,7 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   workNormalBG = "#D6F1FF",
   workNormalBORDER = "#9ec4d7",
   workNormalCOLOR = "#0E0F14",
+  pinkButtonText = "#fff",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
