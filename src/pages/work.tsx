@@ -35,7 +35,7 @@ const work = [
     date: "2020",
     backgroundImage:"/images/background/pinkred1.png",
     image:"/images/work/1.png",
-    desc: (`   Velocity and estimates.<br/>
+    desc: (`   Velocity and estimates.\n
                     Track your team's workload and velocity.
 
                     Automated. Cycles run on an automated schedule,<br/>
@@ -170,7 +170,7 @@ const workItemDesc = css`
     justify-content: space-between;
 
     #name {
-      font-size: 32px;
+      font-size: 28px;
       line-height: 63px;
       font-weight: 900;
       letter-spacing: -0.02em;
