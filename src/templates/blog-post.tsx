@@ -71,7 +71,7 @@ const NewsLetterCard = () => {
           </div>
         </div>
         <div css={newsLetterActionsCSS}>
-          <div css={buttonCSS}>Follow</div>
+          <Link to={"https://twitter.com/1x_engineer"}><div css={buttonCSS}>Follow</div></Link>
           {!joinNewsletter && (
             <div
               css={[buttonCSS, joinButtonCSS]}
@@ -163,6 +163,7 @@ const joinButtonCSS = css`
 const buttonCSS = css`
   border: 1rem solid #134e59;
   border-radius: 8rem;
+  cursor: pointer;
   background: var(--makeText);
   color: var(--heroPrimaryTextColor);
   min-width: 136rem;
