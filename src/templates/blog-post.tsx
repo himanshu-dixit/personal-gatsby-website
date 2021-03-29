@@ -42,9 +42,10 @@ const FireSVG = (props: any) => {
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
-  const [joinNewsletter, setJoinNewsLetter] = useState(false)
+  const [joinNewsletter, setJoinNewsLetter] = useState(false);
+  const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    alert("Email sent")
+    setEmailSent(true)
   }
   return (
     <div css={newsLetterCardContainerCSS}>
@@ -84,7 +85,7 @@ const NewsLetterCard = () => {
 
       {joinNewsletter && (
         <div>
-          <div css={newsLetterInputParentCSS}>
+          {!emailSent && <div css={newsLetterInputParentCSS}>
             <input
               css={newsLetterInputCSS}
               placeholder={"Your Email"}
@@ -96,12 +97,23 @@ const NewsLetterCard = () => {
             <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
               Join
             </div>
-          </div>
+          </div>}
+          {
+            emailSent && (<div css={emailSentCSS}>
+              Email sent to your inbox. Please confirm it.
+            </div>)
+          }
         </div>
       )}
     </div>
   )
 }
+
+const emailSentCSS = css`
+  margin-left: 72px;
+  display: flex;
+  margin-top: 24px;
+`
 
 const newsLetterInputParentCSS = css`
   margin-left: 72px;

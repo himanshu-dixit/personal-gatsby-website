@@ -384,6 +384,9 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
+a{
+  color: var(--breakText) !important;
+}
 html {
   font-family: sans-serif;
   line-height: 1.15;

@@ -3,24 +3,33 @@ import { css } from "@emotion/react"
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("")
+  const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    alert("Email setn")
+    setEmailSent(true)
   }
   return (
     <div css={newsLetterInputContainerCSS}>
-      <div css={newsLetterInputParentCSS}>
-        <input
-          css={newsLetterInputCSS}
-          placeholder={"Your Email"}
-          value={email}
-          onChange={e => {
-            setEmail(e.target.value)
-          }}
-        />
-      </div>
-      <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
-        Join
-      </div>
+      {!emailSent && (
+        <>
+          <div css={newsLetterInputParentCSS}>
+            <input
+              css={newsLetterInputCSS}
+              placeholder={"Your Email"}
+              value={email}
+              onChange={e => {
+                setEmail(e.target.value)
+              }}
+            />
+          </div>
+          <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
+            Join
+          </div>
+        </>
+      )}
+      {emailSent && (
+        <div>Send email</div>
+        )}
+
     </div>
   )
 }

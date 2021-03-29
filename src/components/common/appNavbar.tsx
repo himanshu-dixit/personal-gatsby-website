@@ -11,7 +11,7 @@ function MenuComponent({ isMobile }) {
     <div css={[menu, isMobile ? mobileMenu : desktopMenu]}>
       <Link to={"/work"}>Work</Link>
       <Link to={"/services"}>Services</Link>
-      <Link to={"/contact"}>Contact</Link>
+      <Link to={"/contact"}>Essays</Link>
     </div>
   )
 }

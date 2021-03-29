@@ -1,8 +1,10 @@
 // @ts-ignore
 import React, { useEffect, useState } from "react"
+import {Link} from "gatsby"
 import { css } from "@emotion/react"
 import { Curvy } from "./curvy"
 import { AppNavbar } from "../common/appNavbar"
+import { BookSVG, EmailSVG, Github, InstaSVG, MusicalSVG, TwitterSVG } from "../../constants/icons"
 
 export const Herocomponent = (): JSX.Element => {
   return (
@@ -15,7 +17,7 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTagline}>I bring impact by creating products</h1>
             <h1 css={heroTaglineSecondary}>using my full-stack skills</h1>
             <div css={knowLink}>
-              <a href={"http://gogole.com"}>Know about me</a>
+              <Link to={"about_me"}>Know about me</Link>  <Link to={"about_me"}>Contact</Link>
             </div>
           </div>
           <div css={jammingText}>
@@ -25,7 +27,33 @@ export const Herocomponent = (): JSX.Element => {
               <span>Mera man lage - 3:00</span>
             </div>
           </div>
-          <img src={"/images/standing_person.png"} css={personalIllustration} />
+          <div css={personalStatusContainer}>
+            <div id="twitter">
+              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <TwitterSVG/>     </a></div>
+            <div id="book">
+              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <BookSVG/>     </a></div>
+            <div id="github">
+              <a href="https://github.com/himanshu-dixit" target="_blank">
+              <Github/>     </a></div>
+            <div id="insta">
+
+              <a href="https://instagram.com/1xengineer" target="_blank">
+              <InstaSVG/>
+              </a>
+            </div>
+            <div id="music">
+              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <MusicalSVG/>
+              </a></div>
+            <div id="email">
+              <a href="mailto:hello@himanshudixit.me" target="_blank">
+              <EmailSVG/>
+              </a>
+              </div>
+            <img src={"/images/standing_person.png"} css={personalIllustration} />
+          </div>
         </div>
       </section>
 
@@ -83,6 +111,9 @@ const knowLink = css`
   margin-top: 19rem;
   margin-bottom: 56rem;
   text-decoration-line: underline;
+  a:last-child{
+    margin-left: 16rem;
+  }
   a {
     color: var(--linkText);
   }
@@ -119,18 +150,70 @@ const jammingText = css`
   }
 `
 
-const personalIllustration = css`
+const personalStatusContainer = css`
   position: absolute;
   bottom: 32rem;
   height: 400px;
   right: -96rem;
-  pointer-events: none;
-  user-select: none;
+  z-index: 0;
+  div{
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
+  div:hover path{
+    fill: var(--pinkColor);
+  }
+  div:hover svg{
+    transform: translateY(-4px);
+    
+  }
+  #twitter{
+    top: 32%;
+  }
+  #email{
+    top: 32%;
+    right: 20%;
+  }
+  
+  #book{
+    top: 14%;
+    right: 22%;
+  }
+  
+  #music{
+    top: -2%;
+    right: 38%;
+  }
+
+  #insta{
+    top: 14%;
+    left: 2%;
+  }
+
+  #github{
+    top: -3%;
+    left: 20%;
+  }
+  
 
   @media (max-width: 600px) {
     bottom: 50rem;
     right: -100rem;
     height: 271px;
+  }
+`
+
+const personalIllustration = css`
+  pointer-events: none;
+  user-select: none;
+  height: 372px;
+  @media (max-width: 600px) {
+    height: 271px;
+    right: -90rem;
   }
 `
 
