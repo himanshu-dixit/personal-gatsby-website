@@ -71,7 +71,7 @@ const NewsLetterCard = () => {
           </div>
         </div>
         <div css={newsLetterActionsCSS}>
-          <Link to={"https://twitter.com/1x_engineer"}><div css={buttonCSS}>Follow</div></Link>
+          <a href={"https://twitter.com/1x_engineer"} target="__blank"><div css={buttonCSS}>Follow</div></a>
           {!joinNewsletter && (
             <div
               css={[buttonCSS, joinButtonCSS]}
