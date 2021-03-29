@@ -93,9 +93,9 @@ const MainContainer = ({}) => {
             <div css={[pinkButton, normalButton]}>My Services</div>
           </Link>
 
-          <Link to={"mailto:hello@himanshudixit.me"}>
+          <a href={"mailto:hello@himanshudixit.me"}>
             <div css={pinkButton}>Contact</div>
-          </Link>
+          </a>
         </div>
       </Center>
       <Center>
