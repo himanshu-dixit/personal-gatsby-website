@@ -1,44 +1,18 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import {  graphql } from "gatsby"
+import { css } from "@emotion/react"
+
+
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
 import BlogFeaturedSection from "../components/blog/featuredSection"
 import { Center } from "../components/center"
-import { css } from "@emotion/react"
 import { Curvy } from "../components/homepage/curvy"
 import { Footer } from "../components/common/footer"
-import { HappySvg } from "../constants/icons"
-import { SubscribeForm } from "../components/common/subsribeForm"
+import { HappyEmojiSvg } from "../constants/icons"
+
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 
-const FireSVG = (props: any) => {
-  return (
-    <svg
-      width={28}
-      viewBox="0 0 16 19"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      {...props}
-    >
-      <path
-        d="M7.99.073c1.49 1.056 5.172 4.332 4.313 10.44 0 0 .96-.513 1.813-1.461.197-.22.593-.135.66.14.148.61.328 1.588.357 2.826.09 3.738-3.202 6.946-7.378 6.952-4.05.007-7.356-2.957-7.356-6.597 0-3.153 1.706-4.8 2.362-7.512.054-.224.341-.33.56-.214.499.265 1.287.762 1.802 1.468 0 0 2.096-2.377 2.26-5.787.013-.276.366-.427.608-.255z"
-        fill="#35414E"
-      />
-      <path
-        d="M11.746 12.342c-.588.79-1.333.97-1.333.97a9.94 9.94 0 00-1.654-6.448c-.08-.117-.281-.086-.314.048-.521 2.166-1.921 3.369-1.921 3.369-.456-.476-.89-.67-1.115-.746a.174.174 0 00-.216.093c-.575 1.381-1.662 2.447-1.91 4.035-.363 2.336 1.532 4.55 4.16 4.713 2.652.165 4.86-1.712 4.86-4.05 0-.94-.14-1.586-.247-1.942-.039-.129-.227-.153-.31-.042z"
-        fill="#18222D"
-      />
-      <path
-        d="M7.876 11.982c-.054-.123-.229-.157-.328-.06-.594.585-2.192 2.295-2.192 3.801 0 1.192 1.08 2.158 2.411 2.158 1.332 0 2.412-.966 2.412-2.158 0-1.133-1.557-2.063-2.303-3.741z"
-        fill="#090C0F"
-      />
-      <path
-        d="M7.69 18.967c-.785-.053-7.544-1.18-5.213-8.793a26.02 26.02 0 001.022-5.428 7.692 7.692 0 00-.178-.099c-.22-.117-.507-.01-.56.214C2.103 7.573.397 9.22.397 12.373c0 3.62 3.259 6.557 7.293 6.594z"
-        fill="#182431"
-      />
-    </svg>
-  )
-}
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
@@ -50,7 +24,7 @@ const NewsLetterCard = () => {
   return (
     <div css={newsLetterCardContainerCSS}>
       <div css={newsLetterHeaderCSS}>
-        <HappySvg width={68} />
+        <HappyEmojiSvg width={68} />
         <div>
           <span css={newsLetterHeaderLikedThisArticleCSS}>
             Liked the article?

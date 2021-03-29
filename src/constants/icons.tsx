@@ -1,6 +1,6 @@
 import React from "react"
 
-const HappySvg = (props: any) => {
+export const HappyEmojiSvg = (props: any) => {
   return (
     <svg
       width={92}
@@ -166,5 +166,3 @@ export function MusicSVG(props) {
     </svg>
   )
 }
-
-export { HappySvg }

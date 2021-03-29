@@ -8,7 +8,7 @@
 // @ts-ignore
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
-import { AppNavbar } from "../common/appNavbar"
+import { Navbar } from "../common/Navbar"
 
 export const BlogFeaturedSection = ({ data }): JSX.Element => {
   const { markdownRemark: post } = data
@@ -19,7 +19,7 @@ export const BlogFeaturedSection = ({ data }): JSX.Element => {
   return (
     <>
       <section css={heroSection}>
-        <AppNavbar />
+        <Navbar />
 
         <div css={heroMainContentCSS}>
           <div css={postTypeCSS}>{postType}</div>

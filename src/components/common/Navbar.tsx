@@ -101,7 +101,7 @@ function Tagline() {
   )
 }
 
-export function AppNavbar() {
+export function Navbar() {
   return (
     <>
       <div css={topBar}>

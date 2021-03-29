@@ -1,26 +1,19 @@
-import React, { useEffect, useState } from "react"
-import { graphql, Link } from "gatsby"
+import React from "react"
+import { Link } from "gatsby"
+import { css } from "@emotion/react"
 
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import {
-  Herocomponent,
   ServicesHeroComponent,
-  WorkHeroComponent,
 } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
-import { css } from "@emotion/react"
+
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/center"
 import { Footer } from "../components/common/footer"
-import { HappySvg } from "../constants/icons"
-import { SubscribeForm } from "../components/common/subsribeForm"
-import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
-import { PastWork } from "../components/common/projectList"
 
-const MainContainer = ({}) => {
+
+const Content = ({}) => {
   return (
     <div css={mainContainerCSS}>
       <Center>
@@ -82,6 +75,18 @@ const MainContainer = ({}) => {
   )
 }
 
+const ServicePage = ( ) => {
+  return (
+    <>
+      <ServicesHeroComponent />
+      <Content  />
+      <Curvy isHeroBackground={true} />
+      <Footer />
+    </>
+  )
+}
+
+
 const headingCss = css`
   font-weight: 900;
 `
@@ -138,17 +143,7 @@ const mainContainerCSS = css`
   flex-wrap: wrap;
 `
 
-const BlogIndex = ({ data }) => {
-  return (
-    <>
-      <ServicesHeroComponent />
-      <MainContainer data={data} />
-      <Curvy isHeroBackground={true} />
-      <Footer />
-    </>
-  )
-}
 
-export default withSound(withTheme(BlogIndex))
+export default withSound(withTheme(ServicePage))
 
 export const pageQuery = null

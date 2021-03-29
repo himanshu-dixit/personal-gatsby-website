@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { Curvy } from "../homepage/curvy"
-import { AppNavbar } from "./appNavbar"
+import { Navbar } from "./Navbar"
 import {
   BookSVG,
   EmailSVG,
@@ -18,7 +18,7 @@ export const Herocomponent = (): JSX.Element => {
   return (
     <>
       <section css={heroSection}>
-        <AppNavbar />
+        <Navbar />
 
         <div id={"hero-content"}>
           <div>
@@ -84,7 +84,7 @@ export const WorkHeroComponent = (): JSX.Element => {
   return (
     <>
       <section css={[heroSection, workHeroSection]}>
-        <AppNavbar />
+        <Navbar />
 
         <div id={"hero-content"}>
           <div>
@@ -106,7 +106,7 @@ export const ServicesHeroComponent = (): JSX.Element => {
   return (
     <>
       <section css={[heroSection, serviceHeroSection]}>
-        <AppNavbar />
+        <Navbar />
 
         <div id={"hero-content"}>
           <div>

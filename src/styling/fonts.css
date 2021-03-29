@@ -1,17 +1,3 @@
-@font-face {
-  font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Thin.otf") format("opentype");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Cera Pro";
-  src: url("../../static/fonts/CeraPro/Cera_Pro_Thin_Italic.otf")
-    format("opentype");
-  font-weight: 200;
-  font-style: italic;
-}
 
 @font-face {
   font-family: "Cera Pro";

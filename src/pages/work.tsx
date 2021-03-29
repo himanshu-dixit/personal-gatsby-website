@@ -1,19 +1,12 @@
-import React, { useEffect, useState } from "react"
-import { graphql, Link } from "gatsby"
-
-import Bio from "../components/bio"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import { Herocomponent, WorkHeroComponent } from "../components/common/hero"
+import React from "react"
+import {  Link } from "gatsby"
+import { css } from "@emotion/react"
+import { WorkHeroComponent } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
-import { css } from "@emotion/react"
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/center"
 import { Footer } from "../components/common/footer"
-import { HappySvg } from "../constants/icons"
-import { SubscribeForm } from "../components/common/subsribeForm"
-import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
 
 const work = [
@@ -82,7 +75,7 @@ function WorkList() {
   )
 }
 
-const MainContainer = ({}) => {
+const Content = ({}) => {
   return (
     <div css={mainContainerCSS}>
       {WorkList()}
@@ -245,17 +238,17 @@ const mainContainerCSS = css`
   flex-wrap: wrap;
 `
 
-const BlogIndex = ({}) => {
+const WorkPage = () => {
   return (
     <>
       <WorkHeroComponent />
-      <MainContainer />
+      <Content />
       <Curvy isHeroBackground={true} />
       <Footer />
     </>
   )
 }
 
-export default withSound(withTheme(BlogIndex))
+export default withSound(withTheme(WorkPage))
 
 export const pageQuery = null
