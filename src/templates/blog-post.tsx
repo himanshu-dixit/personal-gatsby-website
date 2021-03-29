@@ -232,6 +232,10 @@ const newsLetterActionsCSS = css`
       margin-bottom: 16rem;
     }
   }
+
+  a{
+    text-decoration: none;
+  }
 `
 const newsLetterHeaderFollowTextCSS = css`
   color: var(--newsLetterText);
