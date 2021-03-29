@@ -124,6 +124,7 @@ const buttonContainer = css`
 const normalButton = css`
   background: var(--workNormalBG);
   color: var(--workNormalCOLOR);
+  text-decoration: none;
   border: 1px solid var(--workNormalBORDER);
 `
 

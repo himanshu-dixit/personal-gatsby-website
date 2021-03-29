@@ -25,7 +25,7 @@ export const PAST_PROJECTS = [
   ,
   {
     name: "Consultant",
-    desc: "Signoz | YC S21",
+    desc: "TEst | YC ",
     isNew: true,
   },
   {
