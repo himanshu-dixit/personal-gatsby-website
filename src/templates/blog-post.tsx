@@ -42,7 +42,7 @@ const FireSVG = (props: any) => {
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
-  const [joinNewsletter, setJoinNewsLetter] = useState(false);
+  const [joinNewsletter, setJoinNewsLetter] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
     setEmailSent(true)
@@ -71,7 +71,9 @@ const NewsLetterCard = () => {
           </div>
         </div>
         <div css={newsLetterActionsCSS}>
-          <a href={"https://twitter.com/1x_engineer"} target="__blank"><div css={buttonCSS}>Follow</div></a>
+          <a href={"https://twitter.com/1x_engineer"} target="__blank">
+            <div css={buttonCSS}>Follow</div>
+          </a>
           {!joinNewsletter && (
             <div
               css={[buttonCSS, joinButtonCSS]}
@@ -85,24 +87,26 @@ const NewsLetterCard = () => {
 
       {joinNewsletter && (
         <div>
-          {!emailSent && <div css={newsLetterInputParentCSS}>
-            <input
-              css={newsLetterInputCSS}
-              placeholder={"Your Email"}
-              value={email}
-              onChange={e => {
-                setEmail(e.target.value)
-              }}
-            />
-            <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
-              Join
+          {!emailSent && (
+            <div css={newsLetterInputParentCSS}>
+              <input
+                css={newsLetterInputCSS}
+                placeholder={"Your Email"}
+                value={email}
+                onChange={e => {
+                  setEmail(e.target.value)
+                }}
+              />
+              <div css={newsLetterJoinButtonCSS} onClick={onSubmit}>
+                Join
+              </div>
             </div>
-          </div>}
-          {
-            emailSent && (<div css={emailSentCSS}>
+          )}
+          {emailSent && (
+            <div css={emailSentCSS}>
               Email sent to your inbox. Please confirm it.
-            </div>)
-          }
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -307,9 +311,9 @@ const BlogPostTemplate = ({ data, location }) => {
             </div>
             <NewsLetterCard />
           </div>
-         <div css={upvoteDesktop}>
-           <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
-         </div>
+          <div css={upvoteDesktop}>
+            <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
+          </div>
         </Center>
       </div>
 

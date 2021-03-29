@@ -4,7 +4,11 @@ import { graphql, Link } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Herocomponent, ServicesHeroComponent, WorkHeroComponent } from "../components/homepage/hero"
+import {
+  Herocomponent,
+  ServicesHeroComponent,
+  WorkHeroComponent,
+} from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 import { css } from "@emotion/react"
@@ -16,10 +20,7 @@ import { SubscribeForm } from "../components/common/subsribeForm"
 import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
 
-
-const MainContainer = ({  }) => {
-
-
+const MainContainer = ({}) => {
   return (
     <div css={mainContainerCSS}>
       <Center>
@@ -30,24 +31,101 @@ const MainContainer = ({  }) => {
             flexWrap: "wrap",
           }}
         >
+          <h2 css={headingCss}>What do I do?</h2>
 
-          <h2>
-            What do I do?
-          </h2>
+          <div css={sectionText}>
+            <strong>MVP</strong>Track your team's workload and velocity.
+            <br />
+            Scale system/Layout foundation. Cycles run on an automated
+            schedule,so you can focus on your work.
+            <br />
+            Created E2E Product.
+          </div>
 
-          <h2>
-            Some traits
-          </h2>
+          <h2 css={headingCss}>Some traits</h2>
 
+          <div css={sectionText}>
+            <strong>MVP</strong>Track your team's workload and velocity.
+            <br />
+            Scale system/Layout foundation. Cycles run on an automated
+            schedule,so you can focus on your work.
+            <br />
+            Created E2E Product.
+          </div>
 
-          <h2>
-            Why we should work together?
-          </h2>
+          <h2 css={headingCss}>Why we should work together?</h2>
+
+          <div css={sectionText}>
+            <strong>MVP</strong>Track your team's workload and velocity.
+            <br />
+            Scale system/Layout foundation. Cycles run on an automated
+            schedule,so you can focus on your work.
+            <br />
+            Created E2E Product.
+          </div>
+
+          <Center>
+            <div css={interestedInWorking}>Interested in working?</div>
+            <div css={buttonContainer}>
+              <Link to={"/work"}>
+                <div css={[pinkButton, normalButton]}>My Work</div>
+              </Link>
+
+              <Link to={"mailto:hello@himanshudixit.me"}>
+                <div css={pinkButton}>Contact</div>
+              </Link>
+            </div>
+          </Center>
         </div>
       </Center>
     </div>
   )
 }
+
+const headingCss = css`
+  font-weight: 900;
+`
+
+const sectionText = css`
+  font-size: 16.5rem;
+  line-height: 32rem;
+  margin: 16rem 0 60rem 0;
+`
+
+const interestedInWorking = css`
+  font-weight: 800;
+  font-size: 22rem;
+  margin: 32rem 0 24rem 0;
+`
+
+const buttonContainer = css`
+  display: flex;
+  margin: 0rem 0 20rem 0;
+  a {
+    text-decoration: none;
+    color: var(--workNormalCOLOR);
+  }
+`
+
+const normalButton = css`
+  background: var(--workNormalBG);
+  color: var(--workNormalCOLOR);
+  border: 1px solid var(--workNormalBORDER);
+`
+
+const pinkButton = css`
+  font-family: "Cera Pro";
+  margin-right: 20rem;
+  background: var(--newsLetterJoinBackground);
+  border: 2rem solid var(--newsLetterJoinBorder);
+  padding: 6rem 20rem;
+  min-width: 236rem;
+  text-align: center;
+  border-radius: 8rem;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18rem;
+`
 
 const mainContainerCSS = css`
   background: var(--primaryBackground);
@@ -59,9 +137,7 @@ const mainContainerCSS = css`
   flex-wrap: wrap;
 `
 
-
-const BlogIndex = ({ data, location }) => {
-
+const BlogIndex = ({ data }) => {
   return (
     <>
       <ServicesHeroComponent />

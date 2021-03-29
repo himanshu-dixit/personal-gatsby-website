@@ -1,10 +1,18 @@
 // @ts-ignore
 import React, { useEffect, useState } from "react"
-import {Link} from "gatsby"
+import { Link } from "gatsby"
 import { css } from "@emotion/react"
-import { Curvy } from "./curvy"
-import { AppNavbar } from "../common/appNavbar"
-import { BookSVG, EmailSVG, Github, InstaSVG, MusicalSVG, MusicSVG, TwitterSVG } from "../../constants/icons"
+import { Curvy } from "../homepage/curvy"
+import { AppNavbar } from "./appNavbar"
+import {
+  BookSVG,
+  EmailSVG,
+  Github,
+  InstaSVG,
+  MusicalSVG,
+  MusicSVG,
+  TwitterSVG,
+} from "../../constants/icons"
 
 export const Herocomponent = (): JSX.Element => {
   return (
@@ -17,7 +25,8 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTagline}>I bring impact by creating products</h1>
             <h1 css={heroTaglineSecondary}>using my full-stack skills</h1>
             <div css={knowLink}>
-              <Link to={"about_me"}>About me</Link><Link to={"about_me"}>Contact</Link>
+              <Link to={"about_me"}>About me</Link>
+              <Link to={"about_me"}>Contact</Link>
             </div>
           </div>
           <div css={jammingText}>
@@ -30,29 +39,38 @@ export const Herocomponent = (): JSX.Element => {
           <div css={personalStatusContainer}>
             <div id="twitter">
               <a href="https://twitter.com/1x_engineer" target="_blank">
-              <TwitterSVG/>     </a></div>
+                <TwitterSVG />{" "}
+              </a>
+            </div>
             <div id="book">
               <a href="https://twitter.com/1x_engineer" target="_blank">
-              <BookSVG/>     </a></div>
+                <BookSVG />{" "}
+              </a>
+            </div>
             <div id="github">
               <a href="https://github.com/himanshu-dixit" target="_blank">
-              <Github/>     </a></div>
+                <Github />{" "}
+              </a>
+            </div>
             <div id="insta">
-
               <a href="https://instagram.com/1xengineer" target="_blank">
-              <InstaSVG/>
+                <InstaSVG />
               </a>
             </div>
             <div id="music">
               <a href="https://twitter.com/1x_engineer" target="_blank">
-              <MusicalSVG/>
-              </a></div>
+                <MusicalSVG />
+              </a>
+            </div>
             <div id="email">
               <a href="mailto:hello@himanshudixit.me" target="_blank">
-              <EmailSVG/>
+                <EmailSVG />
               </a>
-              </div>
-            <img src={"/images/standing_person.png"} css={personalIllustration} />
+            </div>
+            <img
+              src={"/images/standing_person.png"}
+              css={personalIllustration}
+            />
           </div>
         </div>
       </section>
@@ -70,14 +88,12 @@ export const WorkHeroComponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-
-            <h1 css={[ worHeroTagline]}>My Work</h1>
+            <h1 css={[worHeroTagline]}>My Work</h1>
             <div css={knowLink}>
-              <Link to={"/services"}>Services</Link><Link to={"/about_me"}>Blog</Link>
+              <Link to={"/services"}>Services</Link>
+              <Link to={"/"}>Blog</Link>
             </div>
           </div>
-
-
         </div>
       </section>
 
@@ -94,16 +110,19 @@ export const ServicesHeroComponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-
-            <h1 css={[ worHeroTagline]}>About Me</h1>
+            <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I’m Himanshu.I’m full stack engineer, 2 times founder.<br/><br/>  I build scalable and user centric product by creating well layed out architecture.  I have worked with High growth companies and YC stratups. These were across consumer and SAAS space.
-<br/><br/>
-              The BE systems/FE I have built have handled 10+ billions of request.
+              I’m Himanshu.I’m full stack engineer, 2 times founder.
+              <br />
+              <br />  I build scalable and user centric product by creating well
+              layed out architecture.  I have worked with High growth companies
+              and YC stratups. These were across consumer and SAAS space.
+              <br />
+              <br />
+              The BE systems/FE I have built have handled 10+ billions of
+              request.
             </div>
           </div>
-
-
         </div>
       </section>
 
@@ -111,7 +130,6 @@ export const ServicesHeroComponent = (): JSX.Element => {
     </>
   )
 }
-
 
 const worHeroTagline = css`
   font-family: Cera Pro;
@@ -122,7 +140,6 @@ const worHeroTagline = css`
   margin-left: -3rem;
   margin-top: 80rem;
 `
-
 
 const workHeroSection = css`
   width: 100%;
@@ -176,8 +193,6 @@ const serviceHeroSection = css`
   }
 `
 
-
-
 const heroTagline = css`
   font-family: Cera Pro;
   font-style: normal;
@@ -208,7 +223,7 @@ const knowLink = css`
   margin-top: 0rem;
   margin-bottom: 56rem;
   text-decoration-line: underline;
-  a:last-child{
+  a:last-child {
     margin-left: 16rem;
   }
   a {
@@ -225,14 +240,13 @@ const serviceDesc = css`
   /* identical to box height */
   margin-top: 19rem;
   margin-bottom: 56rem;
-  a:last-child{
+  a:last-child {
     margin-left: 16rem;
   }
   a {
     color: var(--linkText);
   }
 `
-
 
 const jammingText = css`
   font-family: Cera Pro;
@@ -271,7 +285,7 @@ const personalStatusContainer = css`
   height: 400px;
   right: -96rem;
   z-index: 0;
-  div{
+  div {
     position: absolute;
     z-index: 100;
     cursor: pointer;
@@ -279,41 +293,39 @@ const personalStatusContainer = css`
       display: none;
     }
   }
-  div:hover path{
+  div:hover path {
     fill: var(--pinkColor);
   }
-  div:hover svg{
+  div:hover svg {
     transform: translateY(-4px);
-    
   }
-  #twitter{
+  #twitter {
     top: 32%;
   }
-  #email{
+  #email {
     top: 32%;
     right: 20%;
   }
-  
-  #book{
+
+  #book {
     top: 14%;
     right: 22%;
   }
-  
-  #music{
+
+  #music {
     top: -2%;
     right: 38%;
   }
 
-  #insta{
+  #insta {
     top: 14%;
     left: 2%;
   }
 
-  #github{
+  #github {
     top: -3%;
     left: 20%;
   }
-  
 
   @media (max-width: 600px) {
     bottom: 50rem;

@@ -109,7 +109,6 @@ export function EmailSVG(props) {
   )
 }
 
-
 export function BookSVG(props) {
   return (
     <svg
@@ -167,7 +166,5 @@ export function MusicSVG(props) {
     </svg>
   )
 }
-
-
 
 export { HappySvg }

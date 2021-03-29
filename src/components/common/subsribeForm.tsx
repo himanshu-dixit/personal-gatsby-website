@@ -26,10 +26,7 @@ export function SubscribeForm() {
           </div>
         </>
       )}
-      {emailSent && (
-        <div>Send email</div>
-        )}
-
+      {emailSent && <div>Send email</div>}
     </div>
   )
 }

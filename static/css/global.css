@@ -384,7 +384,7 @@ body {
                                   supported by Chrome, Edge, Opera and Firefox */
 }
 
-a{
+a {
   color: var(--breakText) !important;
 }
 html {

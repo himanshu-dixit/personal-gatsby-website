@@ -46,6 +46,11 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   fire31 = "#FF9ED8",
   fire32 = "#FF5FBF",
   fire33 = "#CA2889",
+  tagColor = "#0E0F14",
+  tagBackground = "#D6F1FF",
+  workNormalBG = "#D6F1FF",
+  workNormalBORDER = "#9ec4d7",
+  workNormalCOLOR = "#0E0F14",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -96,6 +101,11 @@ export enum GLOBAL_CSS_VAR_DARK {
   fire31 = "#FF9ED8",
   fire32 = "#FF5FBF",
   fire33 = "#CA2889",
+  tagColor = "#fff",
+  tagBackground = "#0b1218",
+  workNormalBG = "#1D2021",
+  workNormalBORDER = "#3C535B",
+  workNormalCOLOR = "#fff",
 }
 
 export const convertThemeObjectToStyle = object => {

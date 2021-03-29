@@ -140,7 +140,6 @@ const FireSVG = (props: any) => {
 }
 
 const articleUpvotesVertical = css`
-
   cursor: pointer;
   padding-top: 10rem;
   color: var(--heroPrimaryTextColor);
@@ -155,7 +154,6 @@ const articleUpvotesVertical = css`
     font-weight: bold;
     font-size: 16rem;
   }
-  
 `
 const articleUpvotes = css`
   margin-left: auto;

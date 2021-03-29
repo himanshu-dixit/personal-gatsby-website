@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { Herocomponent } from "../components/homepage/hero"
+import { Herocomponent } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 import { css } from "@emotion/react"
@@ -231,7 +231,6 @@ const popularContentContainerCSS = css`
 `
 
 const NewsLetterCard = () => {
-
   return (
     <div css={newsLetterContainerCSS}>
       <div css={newsLetterInfoCSS}>
