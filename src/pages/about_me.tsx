@@ -3,7 +3,8 @@ import { Link } from "gatsby"
 import { css } from "@emotion/react"
 
 import {
-  ServicesHeroComponent,
+  AboutMeHero,
+  ServicesHeroComponent
 } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
@@ -78,7 +79,7 @@ const Content = ({}) => {
 const ServicePage = ( ) => {
   return (
     <>
-      <ServicesHeroComponent />
+      <AboutMeHero />
       <Content  />
       <Curvy isHeroBackground={true} />
       <Footer />
@@ -89,18 +90,17 @@ const ServicePage = ( ) => {
 
 const headingCss = css`
   font-weight: 900;
-    font-size: 20rem;
 `
 
 const sectionText = css`
-  font-size: 16rem;
+  font-size: 16.5rem;
   line-height: 32rem;
   margin: 16rem 0 60rem 0;
 `
 
 const interestedInWorking = css`
   font-weight: 800;
-  font-size: 20rem;
+  font-size: 22rem;
   margin: 32rem 0 24rem 0;
 `
 
@@ -126,12 +126,12 @@ const pinkButton = css`
   border: 2rem solid var(--newsLetterJoinBorder);
   color: var(--pinkButtonText);
   padding: 6rem 20rem;
-  min-width: 206rem;
+  min-width: 236rem;
   text-align: center;
   border-radius: 8rem;
   font-style: normal;
   font-weight: 900;
-  font-size: 15rem;
+  font-size: 18rem;
 `
 
 const mainContainerCSS = css`

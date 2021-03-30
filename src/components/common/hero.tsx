@@ -26,7 +26,7 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTaglineSecondary}>using my full-stack skills</h1>
             <div css={knowLink}>
               <Link to={"about_me"}>About me</Link>
-              <Link to={"about_me"}>Contact</Link>
+              <a href={"mailto:hello@himanshudixit.me"}>Contact</a>
             </div>
           </div>
           <div css={jammingText}>
@@ -130,6 +130,30 @@ export const ServicesHeroComponent = (): JSX.Element => {
     </>
   )
 }
+
+export const AboutMeHero = (): JSX.Element => {
+  return (
+    <>
+      <section css={[heroSection, serviceHeroSection]}>
+        <Navbar />
+
+        <div id={"hero-content"}>
+          <div>
+            <h1 css={[worHeroTagline]}>About Me</h1>
+            <div css={serviceDesc}>
+              I’m creator at heart. Love to build stuff and break them.<br/>
+              The power of creation, or improving drives me to work. I love doing it every single day<br/>
+              Most of the time I dwelve into multiple tasks, Product, Design, Trading but deep specialization inv FE.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Curvy />
+    </>
+  )
+}
+
 
 const worHeroTagline = css`
   font-family: Cera Pro;
@@ -235,8 +259,8 @@ const serviceDesc = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15.5px;
+  line-height: 23px;
   /* identical to box height */
   margin-top: 19rem;
   margin-bottom: 56rem;
@@ -252,7 +276,7 @@ const jammingText = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   display: flex;
   align-items: center;
