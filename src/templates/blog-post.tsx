@@ -135,15 +135,16 @@ const newsLetterInputCSS = css`
   }
 `
 const joinButtonCSS = css`
-  background: var(--playerIcon1);
+  border: 1px solid var(--blogJoinBorder);
+  background: var(--blogJoinBackground);
 `
 
 const buttonCSS = css`
-  border: 1rem solid #134e59;
   border-radius: 8rem;
   cursor: pointer;
-  background: var(--makeText);
-  color: var(--heroPrimaryTextColor);
+    border: 1px solid var(--blogFollowBorder);
+  background: var(--blogFollowBackground);
+  color: var(--blogFollowText);
   min-width: 136rem;
   padding: 3rem;
   text-align: center;

@@ -353,6 +353,7 @@ const MainContainer = ({ data }) => {
   return (
     <div css={mainContainerCSS}>
       <Center>
+        <PastWork />
         <div
           css={{
             display: "flex",

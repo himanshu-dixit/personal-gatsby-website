@@ -52,6 +52,11 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   workNormalBORDER = "#9ec4d7",
   workNormalCOLOR = "#0E0F14",
   pinkButtonText = "#fff",
+  blogFollowText = "#fff",
+  blogFollowBackground = "#00C4EB",
+  blogFollowBorder= "#13a7c4",
+  blogJoinBackground =  "#FF46B5",
+  blogJoinBorder =  "#d72590",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
@@ -107,6 +112,14 @@ export enum GLOBAL_CSS_VAR_DARK {
   workNormalBG = "#1D2021",
   workNormalBORDER = "#3C535B",
   workNormalCOLOR = "#fff",
+
+  // Blog
+  //   Newsletter Box
+  blogFollowText = "#fff",
+  blogFollowBackground = "#00C4EB",
+  blogFollowBorder= "#13a7c4",
+  blogJoinBackground =  "#FF46B5",
+  blogJoinBorder =  "#d72590",
 }
 
 export const convertThemeObjectToStyle = object => {

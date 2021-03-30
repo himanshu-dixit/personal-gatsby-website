@@ -78,7 +78,9 @@ function WorkList() {
 const Content = ({}) => {
   return (
     <div css={mainContainerCSS}>
-      {WorkList()}
+      <Center>
+        <WorkList/>
+      </Center>
       <Center>
         <div css={interestedInWorking}>Interested in working?</div>
         <div css={buttonContainer}>
@@ -155,23 +157,25 @@ const workItemReverse = css`
 const workItem = css`
   display: flex;
   width: 100%;
-  margin-top: 56rem;
+  margin-top: 72rem;
   @media (max-width: 600px) {
     display: block;
   }
 `
 const workItemImageReverse = css`
-  border-top-left-radius: 32rem;
-  border-bottom-left-radius: 32rem;
-  border-top-right-radius: 0rem;
-  border-bottom-right-radius: 0rem;
+  // border-top-left-radius: 32rem;
+  // border-bottom-left-radius: 32rem;
+  // border-top-right-radius: 0rem;
+  // border-bottom-right-radius: 0rem;
+  border-radius: 32rem;
+    margin-top: 72rem;
+    justify-content: space-between;
 `
 
 const workItemImage = css`
   flex: 1;
-  height: 510rem;
-  border-top-right-radius: 32rem;
-  border-bottom-right-radius: 32rem;
+  height: 460rem;
+  border-radius: 32rem;
   background-size: cover;
   max-width: 660px;
   display: flex;
