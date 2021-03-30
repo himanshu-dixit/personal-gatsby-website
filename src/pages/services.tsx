@@ -5,7 +5,6 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import {
-  Herocomponent,
   ServicesHeroComponent,
   WorkHeroComponent,
 } from "../components/common/hero"
@@ -87,14 +86,14 @@ const headingCss = css`
 `
 
 const sectionText = css`
-  font-size: 16.5rem;
+  font-size: 15rem;
   line-height: 32rem;
   margin: 16rem 0 60rem 0;
 `
 
 const interestedInWorking = css`
   font-weight: 800;
-  font-size: 22rem;
+  font-size: 20rem;
   margin: 32rem 0 24rem 0;
 `
 
@@ -119,13 +118,13 @@ const pinkButton = css`
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
   color: var(--pinkButtonText);
-  padding: 6rem 20rem;
-  min-width: 236rem;
+  padding: 6rem 18rem;
+  min-width: 206rem;
   text-align: center;
   border-radius: 8rem;
   font-style: normal;
   font-weight: 900;
-  font-size: 18rem;
+  font-size: 16rem;
 `
 
 const mainContainerCSS = css`
@@ -138,17 +137,17 @@ const mainContainerCSS = css`
   flex-wrap: wrap;
 `
 
-const BlogIndex = ({ data }) => {
+const ServicePage = ( ) => {
   return (
     <>
       <ServicesHeroComponent />
-      <MainContainer data={data} />
+      <MainContainer/>
       <Curvy isHeroBackground={true} />
       <Footer />
     </>
   )
 }
 
-export default withSound(withTheme(BlogIndex))
+export default withSound(withTheme(ServicePage))
 
 export const pageQuery = null

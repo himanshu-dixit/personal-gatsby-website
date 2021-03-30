@@ -109,7 +109,7 @@ const MainContainer = ({}) => {
 
 const interestedInWorking = css`
   font-weight: 800;
-  font-size: 22rem;
+  font-size: 20rem;
   margin: 60rem 0 24rem 0;
 `
 
@@ -135,13 +135,14 @@ const pinkButton = css`
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
   color: var(--pinkButtonText);
-  padding: 6rem 20rem;
-  min-width: 236rem;
+  padding: 6rem 18rem;
+  min-width: 206rem;
   text-align: center;
   border-radius: 8rem;
   font-style: normal;
   font-weight: 900;
-  font-size: 18rem;
+  font-size: 16rem;
+  color: var(--workNormalCOLOR);
 `
 
 const pastWorkCss = css`

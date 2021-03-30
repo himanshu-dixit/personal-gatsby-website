@@ -26,7 +26,7 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTaglineSecondary}>using my full-stack skills</h1>
             <div css={knowLink}>
               <Link to={"about_me"}>About me</Link>
-              <Link to={"about_me"}>Contact</Link>
+              <a href={"mailto:hello@himanshudixit.me"}>Contact</a>
             </div>
           </div>
           <div css={jammingText}>
@@ -235,8 +235,8 @@ const serviceDesc = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 15.5px;
+  line-height: 23px;
   /* identical to box height */
   margin-top: 19rem;
   margin-bottom: 56rem;
@@ -252,7 +252,7 @@ const jammingText = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 20px;
   display: flex;
   align-items: center;
