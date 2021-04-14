@@ -11,6 +11,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "airtable": "^0.10.1",
     "gatsby": "^2.8",
     "gatsby-image": "^2.5.0",
     "gatsby-plugin-emotion": "^5.1.0",

@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
+import { addMember } from "../../utils/airtable"
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    setEmailSent(true)
+    addMember(email).then(()=>{
+      setEmailSent(true)
+    })
+
   }
   return (
     <div css={newsLetterInputContainerCSS}>
