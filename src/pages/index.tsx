@@ -16,6 +16,7 @@ import { HappyEmojiSvg } from "../constants/icons"
 import { SubscribeForm } from "../components/common/subsribeForm"
 import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
+import {SITE_CONFIG} from "../../metaData"
 
 const ArticleItem = (props: any) => {
   const { item } = props
@@ -98,17 +99,8 @@ const articleItemTitleCSS = () => css`
   font-size: 18rem;
 `
 
-const TAGS = [
-  { title: "Next", link: "#" },
-  { title: "Devops", link: "#" },
-  { title: "Frontend", link: "#" },
-  { title: "Next", link: "#" },
-  { title: "Devops", link: "#" },
-  { title: "Frontend", link: "#" },
-]
-
 const TagsSection = () => {
-  const tagsOut = TAGS.map(tag => {
+  const tagsOut = SITE_CONFIG.homepage.tags.map(tag => {
     return (
       <div css={tagItemCSS}>
         <a href={tag.link}>{tag.title}</a>
@@ -155,14 +147,6 @@ const tagItemCSS = css`
   cursor: pointer;
 `
 
-const POPULAR_ARTICLES = [
-  { title: "Writing to create value", link: "#" },
-  { title: "Writing to create value", link: "#" },
-  { title: "Writing to create value", link: "#" },
-  { title: "Writing to create value", link: "#" },
-  { title: "Writing to create value", link: "#" },
-]
-
 const ArrowSVG = (props: any) => {
   const { color } = props
   return (
@@ -181,7 +165,7 @@ const ArrowSVG = (props: any) => {
   )
 }
 const PopularContentSection = () => {
-  const contentOut = POPULAR_ARTICLES.map((article, index) => {
+  const contentOut = SITE_CONFIG.homepage.popular.map((article, index) => {
     return (
       <li key={index} css={popularContentItemCSS}>
         <ArrowSVG />

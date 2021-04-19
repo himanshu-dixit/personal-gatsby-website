@@ -1,10 +1,17 @@
-export default {
+export const SITE_CONFIG =  {
   homepage:{
-      tags:[],
-      articles: [{
-          name: '',
-          url: ''
-      }]
+      tags:[
+        { title: "Next", link: "#" },
+        { title: "Devops", link: "#" },
+        { title: "Frontend", link: "#" }
+      ],
+    popular:[
+      { title: "Writing to create value", link: "#" },
+      { title: "Writing to create value", link: "#" },
+      { title: "Writing to create value", link: "#" },
+      { title: "Writing to create value", link: "#" },
+      { title: "Writing to create value", link: "#" },
+    ]
   },
   email: "hello@himanshudixit.me",
   socialMediaURLs : {
@@ -18,3 +25,4 @@ export default {
 
   }
 }
+
