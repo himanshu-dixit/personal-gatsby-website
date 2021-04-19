@@ -38,7 +38,7 @@ const ArticleItem = (props: any) => {
             <a href={link} id={"article-read-more"}>
               Read More{" "}
               <ArrowSVG
-                color={"var(--heroPrimaryTextColor)"}
+                color={"var(--mainTextColor)"}
                 id={"article-arrow"}
               />
             </a>
@@ -63,7 +63,7 @@ const articleInfoContainerCSS = css`
 `
 const articleInfoMetaContainerCSS = css`
   display: flex;
-  color: var(--descText);
+  color: var(--mainTextColor);
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 500;
@@ -78,21 +78,21 @@ const articleDescCSS = css`
 const articleItemContainerCSS = css`
   :hover #article-title,
   :hover #article-read-more {
-    color: var(--playerIcon1);
+    color: var(--primaryPink);
   }
   :hover #article-title {
-    color: var(--playerIcon1);
+    color: var(--primaryPink);
   }
   :hover #article-arrow {
     display: initial;
   }
 
   &:not(:first-child) {
-    margin-top: 54rem;
+    margin-top: 64rem;
   }
 `
 const articleItemTitleCSS = () => css`
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 900;
@@ -116,7 +116,7 @@ const TagsSection = () => {
 }
 
 const tagsHeadingCSS = css`
-  color: var(--linkText);
+  color: var(--primaryBlue);
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
@@ -136,7 +136,7 @@ const tagsListCSS = css`
 
 const tagItemCSS = css`
   background: var(--tagsBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   border-radius: 4px;
   padding: 4px;
   min-width: 74px;
@@ -187,7 +187,7 @@ const popularContentListCSS = css`
 const popularContentItemCSS = css`
   display: flex;
   align-items: center;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   font-family: Cera Pro;
   font-size: 16px;
   font-weight: 500;
@@ -201,14 +201,14 @@ const popularContentItemCSS = css`
   }
 `
 const popularContentHeadingCSS = css`
-  color: var(--linkText);
+  color: var(--primaryBlue);
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
 `
 
 const popularContentContainerCSS = css`
-  margin-top: 48rem;
+  margin-top: 64rem;
   ul {
     list-style: none;
     padding: 0;
@@ -244,7 +244,7 @@ const NewsLetterCard = () => {
 }
 
 const newsLetterContainerCSS = css`
-  margin-top: 56rem;
+  margin-top: 96rem;
   margin-bottom: 20rem;
 `
 const newsLetterInfoCSS = css`
@@ -278,7 +278,7 @@ const newsLetterEmojiCSS = css`
 const newsLetterHeadingCSS = css`
   font-size: 20rem;
   font-weight: 900;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 `
 const newsLetterFollowInfoCSS = css`
   margin-top: 12rem;
@@ -289,7 +289,7 @@ const newsLetterFollowInfoCSS = css`
   }
 `
 const newsLetterHighlightedInfoCSS = css`
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   border-bottom-color: #fa2f90;
   border-bottom-width: 2rem;
   border-bottom-style: solid;
@@ -301,7 +301,7 @@ const newsLetterFooterCSS = css`
   font-weight: normal;
   margin-top: 18rem;
   font-size: 16rem;
-  color: var(--newsLetterInputText);
+  color: var(--contrastColor);
 `
 
 const MainContainer = ({ data }) => {
@@ -309,7 +309,6 @@ const MainContainer = ({ data }) => {
 
   useEffect(() => {
     const { allMarkdownRemark: _posts } = data
-    console.log()
     const postsArr = []
     for (let i = 0; i < _posts.nodes.length; i++) {
       const post = _posts.nodes[i]
@@ -373,10 +372,10 @@ const articlesListCSS = css`
 const mainContainerCSS = css`
   background: var(--primaryBackground);
   margin-top: -36rem;
-  padding-bottom: 136rem;
-  padding-top: 28rem;
+  padding-bottom: 216rem;
+  padding-top: 84rem;
   position: relative;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   flex-wrap: wrap;
 `
 const contentCSS = css``
@@ -385,7 +384,7 @@ const articlesContainerCSS = css`
 `
 const articlesContentHeadingCSS = css`
   font-family: Cera Pro;
-  color: var(--playerIcon1);
+  color: var(--primaryBlue);
   font-size: 19rem;
   font-weight: bold;
 `

@@ -42,6 +42,6 @@ const curve = isHeroBackground => css`
   path {
     fill: ${isHeroBackground
       ? `var(--heroBackground)`
-      : `var(--waveBackground)`};
+      : `var(--primaryBackground)`};
   }
 `

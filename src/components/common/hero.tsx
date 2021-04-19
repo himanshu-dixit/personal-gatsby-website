@@ -175,7 +175,7 @@ const workHeroSection = css`
   padding-top: 38rem;
   position: relative;
   background: var(--heroBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   > div {
     max-width: var(--contentContainerWidth);
     width: 100%;
@@ -201,7 +201,7 @@ const serviceHeroSection = css`
   padding-top: 38rem;
   position: relative;
   background: var(--heroBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   > div {
     max-width: var(--contentContainerWidth);
     width: 100%;
@@ -251,7 +251,7 @@ const knowLink = css`
     margin-left: 16rem;
   }
   a {
-    color: var(--linkText);
+    color: var(--primaryBlue);
   }
 `
 
@@ -268,7 +268,7 @@ const serviceDesc = css`
     margin-left: 16rem;
   }
   a {
-    color: var(--linkText);
+    color: var(--primaryBlue);
   }
 `
 
@@ -318,10 +318,10 @@ const personalStatusContainer = css`
     }
   }
   div:hover path {
-    fill: var(--pinkColor);
+    fill: var(--primaryPink);
   }
   div:hover svg {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
   }
   #twitter {
     top: 32%;
@@ -378,7 +378,7 @@ const heroSection = css`
   padding-top: 38rem;
   position: relative;
   background: var(--heroBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   > div {
     max-width: var(--contentContainerWidth);
     width: 100%;

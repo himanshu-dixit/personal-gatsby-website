@@ -129,7 +129,7 @@ const pinkButton = css`
   margin-right: 20rem;
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
-  color: var(--pinkButtonText);
+  color: #fff;
   padding: 6rem 18rem;
   min-width: 206rem;
   text-align: center;
@@ -137,7 +137,7 @@ const pinkButton = css`
   font-style: normal;
   font-weight: 900;
   font-size: 15rem;
-  color: var(--workNormalCOLOR);
+
 `
 
 const pastWorkCss = css`
@@ -163,10 +163,7 @@ const workItem = css`
   }
 `
 const workItemImageReverse = css`
-  // border-top-left-radius: 32rem;
-  // border-bottom-left-radius: 32rem;
-  // border-top-right-radius: 0rem;
-  // border-bottom-right-radius: 0rem;
+
   border-radius: 32rem;
     margin-top: 72rem;
     justify-content: space-between;
@@ -239,7 +236,7 @@ const mainContainerCSS = css`
   padding-bottom: 136rem;
   padding-top: 28rem;
   position: relative;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   flex-wrap: wrap;
 `
 

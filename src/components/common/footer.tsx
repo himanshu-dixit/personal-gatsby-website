@@ -46,19 +46,19 @@ const Footer = () => {
 const authorNameCSS = css`
   font-weight: 900;
   font-size: 20rem;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 `
 const authorThanksCSS = css`
   margin-top: 2rem;
   span {
-    color: var(--playerIcon1);
+    color: var(--primaryPink);
   }
 `
 const authorCopyRightCSS = css`
   margin-top: 52rem;
   color: #6e7377;
   font-size: 15rem;
-  color: var(--footerCopyrightTextColor);
+  color: var(--mainTextColor01);
 `
 const footerMainContainerCSS = css`
   display: flex;
@@ -121,7 +121,7 @@ const footerContainerCSS = css`
   padding-bottom: 104rem;
   position: relative;
   background: var(--heroBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 `
 
 export { Footer }

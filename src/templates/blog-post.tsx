@@ -113,6 +113,7 @@ const newsLetterJoinButtonCSS = css`
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
+  color: #fff;
 
   @media (max-width: 600px) {
     margin-left: 0rem;
@@ -129,22 +130,22 @@ const newsLetterInputCSS = css`
   font-style: normal;
   font-size: 15rem;
   font-weight: 500;
-  color: var(--newsLetterInputText);
+  color: var(--contrastColor);
   &:focus {
     outline: none;
   }
 `
 const joinButtonCSS = css`
   border: 1px solid var(--blogJoinBorder);
-  background: var(--blogJoinBackground);
+  background: var(--primaryPink);
 `
 
 const buttonCSS = css`
   border-radius: 8rem;
   cursor: pointer;
     border: 1px solid var(--blogFollowBorder);
-  background: var(--blogFollowBackground);
-  color: var(--blogFollowText);
+  background: var(--primaryBlue);
+  color: var(--contrastColor);
   min-width: 136rem;
   padding: 3rem;
   text-align: center;
@@ -178,7 +179,7 @@ const newsLetterContentCSS = css`
     margin-left: 80rem;
   }
 
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 `
 const newsLetterActionsCSS = css`
   display: flex;
@@ -247,7 +248,7 @@ const newsLetterHeaderCSS = css`
 
 const newsLetterHeaderLikedThisArticleCSS = css`
   font-size: 22rem;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 
   @media (max-width: 600px) {
     font-size: 20rem !important;
@@ -255,7 +256,7 @@ const newsLetterHeaderLikedThisArticleCSS = css`
 `
 
 const newsLetterCardContainerCSS = css`
-  border: 2rem solid var(--articleNewsLetterBorderColor);
+  border: 2rem solid var(--mainTextColor01);
   border-radius: 12rem;
   padding: 12rem 20rem 22rem 20rem;
   //max-width: 650rem;
@@ -324,14 +325,14 @@ const mainContentArticleCSS = css`
   flex: 1;
   font-family: Cera Pro;
   font-style: normal;
-  max-width: 720rem;
+  max-width: 680rem;
   font-size: 16px;
   line-height: 32px;
-  color: var(--desc1Text);
+  color: var(--mainTextColor01);
 `
 const mainContentCSS = css`
   background: var(--primaryBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   padding-top: 64rem;
   padding-bottom: 108rem;
 `

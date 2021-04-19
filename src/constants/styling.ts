@@ -1,39 +1,44 @@
+export const COLORS = {};
+
 export enum GLOBAL_CSS_VAR_LIGHT {
-  heroBackground = "#E9F8FF",
-  waveBackground = "#fff",
-  primaryBackground = "#fff",
-  tagsBackground = "#e9f8ff",
-  pinkColor = "#FF46B5",
-  primary = "black",
+
+  // Fundamental color
   contentContainerWidth = "1080px",
-  heroPrimaryTextColor = "#1D2022",
-  heroLogoFill = "#1D2022",
-  speakerIdealColor = "#3A434B",
-  speakerSelectedColor = "#3A434B",
-  bookmarkIdealColor = "#3A434B",
-  bookmarkSelectedColor = "#00C4EB",
+  heroBackground = "#E9F8FF",
+  primaryBackground = "#FFF",
+  primaryPink = "#e54aa7",
+  primaryBlue = "#40a8d4",
+  mainTextColor = "#1D2022",
+  mainTextColor01 = "#253546",
+  mainTextColor02 = "#253546",
+  contrastColor = "#FFF",
+
+  // Hero header right color
+  headerIconColor = "#3A434B",
   themeSwitchContainer = "#29333B",
   themeSwitchButton = "#F2F2F2",
-  themeSwitchSun = "#0C1115",
-  makeText = "#44a2b5",
-  breakText = "#FA2F90",
-  linkText = "#00C4EB",
-  playerIcon1 = "#FF46B5",
-  playerIcon2 = "#46FFB1",
-  playerIcon3 = "#46F4FF",
-  descText = "#5E7D9C",
-  desc1Text = "#1D2022",
-  newsLetterText = "#869BAD",
+  tagsBackground = "#e9f8ff",
+
+  // Homepage, newsletter background
+  newsLetterText = "#818181",
   newsLetterInputBackground = "#ffffff",
-  newsLetterInputText = "#E7E7E7",
   newsLetterInputBorder = "#95a5b3",
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
   newsLetterJoinBorder = "#ffffff",
-  newLabelTextColor = "#969CA3",
-  footerCopyrightTextColor = "#253546",
-  articleNewsLetterBorderColor = "#253546",
-  buttonFollowBorderColor = "#134E59",
-  // Upvote sound
+
+  // Homepage, other colors
+  proectNewLabel = "#969CA3",
+
+  // Project & Services Page
+  tagColor = "#0E0F14",
+  tagBackground = "#D6F1FF",
+  workNormalBG = "#D6F1FF",
+  workNormalBORDER = "#9ec4d7",
+  workNormalCOLOR = "#0E0F14",
+  blogFollowBorder= "#13a7c4",
+  blogJoinBorder =  "#d72590",
+
+  // Upvote color, Don't edit
   fire01 = "#97aec6",
   fire02 = "#547091",
   fire03 = "#657e96",
@@ -46,55 +51,42 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   fire31 = "#FF9ED8",
   fire32 = "#FF5FBF",
   fire33 = "#CA2889",
-  tagColor = "#0E0F14",
-  tagBackground = "#D6F1FF",
-  workNormalBG = "#D6F1FF",
-  workNormalBORDER = "#9ec4d7",
-  workNormalCOLOR = "#0E0F14",
-  pinkButtonText = "#fff",
-  blogFollowText = "#fff",
-  blogFollowBackground = "#00C4EB",
-  blogFollowBorder= "#13a7c4",
-  blogJoinBackground =  "#FF46B5",
-  blogJoinBorder =  "#d72590",
 }
 
 export enum GLOBAL_CSS_VAR_DARK {
-  heroBackground = "#0E0F14",
-  waveBackground = "#090C0F",
-  primaryBackground = "#090C0F",
+  // Fundamental color
+  heroBackground = "#0a0c0c",
+  primaryBackground = "#0a0a0a",
   tagsBackground = "#0B1116",
-  pinkColor = "#FF46B5",
-  primary = "yellow",
+  contrastColor = "#fff",
+  primaryBlue = "#00C4EB",
+  primaryPink =  "#FF46B5",
+  mainTextColor = "#F2F2F2",
+  mainTextColor01 = "#DAD8D8",
+
+  // Hero header right color
   contentContainerWidth = "1080px",
-  heroPrimaryTextColor = "#FFFFFF",
-  heroLogoFill = "#FFFFFF",
-  speakerIdealColor = "#3A434B",
-  speakerSelectedColor = "#3A434B",
-  bookmarkIdealColor = "#3A434B",
-  bookmarkSelectedColor = "#00C4EB",
+  headerIconColor = "#3A434B",
   themeSwitchContainer = "#29333B",
   themeSwitchButton = "#0C1115",
-  themeSwitchSun = "#F2F2F2",
-  makeText = "#00C4EB",
-  breakText = "#FA2F90",
-  linkText = "#00C4EB",
-  playerIcon1 = "#FF46B5",
-  playerIcon2 = "#46FFB1",
-  playerIcon3 = "#46F4FF",
-  descText = "#5E7D9C",
-  desc1Text = "#DAD8D8",
   newsLetterText = "#869BAD",
   newsLetterInputBackground = "#1E2831",
-  newsLetterInputText = "#E7E7E7",
+
   newsLetterInputBorder = "#283746",
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
   newsLetterJoinBorder = "#9E1858",
-  newLabelTextColor = "#969CA3",
-  footerCopyrightTextColor = "#6E7377",
-  articleNewsLetterBorderColor = "#253546",
-  buttonFollowBorderColor = "#134E59",
+  proectNewLabel = "#969CA3",
   // Upvote sound
+
+  tagColor = "#fff",
+  tagBackground = "#0b1218",
+  workNormalBG = "#1D2021",
+  workNormalBORDER = "#3C535B",
+  workNormalCOLOR = "#fff",
+  blogFollowBorder= "#13a7c4",
+  blogJoinBorder =  "#d72590",
+
+  // Upvote color, Don't edit
   fire01 = "#232C35",
   fire02 = "#1A2027",
   fire03 = "#11171D",
@@ -107,19 +99,6 @@ export enum GLOBAL_CSS_VAR_DARK {
   fire31 = "#FF9ED8",
   fire32 = "#FF5FBF",
   fire33 = "#CA2889",
-  tagColor = "#fff",
-  tagBackground = "#0b1218",
-  workNormalBG = "#1D2021",
-  workNormalBORDER = "#3C535B",
-  workNormalCOLOR = "#fff",
-
-  // Blog
-  //   Newsletter Box
-  blogFollowText = "#fff",
-  blogFollowBackground = "#00C4EB",
-  blogFollowBorder= "#13a7c4",
-  blogJoinBackground =  "#FF46B5",
-  blogJoinBorder =  "#d72590",
 }
 
 export const convertThemeObjectToStyle = object => {

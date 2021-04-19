@@ -28,12 +28,15 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+a{
+  color: var(--primaryPink);
+}
 .blinking-cursor {
   font-weight: 100;
   font-size: 16px;
   margin-left: -2px;
   margin-right: 2px;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   animation: 1.2s blink step-end infinite;
 }
 
@@ -43,19 +46,17 @@ body {
     color: transparent;
   }
   50% {
-    color: var(--heroPrimaryTextColor);
+    color: var(--mainTextColor);
   }
 }
 
 @keyframes playerAnimation {
   from,
   to {
-    fill: var(--playerIcon1);
+    fill: var(--primaryPink);
   }
-  33% {
-    fill: var(--playerIcon2);
+  50% {
+    fill: var(--primaryBlue);
   }
-  66% {
-    fill: var(--playerIcon3);
-  }
+
 }

@@ -236,5 +236,5 @@ a:visited {
 }
 
 a {
-  color: var(--breakText) !important;
+  color: var(--primaryPink) !important;
 }

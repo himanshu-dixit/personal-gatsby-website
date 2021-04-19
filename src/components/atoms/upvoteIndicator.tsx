@@ -142,7 +142,7 @@ const FireSVG = (props: any) => {
 const articleUpvotesVertical = css`
   cursor: pointer;
   padding-top: 10rem;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
 
   > div {
     margin-top: 3rem;

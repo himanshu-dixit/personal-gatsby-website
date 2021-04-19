@@ -39,10 +39,10 @@ const tagline = css`
   span {
   }
   #make-text {
-    color: var(--makeText);
+    color: var(--primaryBlue);
   }
   #break-text {
-    color: var(--breakText);
+    color: var(--primaryPink);
   }
 `
 
@@ -139,7 +139,7 @@ const menu = css`
     @media (max-width: 600px) {
       margin-right: 12rem;
     }
-    color: var(--heroPrimaryTextColor);
+    color: var(--mainTextColor);
   }
   > :first-child {
     margin-left: 0rem;

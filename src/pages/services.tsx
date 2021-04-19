@@ -124,7 +124,7 @@ const pinkButton = css`
   margin-right: 20rem;
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
-  color: var(--pinkButtonText);
+  color: #fff;
   padding: 6rem 20rem;
   min-width: 206rem;
   text-align: center;
@@ -140,7 +140,7 @@ const mainContainerCSS = css`
   padding-bottom: 136rem;
   padding-top: 28rem;
   position: relative;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   flex-wrap: wrap;
 `
 

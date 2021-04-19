@@ -9,7 +9,7 @@ const toggle = css`
   }
 
   .sun-icon {
-    stroke: var(--themeSwitchSun);
+    stroke: var(--mainTextColor);
   }
 `
 const toggleButton = css`

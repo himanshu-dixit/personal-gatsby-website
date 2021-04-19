@@ -37,7 +37,7 @@ const postTypeCSS = css`
   font-weight: normal;
   font-size: 16rem;
 
-  color: var(--playerIcon1);
+  color: var(--primaryPink);
 `
 
 const heroMainContentCSS = css`
@@ -53,7 +53,7 @@ const postTitleCSS = css`
   font-style: normal;
   font-weight: 900;
   font-size: 24rem;
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   margin-top: 14rem;
 `
 const postDateCSS = css`
@@ -62,7 +62,7 @@ const postDateCSS = css`
   font-style: normal;
   font-weight: 500;
   font-size: 14rem;
-  color: var(--descText);
+  color: var(--mainTextColor);
 `
 
 function MusicSVG(props) {
@@ -90,7 +90,7 @@ const heroSection = css`
   padding-bottom: 108rem;
   position: relative;
   background: var(--heroBackground);
-  color: var(--heroPrimaryTextColor);
+  color: var(--mainTextColor);
   > div {
     max-width: var(--contentContainerWidth);
     width: 100%;

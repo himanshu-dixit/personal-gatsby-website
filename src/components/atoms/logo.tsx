@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 const logoSVG = css`
   height: 20rem;
   path {
-    fill: var(--heroLogoFill);
+    fill: var(--mainTextColor);
   }
   @media screen and (max-width: 1080px) {
     width: 140rem;

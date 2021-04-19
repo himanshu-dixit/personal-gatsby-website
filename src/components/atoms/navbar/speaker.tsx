@@ -7,7 +7,7 @@ const speaker = css`
   cursor: pointer;
   margin-top: 1rem;
   path {
-    fill: var(--bookmarkIdealColor);
+    fill: var(--headerIconColor);
   }
 `
 

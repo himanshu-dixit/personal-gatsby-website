@@ -3,7 +3,7 @@ import * as React from "react"
 
 const bookmark = css`
   path {
-    fill: var(--bookmarkIdealColor);
+    fill: var(--headerIconColor);
   }
 `
 

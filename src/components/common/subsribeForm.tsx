@@ -59,6 +59,7 @@ const newsLetterJoinButtonCSS = css`
   font-weight: 900;
   font-size: 18rem;
 
+color: #fff;
   @media (max-width: 600px) {
     margin-left: 0rem;
     margin-top: 20rem;
@@ -74,7 +75,7 @@ const newsLetterInputCSS = css`
   font-style: normal;
   font-size: 15rem;
   font-weight: 500;
-  color: var(--newsLetterInputText);
+  color: var(--contrastColor);
   &:focus {
     outline: none;
   }
