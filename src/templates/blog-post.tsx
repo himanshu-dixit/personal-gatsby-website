@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import {  graphql } from "gatsby"
 import { css } from "@emotion/react"
 
@@ -12,6 +12,7 @@ import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
 
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
+import { doPostAction } from "../utils/api"
 
 
 const NewsLetterCard = () => {
@@ -103,11 +104,11 @@ const newsLetterInputParentCSS = css`
 `
 const newsLetterJoinButtonCSS = css`
   font-family: "Cera Pro";
-  margin-left: 20rem;
+  margin-left: 12rem;
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
   padding: 6rem 20rem;
-  min-width: 236rem;
+  min-width: 206rem;
   text-align: center;
   border-radius: 8rem;
   font-style: normal;
@@ -268,7 +269,10 @@ const newsLetterCardContainerCSS = css`
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-
+  const slug = data.markdownRemark.fields.slug;
+  useEffect(()=>{
+    doPostAction(slug,'views')
+  },[])
   return (
     <>
       <BlogFeaturedSection data={data} />
@@ -287,12 +291,12 @@ const BlogPostTemplate = ({ data, location }) => {
               />
             </article>
             <div css={upvoteMobile}>
-              <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
+              <UpvoteIndicatorVertical slug={slug}  />
             </div>
             <NewsLetterCard />
           </div>
           <div css={upvoteDesktop}>
-            <UpvoteIndicatorVertical upvotes={post.frontmatter.rating} />
+            <UpvoteIndicatorVertical slug={slug}  />
           </div>
         </Center>
       </div>
@@ -351,6 +355,9 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
+         fields {
+          slug
+        }
       excerpt(pruneLength: 160)
       html
       frontmatter {

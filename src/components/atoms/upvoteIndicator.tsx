@@ -1,7 +1,8 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
 import { Sound, useSound } from "../../context/Sound"
 import { getSoundInstance, playSound } from "../../utils/sound"
+import { doPostAction, getPostData } from "../../utils/api"
 
 const upvoteCounter = css`
   cursor: pointer;
@@ -80,29 +81,36 @@ export function UpvoteIndicator({ upvotes }) {
   )
 }
 
-export function UpvoteIndicatorVertical({ upvotes }) {
+export function UpvoteIndicatorVertical({ slug }) {
   const [clickCount, setClickCount] = useState(0)
+  const [upvotes,setUpvotes] = useState(0)
   const { sound } = useSound()
 
   const soundInstance = getSoundInstance("/sound/upvote.m4a")
 
   const upvoteComplete = getSoundInstance("/sound/upvote_complete.m4a")
   const handleClick = () => {
-    clickCount < 3 && setClickCount(clickCount + 1)
-    if (sound == Sound.On) {
-      if (clickCount >= 2) {
-        playSound(upvoteComplete)
+
+      if (clickCount >= 3) {
+        sound == Sound.On && playSound(upvoteComplete)
       } else {
-        playSound(soundInstance)
+        sound == Sound.On && playSound(soundInstance)
+        setClickCount(clickCount + 1)
+        doPostAction(slug, 'upvote')
       }
-    }
   }
-  return (
+
+  useEffect(()=>{
+    getPostData().then((res)=>{
+      setUpvotes(res.data[slug.substr(1,Infinity)]?.upvote || 0)
+    })
+  },[])
+  return upvotes ? (
     <div css={articleUpvotesVertical} onClick={handleClick}>
       <FireSVG height={36} clickCount={clickCount} />
-      <div>{upvotes + clickCount}</div>
+      <div>{ upvotes + clickCount}</div>
     </div>
-  )
+  ) : null
 }
 
 const FireSVG = (props: any) => {

@@ -11,7 +11,7 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   mainTextColor = "#1D2022",
   mainTextColor01 = "#253546",
   mainTextColor02 = "#253546",
-  contrastColor = "#FFF",
+  contrastColor = "#1D2022",
 
   // Hero header right color
   headerIconColor = "#3A434B",

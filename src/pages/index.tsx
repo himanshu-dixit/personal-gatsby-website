@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { graphql, Link } from "gatsby"
 import { css } from "@emotion/react"
-
 import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,24 +16,25 @@ import { SubscribeForm } from "../components/common/subsribeForm"
 import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
 import {SITE_CONFIG} from "../../metaData"
+import { getPostData } from "../utils/api"
 
 const ArticleItem = (props: any) => {
   const { item } = props
   const { title, meta, desc, link, rating } = item
 
   return (
-    <div css={articleItemContainerCSS}>
+    <div css={articleItemContainer}>
       <Link to={link}>
-        <div css={articleItemTitleCSS()} id={"article-title"}>
+        <div css={articleItemTitle()} id={"article-title"}>
           {title}
         </div>
-        <div css={articleInfoContainerCSS}>
-          <div css={articleInfoMetaContainerCSS}>
+        <div css={articleInfoContainer}>
+          <div css={articleInfoMetaContainer}>
             <div>{meta}</div>
             <UpvoteIndicator upvotes={rating} />
           </div>
-          <div css={articleDescCSS}>{desc}</div>
-          <div css={articleItemReadMoreCSS}>
+          <div css={articleDesc}>{desc}</div>
+          <div css={articleItemReadMore}>
             <a href={link} id={"article-read-more"}>
               Read More{" "}
               <ArrowSVG
@@ -49,7 +49,7 @@ const ArticleItem = (props: any) => {
   )
 }
 
-const articleItemReadMoreCSS = css`
+const articleItemReadMore = css`
   margin-top: 4rem;
   a {
     color: inherit;
@@ -58,10 +58,10 @@ const articleItemReadMoreCSS = css`
     display: none;
   }
 `
-const articleInfoContainerCSS = css`
+const articleInfoContainer = css`
   margin-top: 10rem;
 `
-const articleInfoMetaContainerCSS = css`
+const articleInfoMetaContainer = css`
   display: flex;
   color: var(--mainTextColor);
   font-family: Cera Pro;
@@ -70,12 +70,12 @@ const articleInfoMetaContainerCSS = css`
   font-size: 16rem;
 `
 
-const articleDescCSS = css`
+const articleDesc = css`
   margin-top: 12rem;
   font-family: Gilroy;
   font-size: 16px;
 `
-const articleItemContainerCSS = css`
+const articleItemContainer = css`
   :hover #article-title,
   :hover #article-read-more {
     color: var(--primaryPink);
@@ -91,7 +91,7 @@ const articleItemContainerCSS = css`
     margin-top: 64rem;
   }
 `
-const articleItemTitleCSS = () => css`
+const articleItemTitle = () => css`
   color: var(--mainTextColor);
   font-family: Cera Pro;
   font-style: normal;
@@ -102,39 +102,39 @@ const articleItemTitleCSS = () => css`
 const TagsSection = () => {
   const tagsOut = SITE_CONFIG.homepage.tags.map(tag => {
     return (
-      <div css={tagItemCSS}>
+      <div css={tagItem}>
         <a href={tag.link}>{tag.title}</a>
       </div>
     )
   })
   return (
-    <div css={tagsContainerCSS}>
-      <div css={tagsHeadingCSS}>Tags</div>
-      <div css={tagsListCSS}>{tagsOut}</div>
+    <div css={tagsContainer}>
+      <div css={tagsHeading}>Tags</div>
+      <div css={tagsList}>{tagsOut}</div>
     </div>
   )
 }
 
-const tagsHeadingCSS = css`
+const tagsHeading = css`
   color: var(--primaryBlue);
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
 `
-const tagsContainerCSS = css`
+const tagsContainer = css`
   a {
     text-decoration: none;
     color: inherit;
   }
 `
-const tagsListCSS = css`
+const tagsList = css`
   margin-top: 24rem;
   display: grid;
   grid-template-columns: auto auto auto;
   grid-gap: 14.5rem 10rem;
 `
 
-const tagItemCSS = css`
+const tagItem = css`
   background: var(--tagsBackground);
   color: var(--mainTextColor);
   border-radius: 4px;
@@ -167,24 +167,24 @@ const ArrowSVG = (props: any) => {
 const PopularContentSection = () => {
   const contentOut = SITE_CONFIG.homepage.popular.map((article, index) => {
     return (
-      <li key={index} css={popularContentItemCSS}>
+      <li key={index} css={popularContentItem}>
         <ArrowSVG />
         <a href={article.link}>{article.title}</a>
       </li>
     )
   })
   return (
-    <div css={popularContentContainerCSS}>
-      <div css={popularContentHeadingCSS}>Popular Content</div>
-      <ul css={popularContentListCSS}>{contentOut}</ul>
+    <div css={popularContentContainer}>
+      <div css={popularContentHeading}>Popular Content</div>
+      <ul css={popularContentList}>{contentOut}</ul>
     </div>
   )
 }
-const popularContentListCSS = css`
+const popularContentList = css`
   margin: 0;
   margin-top: 24rem;
 `
-const popularContentItemCSS = css`
+const popularContentItem = css`
   display: flex;
   align-items: center;
   color: var(--mainTextColor);
@@ -200,14 +200,14 @@ const popularContentItemCSS = css`
     margin-top: 18rem;
   }
 `
-const popularContentHeadingCSS = css`
+const popularContentHeading = css`
   color: var(--primaryBlue);
   font-family: Cera Pro;
   font-weight: bold;
   font-size: 18px;
 `
 
-const popularContentContainerCSS = css`
+const popularContentContainer = css`
   margin-top: 64rem;
   ul {
     list-style: none;
@@ -217,24 +217,24 @@ const popularContentContainerCSS = css`
 
 const NewsLetterCard = () => {
   return (
-    <div css={newsLetterContainerCSS}>
-      <div css={newsLetterInfoCSS}>
-        <div css={newsLetterInfoTextCSS}>
-          <div css={newsLetterHeadingCSS}>
+    <div css={newsLetterContainer}>
+      <div css={newsLetterInfo}>
+        <div css={newsLetterInfoText}>
+          <div css={newsLetterHeading}>
             Follow my journey of building tech products
           </div>
-          <div css={newsLetterFollowInfoCSS}>
+          <div css={newsLetterFollowInfo}>
             <div>30+ community of engineers, developers, product makers</div>
             <div>Content for nerds on engineering and product</div>
             <div>
               In-depth resources from{" "}
-              <span css={newsLetterHighlightedInfoCSS}>
+              <span css={newsLetterHighlightedInfo}>
                 idea, tech and building product
               </span>
             </div>
           </div>
         </div>
-        <div css={newsLetterEmojiCSS}>
+        <div css={newsLetterEmoji}>
           <HappyEmojiSvg />
         </div>
       </div>
@@ -243,17 +243,17 @@ const NewsLetterCard = () => {
   )
 }
 
-const newsLetterContainerCSS = css`
+const newsLetterContainer = css`
   margin-top: 96rem;
   margin-bottom: 20rem;
 `
-const newsLetterInfoCSS = css`
+const newsLetterInfo = css`
   display: flex;
   @media (max-width: 600px) {
     flex-wrap: wrap-reverse;
   }
 `
-const newsLetterInfoTextCSS = css`
+const newsLetterInfoText = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
@@ -266,7 +266,7 @@ const newsLetterInfoTextCSS = css`
 
   color: var(--newsLetterText);
 `
-const newsLetterEmojiCSS = css`
+const newsLetterEmoji = css`
   margin-left: 80rem;
   margin-top: -8rem;
 
@@ -275,12 +275,12 @@ const newsLetterEmojiCSS = css`
     margin-top: 20rem;
   }
 `
-const newsLetterHeadingCSS = css`
+const newsLetterHeading = css`
   font-size: 20rem;
   font-weight: 900;
   color: var(--mainTextColor);
 `
-const newsLetterFollowInfoCSS = css`
+const newsLetterFollowInfo = css`
   margin-top: 12rem;
   > div {
     &:not(:first-child) {
@@ -288,14 +288,14 @@ const newsLetterFollowInfoCSS = css`
     }
   }
 `
-const newsLetterHighlightedInfoCSS = css`
+const newsLetterHighlightedInfo = css`
   color: var(--mainTextColor);
   border-bottom-color: #fa2f90;
   border-bottom-width: 2rem;
   border-bottom-style: solid;
   padding-bottom: 8rem;
 `
-const newsLetterFooterCSS = css`
+const newsLetterFooter = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
@@ -306,6 +306,13 @@ const newsLetterFooterCSS = css`
 
 const MainContainer = ({ data }) => {
   const [posts, setPosts] = useState([])
+  const [postData, setPostData]= useState({});
+
+  useEffect(()=>{
+    getPostData().then(res=>{
+      setPostData(res.data);
+    })
+  },[])
 
   useEffect(() => {
     const { allMarkdownRemark: _posts } = data
@@ -315,7 +322,6 @@ const MainContainer = ({ data }) => {
       const title = post.frontmatter.title
       const meta = post.frontmatter.description
       const desc = post.excerpt
-      const rating = post.frontmatter.rating
       const slug = post.fields.slug
 
       postsArr.push({
@@ -323,18 +329,18 @@ const MainContainer = ({ data }) => {
         meta: meta,
         desc: desc,
         link: slug,
-        rating: rating,
+        rating: postData[slug.substr(1, Infinity)]?.upvote || 0,
       })
     }
     setPosts([...postsArr])
-  }, [data])
+  }, [data,postData])
 
   const articlesOut = posts.map(item => {
     return <ArticleItem item={item} />
   })
 
   return (
-    <div css={mainContainerCSS}>
+    <div css={mainContainer}>
       <Center>
         <PastWork />
         <div
@@ -345,14 +351,14 @@ const MainContainer = ({ data }) => {
             flexWrap: "wrap",
           }}
         >
-          <div css={contentCSS}>
-            <div css={articlesContainerCSS}>
-              <div css={articlesContentHeadingCSS}>Recently published</div>
-              <div css={articlesListCSS}>{articlesOut}</div>
+          <div css={content}>
+            <div css={articlesContainer}>
+              <div css={articlesContentHeading}>Recently published</div>
+              <div css={articlesList}>{articlesOut}</div>
             </div>
             <NewsLetterCard />
           </div>
-          <div css={sidebarContainerCSS}>
+          <div css={sidebarContainer}>
             <TagsSection />
             <PopularContentSection />
           </div>
@@ -362,14 +368,14 @@ const MainContainer = ({ data }) => {
   )
 }
 
-const articlesListCSS = css`
+const articlesList = css`
   margin-top: 44rem;
   a {
     text-decoration: none;
     color: inherit;
   }
 `
-const mainContainerCSS = css`
+const mainContainer = css`
   background: var(--primaryBackground);
   margin-top: -36rem;
   padding-bottom: 216rem;
@@ -378,17 +384,17 @@ const mainContainerCSS = css`
   color: var(--mainTextColor);
   flex-wrap: wrap;
 `
-const contentCSS = css``
-const articlesContainerCSS = css`
+const content = css``
+const articlesContainer = css`
   max-width: 712rem;
 `
-const articlesContentHeadingCSS = css`
+const articlesContentHeading = css`
   font-family: Cera Pro;
   color: var(--primaryBlue);
   font-size: 19rem;
   font-weight: bold;
 `
-const sidebarContainerCSS = css`
+const sidebarContainer = css`
   @media (max-width: 600px) {
     margin-top: 48rem;
   }

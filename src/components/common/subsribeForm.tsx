@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
-import { addMember } from "../../utils/airtable"
+import { addMember } from "../../utils/api"
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    addMember(email).then(()=>{
+    addMember(email,email).then(()=>{
       setEmailSent(true)
     })
 
@@ -30,7 +30,7 @@ export function SubscribeForm() {
           </div>
         </>
       )}
-      {emailSent && <div>Send email</div>}
+      {emailSent && <div>❤️ ❤️ Thanks for becoming part of the family.</div>}
     </div>
   )
 }
