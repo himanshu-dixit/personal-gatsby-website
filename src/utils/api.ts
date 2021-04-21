@@ -1,4 +1,4 @@
-const API_BASE_HOST = window.location.hostname.includes("localhost")? "http://localhost:8888" : ""
+const API_BASE_HOST = typeof window !== "undefined" && window.location.hostname.includes("localhost")? "http://localhost:8888" : ""
 export const getPostData = () => {
   return fetch(API_BASE_HOST + "/.netlify/functions/get-posts").then(res =>
     res.json()
