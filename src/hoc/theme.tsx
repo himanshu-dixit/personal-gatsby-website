@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from "react"
-import { Theme, ThemeContext } from "../context/Theme"
+import { Theme, ThemeContext } from "../context/theme"
 import { css } from "@emotion/react"
 import {
   convertThemeObjectToStyle,

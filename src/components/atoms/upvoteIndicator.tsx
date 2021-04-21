@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
-import { Sound, useSound } from "../../context/Sound"
+import { Sound, useSound } from "../../context/sound.ts"
 import { getSoundInstance, playSound } from "../../utils/sound"
 import { doPostAction, getPostData } from "../../utils/api"
 

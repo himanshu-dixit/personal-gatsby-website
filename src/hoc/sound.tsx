@@ -1,5 +1,5 @@
 import React, { ReactElement, ReactPropTypes, useEffect, useState } from "react"
-import { Sound, SoundContext } from "../context/Sound"
+import { Sound, SoundContext } from "../context/sound.ts"
 import { getSoundInstance, playSound } from "../utils/sound"
 
 export const withSound = (
