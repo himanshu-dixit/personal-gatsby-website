@@ -3,6 +3,7 @@ title: My Third post!
 date: "2015-05-01T22:12:03.284Z"
 description: Writing to create value
 rating: 67
+tags: ["test"]
 ---
 
 This is my first post on my new fake blog! How exciting!

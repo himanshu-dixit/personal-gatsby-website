@@ -24,7 +24,7 @@ const work = [
     rightAligned: false,
   },
   {
-    name: "Crusher",
+    name: "Headout",
     date: "2020",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
@@ -35,6 +35,71 @@ const work = [
                     so you can focus on your work.`,
     tags: "Frontend,Backend",
     rightAligned: true,
+  },
+  {
+    name: "Signoz",
+    date: "2020",
+    backgroundImage: "/images/background/pinkred1.png",
+    image: "/images/work/1.png",
+    desc: `   Velocity and estimates.\n
+                    Track your team's workload and velocity.
+
+                    Automated. Cycles run on an automated schedule,<br/>
+                    so you can focus on your work.`,
+    tags: "Frontend,Backend",
+    rightAligned: false,
+  },
+  {
+    name: "Social API",
+    date: "2020",
+    backgroundImage: "/images/background/pinkred1.png",
+    image: "/images/work/1.png",
+    desc: `   Velocity and estimates.\n
+                    Track your team's workload and velocity.
+
+                    Automated. Cycles run on an automated schedule,<br/>
+                    so you can focus on your work.`,
+    tags: "Frontend,Backend",
+    rightAligned: true,
+  },
+  {
+    name: "Sveet",
+    date: "2020",
+    backgroundImage: "/images/background/pinkred1.png",
+    image: "/images/work/1.png",
+    desc: `   Velocity and estimates.\n
+                    Track your team's workload and velocity.
+
+                    Automated. Cycles run on an automated schedule,<br/>
+                    so you can focus on your work.`,
+    tags: "Frontend,Backend",
+    rightAligned: false,
+  },
+  {
+    name: "Rizort",
+    date: "2020",
+    backgroundImage: "/images/background/pinkred1.png",
+    image: "/images/work/1.png",
+    desc: `   Velocity and estimates.\n
+                    Track your team's workload and velocity.
+
+                    Automated. Cycles run on an automated schedule,<br/>
+                    so you can focus on your work.`,
+    tags: "Frontend,Backend",
+    rightAligned: true,
+  },
+  {
+    name: "Tapnar",
+    date: "2020",
+    backgroundImage: "/images/background/pinkred1.png",
+    image: "/images/work/1.png",
+    desc: `   Velocity and estimates.\n
+                    Track your team's workload and velocity.
+
+                    Automated. Cycles run on an automated schedule,<br/>
+                    so you can focus on your work.`,
+    tags: "Frontend,Backend",
+    rightAligned: false,
   },
 ]
 

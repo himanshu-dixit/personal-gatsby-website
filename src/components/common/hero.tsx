@@ -22,7 +22,7 @@ export const Herocomponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-            <h1 css={heroTagline}>Engineer, Entrepreneur, Designer</h1>
+            <h1 css={heroTagline}>Full stack engineer</h1>
             <h1 css={heroTaglineSecondary}>building next-gen products</h1>
             <div css={knowLink}>
               <Link to={"about_me"}>About me</Link>
@@ -141,13 +141,11 @@ export const AboutMeHero = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I’m creator at heart. Love to build stuff and break them.
+              I’m engineer and do mOrE tHAn just write code
               <br />
-              The power of creation, or improving drives me to work. I love
-              doing it every single day
+              I have been coding professionally for last 5 years.
               <br />
-              Most of the time I dwelve into multiple tasks, Product, Design,
-              Trading but deep specialization inv FE.
+              I specialize in building E2E product. I have worked with YC and built system handling billions of request.
             </div>
           </div>
         </div>
@@ -262,10 +260,10 @@ const serviceDesc = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: normal;
-  font-size: 15.5px;
-  line-height: 23px;
+  font-size: 16px;
+  line-height: 30px;
   /* identical to box height */
-  margin-top: 19rem;
+  margin-top: 28rem;
   margin-bottom: 56rem;
   a:last-child {
     margin-left: 16rem;
@@ -394,5 +392,6 @@ const heroSection = css`
   #hero-content {
     height: 428px;
     position: relative;
+    line-height: 40px;
   }
 `

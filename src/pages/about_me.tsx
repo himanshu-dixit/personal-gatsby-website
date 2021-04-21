@@ -24,12 +24,12 @@ const Content = ({}) => {
           <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
-            <strong>MVP</strong>Track your team's workload and velocity.
+            <span style={{color: "var(--primaryPink)"}}>Build MVP</span>Track your team's workload and velocity.
             <br />
-            Scale system/Layout foundation. Cycles run on an automated
+            <span style={{color: "var(--primaryPink)"}}>Scale system/Layout foundation.</span> Cycles run on an automated
             schedule,so you can focus on your work.
             <br />
-            Created E2E Product.
+            <span style={{color: "var(--primaryPink)"}}>Created E2E Product.</span>
           </div>
 
           <h2 css={headingCss}>Some traits</h2>
