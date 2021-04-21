@@ -15,7 +15,7 @@ import { HappyEmojiSvg } from "../constants/icons"
 import { SubscribeForm } from "../components/common/subsribeForm"
 import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
-import {SITE_CONFIG} from "../../metaData"
+import { SITE_CONFIG } from "../../metaData"
 import { getPostData } from "../utils/api"
 
 const ArticleItem = (props: any) => {
@@ -37,10 +37,7 @@ const ArticleItem = (props: any) => {
           <div css={articleItemReadMore}>
             <a href={link} id={"article-read-more"}>
               Read More{" "}
-              <ArrowSVG
-                color={"var(--mainTextColor)"}
-                id={"article-arrow"}
-              />
+              <ArrowSVG color={"var(--mainTextColor)"} id={"article-arrow"} />
             </a>
           </div>
         </div>
@@ -306,13 +303,13 @@ const newsLetterFooter = css`
 
 const MainContainer = ({ data }) => {
   const [posts, setPosts] = useState([])
-  const [postData, setPostData]= useState({});
+  const [postData, setPostData] = useState({})
 
-  useEffect(()=>{
-    getPostData().then(res=>{
-      setPostData(res.data);
+  useEffect(() => {
+    getPostData().then(res => {
+      setPostData(res.data)
     })
-  },[])
+  }, [])
 
   useEffect(() => {
     const { allMarkdownRemark: _posts } = data
@@ -333,7 +330,7 @@ const MainContainer = ({ data }) => {
       })
     }
     setPosts([...postsArr])
-  }, [data,postData])
+  }, [data, postData])
 
   const articlesOut = posts.map(item => {
     return <ArticleItem item={item} />

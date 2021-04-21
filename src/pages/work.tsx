@@ -1,5 +1,5 @@
 import React from "react"
-import {  Link } from "gatsby"
+import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { WorkHeroComponent } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
@@ -79,7 +79,7 @@ const Content = ({}) => {
   return (
     <div css={mainContainerCSS}>
       <Center>
-        <WorkList/>
+        <WorkList />
       </Center>
       <Center>
         <div css={interestedInWorking}>Interested in working?</div>
@@ -137,7 +137,6 @@ const pinkButton = css`
   font-style: normal;
   font-weight: 900;
   font-size: 15rem;
-
 `
 
 const pastWorkCss = css`
@@ -163,10 +162,9 @@ const workItem = css`
   }
 `
 const workItemImageReverse = css`
-
   border-radius: 32rem;
-    margin-top: 72rem;
-    justify-content: space-between;
+  margin-top: 72rem;
+  justify-content: space-between;
 `
 
 const workItemImage = css`

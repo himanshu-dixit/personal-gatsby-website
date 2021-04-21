@@ -19,40 +19,41 @@ export function PastWork() {
 export const PAST_PROJECTS = [
   {
     name: "Cofounder",
-    desc: "Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher",
-    for:  "Crusher",
-    link: "dfs"
+    desc:
+      "Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher Crusher",
+    for: "Crusher",
+    link: "dfs",
   },
   ,
   {
     name: "Consultant",
     desc: "TEst | YC ",
-    for:  "Crusher",
-    link: "dfs"
+    for: "Crusher",
+    link: "dfs",
   },
   {
     name: "Full stack engineer",
     desc: "Headout",
-    for:  "Crusher",
-    link: "dfs"
+    for: "Crusher",
+    link: "dfs",
   },
   {
     name: "FS Engineer",
     desc: "Rizort",
-    for:  "Crusher",
-    link: "dfs"
+    for: "Crusher",
+    link: "dfs",
   },
   {
     name: "Writing to create value",
     desc: "Frontend | Headout",
-    for:  "Crusher",
-    link: "dfs"
+    for: "Crusher",
+    link: "dfs",
   },
   {
     name: "Cofounder",
     desc: "Crusher",
-    for:  "Crusher",
-    link: "dfs"
+    for: "Crusher",
+    link: "dfs",
   },
 ]
 export const ProjectItem = (props: any) => {

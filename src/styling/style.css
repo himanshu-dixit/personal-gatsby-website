@@ -28,7 +28,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-a{
+a {
   color: var(--primaryPink);
 }
 .blinking-cursor {
@@ -58,5 +58,4 @@ a{
   50% {
     fill: var(--primaryBlue);
   }
-
 }

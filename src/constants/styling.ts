@@ -1,7 +1,6 @@
-export const COLORS = {};
+export const COLORS = {}
 
 export enum GLOBAL_CSS_VAR_LIGHT {
-
   // Fundamental color
   contentContainerWidth = "1080px",
   heroBackground = "#E9F8FF",
@@ -35,8 +34,8 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   workNormalBG = "#D6F1FF",
   workNormalBORDER = "#9ec4d7",
   workNormalCOLOR = "#0E0F14",
-  blogFollowBorder= "#13a7c4",
-  blogJoinBorder =  "#d72590",
+  blogFollowBorder = "#13a7c4",
+  blogJoinBorder = "#d72590",
 
   // Upvote color, Don't edit
   fire01 = "#97aec6",
@@ -60,7 +59,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   tagsBackground = "#0B1116",
   contrastColor = "#fff",
   primaryBlue = "#00C4EB",
-  primaryPink =  "#FF46B5",
+  primaryPink = "#FF46B5",
   mainTextColor = "#F2F2F2",
   mainTextColor01 = "#DAD8D8",
 
@@ -83,8 +82,8 @@ export enum GLOBAL_CSS_VAR_DARK {
   workNormalBG = "#1D2021",
   workNormalBORDER = "#3C535B",
   workNormalCOLOR = "#fff",
-  blogFollowBorder= "#13a7c4",
-  blogJoinBorder =  "#d72590",
+  blogFollowBorder = "#13a7c4",
+  blogJoinBorder = "#d72590",
 
   // Upvote color, Don't edit
   fire01 = "#232C35",

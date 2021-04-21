@@ -2,17 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 
-import {
-  AboutMeHero,
-  ServicesHeroComponent
-} from "../components/common/hero"
+import { AboutMeHero, ServicesHeroComponent } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/center"
 import { Footer } from "../components/common/footer"
-
 
 const Content = ({}) => {
   return (
@@ -76,17 +72,16 @@ const Content = ({}) => {
   )
 }
 
-const ServicePage = ( ) => {
+const ServicePage = () => {
   return (
     <>
       <AboutMeHero />
-      <Content  />
+      <Content />
       <Curvy isHeroBackground={true} />
       <Footer />
     </>
   )
 }
-
 
 const headingCss = css`
   font-weight: 900;
@@ -124,7 +119,7 @@ const pinkButton = css`
   margin-right: 20rem;
   background: var(--newsLetterJoinBackground);
   border: 2rem solid var(--newsLetterJoinBorder);
-  color: #FFF;
+  color: #fff;
   padding: 6rem 20rem;
   min-width: 236rem;
   text-align: center;
@@ -143,7 +138,6 @@ const mainContainerCSS = css`
   color: var(--mainTextColor);
   flex-wrap: wrap;
 `
-
 
 export default withSound(withTheme(ServicePage))
 

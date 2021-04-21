@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react"
-import {  graphql } from "gatsby"
+import { graphql } from "gatsby"
 import { css } from "@emotion/react"
-
 
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
@@ -13,7 +12,6 @@ import { HappyEmojiSvg } from "../constants/icons"
 
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 import { doPostAction } from "../utils/api"
-
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
@@ -144,7 +142,7 @@ const joinButtonCSS = css`
 const buttonCSS = css`
   border-radius: 8rem;
   cursor: pointer;
-    border: 1px solid var(--blogFollowBorder);
+  border: 1px solid var(--blogFollowBorder);
   background: var(--primaryBlue);
   color: var(--contrastColor);
   min-width: 136rem;
@@ -210,7 +208,7 @@ const newsLetterActionsCSS = css`
     }
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 `
@@ -269,10 +267,10 @@ const newsLetterCardContainerCSS = css`
 const BlogPostTemplate = ({ data, location }) => {
   const post = data.markdownRemark
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const slug = data.markdownRemark.fields.slug;
-  useEffect(()=>{
-    doPostAction(slug,'views')
-  },[])
+  const slug = data.markdownRemark.fields.slug
+  useEffect(() => {
+    doPostAction(slug, "views")
+  }, [])
   return (
     <>
       <BlogFeaturedSection data={data} />
@@ -291,12 +289,12 @@ const BlogPostTemplate = ({ data, location }) => {
               />
             </article>
             <div css={upvoteMobile}>
-              <UpvoteIndicatorVertical slug={slug}  />
+              <UpvoteIndicatorVertical slug={slug} />
             </div>
             <NewsLetterCard />
           </div>
           <div css={upvoteDesktop}>
-            <UpvoteIndicatorVertical slug={slug}  />
+            <UpvoteIndicatorVertical slug={slug} />
           </div>
         </Center>
       </div>
@@ -355,9 +353,9 @@ export const pageQuery = graphql`
     }
     markdownRemark(id: { eq: $id }) {
       id
-         fields {
-          slug
-        }
+      fields {
+        slug
+      }
       excerpt(pruneLength: 160)
       html
       frontmatter {

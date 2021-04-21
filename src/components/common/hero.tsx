@@ -141,9 +141,13 @@ export const AboutMeHero = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I’m creator at heart. Love to build stuff and break them.<br/>
-              The power of creation, or improving drives me to work. I love doing it every single day<br/>
-              Most of the time I dwelve into multiple tasks, Product, Design, Trading but deep specialization inv FE.
+              I’m creator at heart. Love to build stuff and break them.
+              <br />
+              The power of creation, or improving drives me to work. I love
+              doing it every single day
+              <br />
+              Most of the time I dwelve into multiple tasks, Product, Design,
+              Trading but deep specialization inv FE.
             </div>
           </div>
         </div>
@@ -153,7 +157,6 @@ export const AboutMeHero = (): JSX.Element => {
     </>
   )
 }
-
 
 const worHeroTagline = css`
   font-family: Cera Pro;

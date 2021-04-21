@@ -6,10 +6,9 @@ export function SubscribeForm() {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    addMember(email,email).then(()=>{
+    addMember(email, email).then(() => {
       setEmailSent(true)
     })
-
   }
   return (
     <div css={newsLetterInputContainerCSS}>
@@ -59,7 +58,7 @@ const newsLetterJoinButtonCSS = css`
   font-weight: 900;
   font-size: 18rem;
 
-color: #fff;
+  color: #fff;
   @media (max-width: 600px) {
     margin-left: 0rem;
     margin-top: 20rem;

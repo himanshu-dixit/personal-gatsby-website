@@ -1,21 +1,22 @@
 const { initializeFirebase } = require("./utils/firebase")
 
-exports.handler = async function (event,) {
-  const { email, name } = JSON.parse(event.body);
-  if(!email){
-    return {statusCode: 500}
+exports.handler = async function (event) {
+  const { email, name } = JSON.parse(event.body)
+  if (!email) {
+    return { statusCode: 500 }
   }
 
-  const admin = initializeFirebase();
-  const db = admin.firestore();
-  const docRef = db.collection('subscribers').doc(`${email}-${name}`);
+  const admin = initializeFirebase()
+  const db = admin.firestore()
+  const docRef = db.collection("subscribers").doc(`${email}-${name}`)
 
   await docRef.set({
-    email, name
-  });
+    email,
+    name,
+  })
 
   return {
     statusCode: 200,
-    body: JSON.stringify({status: 'User added successfully'}),
-  };
-};
+    body: JSON.stringify({ status: "User added successfully" }),
+  }
+}

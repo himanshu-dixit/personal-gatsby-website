@@ -83,32 +83,31 @@ export function UpvoteIndicator({ upvotes }) {
 
 export function UpvoteIndicatorVertical({ slug }) {
   const [clickCount, setClickCount] = useState(0)
-  const [upvotes,setUpvotes] = useState(0)
+  const [upvotes, setUpvotes] = useState(0)
   const { sound } = useSound()
 
   const soundInstance = getSoundInstance("/sound/upvote.m4a")
 
   const upvoteComplete = getSoundInstance("/sound/upvote_complete.m4a")
   const handleClick = () => {
-
-      if (clickCount >= 3) {
-        sound == Sound.On && playSound(upvoteComplete)
-      } else {
-        sound == Sound.On && playSound(soundInstance)
-        setClickCount(clickCount + 1)
-        doPostAction(slug, 'upvote')
-      }
+    if (clickCount >= 3) {
+      sound == Sound.On && playSound(upvoteComplete)
+    } else {
+      sound == Sound.On && playSound(soundInstance)
+      setClickCount(clickCount + 1)
+      doPostAction(slug, "upvote")
+    }
   }
 
-  useEffect(()=>{
-    getPostData().then((res)=>{
-      setUpvotes(res.data[slug.substr(1,Infinity)]?.upvote || 0)
+  useEffect(() => {
+    getPostData().then(res => {
+      setUpvotes(res.data[slug.substr(1, Infinity)]?.upvote || 0)
     })
-  },[])
+  }, [])
   return upvotes ? (
     <div css={articleUpvotesVertical} onClick={handleClick}>
       <FireSVG height={36} clickCount={clickCount} />
-      <div>{ upvotes + clickCount}</div>
+      <div>{upvotes + clickCount}</div>
     </div>
   ) : null
 }
