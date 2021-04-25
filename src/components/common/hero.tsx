@@ -23,10 +23,10 @@ export const Herocomponent = (): JSX.Element => {
         <div id={"hero-content"}>
           <div>
             <h1 css={heroTagline}>Full stack engineer</h1>
-            <h1 css={heroTaglineSecondary}>building next-gen products</h1>
+            <h1 css={heroTaglineSecondary}>building open-ended ecosystem</h1>
             <div css={knowLink}>
-              <Link to={"about_me"}>About me</Link>
-              <a href={"mailto:hello@himanshudixit.me"}>Contact</a>
+              <Link to={"about_me"}>Know about me</Link>
+              <a href={"mailto:hello@himanshudixit.me"}>Get in touch</a>
             </div>
           </div>
           <div css={jammingText}>
@@ -156,6 +156,28 @@ export const AboutMeHero = (): JSX.Element => {
   )
 }
 
+export const TagHero = ({
+  tagName = "test",
+}: {
+  tagName: string
+}): JSX.Element => {
+  return (
+    <>
+      <section css={[heroSection, tagHeroSection]}>
+        <Navbar />
+
+        <div id={"hero-content"}>
+          <div>
+            <h1 css={[worHeroTagline]}>{tagName}</h1>
+          </div>
+        </div>
+      </section>
+
+      <Curvy />
+    </>
+  )
+}
+
 const worHeroTagline = css`
   font-family: Cera Pro;
   font-style: normal;
@@ -163,7 +185,8 @@ const worHeroTagline = css`
   font-size: 22px;
   line-height: 28px;
   margin-left: -3rem;
-  margin-top: 80rem;
+  margin-top: 96rem;
+  text-transform: capitalize;
 `
 
 const workHeroSection = css`
@@ -172,6 +195,32 @@ const workHeroSection = css`
 
   @media (max-width: 600px) {
     height: 572rem;
+  }
+  padding-top: 38rem;
+  position: relative;
+  background: var(--heroBackground);
+  color: var(--mainTextColor);
+  > div {
+    max-width: var(--contentContainerWidth);
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 1080px) {
+      padding: 0 25rem;
+    }
+  }
+
+  #hero-content {
+    height: 428px;
+    position: relative;
+  }
+`
+
+const tagHeroSection = css`
+  width: 100%;
+  height: 340rem;
+
+  @media (max-width: 600px) {
+    height: 302rem;
   }
   padding-top: 38rem;
   position: relative;

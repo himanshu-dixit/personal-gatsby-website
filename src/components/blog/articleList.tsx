@@ -117,6 +117,7 @@ const articlesContentHeading = css`
   color: var(--primaryBlue);
   font-size: 19rem;
   font-weight: bold;
+  margin-top: -21rem;
 `
 
 const ArrowSVG = (props: any) => {

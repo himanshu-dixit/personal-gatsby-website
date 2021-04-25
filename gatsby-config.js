@@ -13,6 +13,7 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-slug",
+    "gatsby-plugin-emotion",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

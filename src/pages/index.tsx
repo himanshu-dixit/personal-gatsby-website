@@ -36,7 +36,7 @@ const TagsSection = () => {
   const tagsOut = SITE_CONFIG.homepage.tags.map(tag => {
     return (
       <div css={tagItem}>
-        <a href={tag.link}>{tag.title}</a>
+        <a href={`/tags/${tag.title.toLowerCase()}`}>{tag.title}</a>
       </div>
     )
   })
@@ -180,6 +180,11 @@ export const pageQuery = graphql`
           description
           rating
         }
+      }
+    }
+    tagsGroup: allMarkdownRemark(limit: 2000) {
+      group(field: frontmatter___tags) {
+        fieldValue
       }
     }
   }

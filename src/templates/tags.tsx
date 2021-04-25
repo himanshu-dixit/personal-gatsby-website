@@ -11,7 +11,10 @@ import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
 
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
-import { doPostAction } from "../utils/api"
+import { doPostAction, getPostData } from "../utils/api"
+import { Herocomponent, TagHero } from "../components/common/hero"
+import { PastWork } from "../components/common/projectList"
+import { ArticlesList } from "../components/blog/articleList"
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
@@ -264,83 +267,91 @@ const newsLetterCardContainerCSS = css`
   font-style: normal;
 `
 
-const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site?.siteMetadata?.title || `Title`
+const MainContainer = ({ data }) => {
+  const [posts, setPosts] = useState([])
+  const [postData, setPostData] = useState({})
+
+  console.log(data)
+  useEffect(() => {
+    getPostData().then(res => {
+      setPostData(res.data)
+    })
+  }, [])
+
+  useEffect(() => {
+    const { allMarkdownRemark: _posts } = data
+    const postsArr = []
+    for (let i = 0; i < _posts.edges.length; i++) {
+      const post = _posts.edges[i].node
+      const title = post.frontmatter.title
+      const meta = post.frontmatter.description
+      const desc = post.excerpt
+      const slug = post.fields.slug
+
+      postsArr.push({
+        title: title,
+        meta: meta,
+        desc: desc,
+        link: slug,
+        rating: postData[slug.substr(1, Infinity)]?.upvote || 0,
+      })
+    }
+    setPosts([...postsArr])
+  }, [data, postData])
+
+  return (
+    <div css={mainContainer}>
+      <Center>
+        <div
+          css={{
+            display: "flex",
+            marginTop: "72rem",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+          }}
+        >
+          <div css={content}>{ArticlesList(posts)}</div>
+        </div>
+      </Center>
+    </div>
+  )
+}
+
+const TagTemplate = pageProps => {
+  const {
+    data,
+    pageContext: { tag },
+  } = pageProps
   const slug = "Tags"
   useEffect(() => {
     doPostAction(slug, "views")
   }, [])
 
-  console.log(data)
   return (
     <>
-      <BlogFeaturedSection data={data} />
-      {/*<MainContainer data={data}/>*/}
-      <div css={mainContentCSS}>
-        <Center customCSS={{ display: "flex", justifyContent: "center" }}>
-          <div css={mainContentArticleCSS}>
-            <article
-              className="blog-post"
-              itemScope
-              itemType="http://schema.org/Article"
-            >
-              <section
-                dangerouslySetInnerHTML={{ __html: post.html }}
-                itemProp="articleBody"
-              />
-            </article>
-            <div css={upvoteMobile}>
-              <UpvoteIndicatorVertical slug={slug} />
-            </div>
-            <NewsLetterCard />
-          </div>
-          <div css={upvoteDesktop}>
-            <UpvoteIndicatorVertical slug={slug} />
-          </div>
-        </Center>
-      </div>
-
+      <TagHero tagName={tag.toLowerCase()} />
+      <MainContainer data={data} />
       <Curvy isHeroBackground={true} />
       <Footer />
     </>
   )
 }
 
-const upvoteDesktop = css`
-  margin: 0rem 72rem;
-  position: absolute;
-  right: -40px;
-  @media (max-width: 600px) {
-    display: none;
-  }
-`
-const upvoteMobile = css`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 32rem 0;
-  @media (min-width: 600px) {
-    font-size: 14rem;
-    display: none;
-  }
-`
-const mainContentArticleCSS = css`
-  flex: 1;
-  font-family: Cera Pro;
-  font-style: normal;
-  max-width: 680rem;
-  font-size: 16px;
-  line-height: 32px;
-  color: var(--mainTextColor01);
-`
-const mainContentCSS = css`
+const content = css``
+const mainContainer = css`
   background: var(--primaryBackground);
+  margin-top: -36rem;
+  @media (max-width: 600px) {
+    margin-top: -46rem;
+  }
+  padding-bottom: 216rem;
+  padding-top: 0rem;
+  position: relative;
   color: var(--mainTextColor);
-  padding-top: 64rem;
-  padding-bottom: 108rem;
+  flex-wrap: wrap;
 `
-export default withSound(withTheme(BlogPostTemplate))
+
+export default withSound(withTheme(TagTemplate))
 
 export const pageQuery = graphql`
   query($tag: String) {
@@ -352,11 +363,15 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
+          excerpt
           fields {
             slug
           }
           frontmatter {
+            date(formatString: "MMMM DD, YYYY")
             title
+            description
+            rating
           }
         }
       }

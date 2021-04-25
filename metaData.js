@@ -1,7 +1,7 @@
 export const SITE_CONFIG = {
   homepage: {
     tags: [
-      { title: "Next", link: "#" },
+      { title: "test" },
       { title: "Devops", link: "#" },
       { title: "Frontend", link: "#" },
     ],
