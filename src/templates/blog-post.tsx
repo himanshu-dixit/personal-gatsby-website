@@ -11,14 +11,21 @@ import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
 
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
-import { doPostAction } from "../utils/api"
+import { addMember, doPostAction } from "../utils/api"
+import { validateEmail } from "../utils/common"
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
   const [joinNewsletter, setJoinNewsLetter] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    setEmailSent(true)
+    if(!validateEmail(email)){
+      alert("Please enter valid email.")
+      return
+    }
+    addMember(email, email).then(() => {
+      setEmailSent(true)
+    })
   }
   return (
     <div css={newsLetterCardContainerCSS}>

@@ -1,6 +1,7 @@
 import { Center } from "./center"
 import { css } from "@emotion/react"
 import React from "react"
+import { Link } from "gatsby"
 
 const Footer = () => {
   return (
@@ -19,22 +20,33 @@ const Footer = () => {
         </div>
         <div css={footerLinksSectionCSS}>
           <div css={tutorialsLinksListCSS}>
-            <div css={tutorialsLinksHeadingCSS}>Tutorials</div>
+            <div css={tutorialsLinksHeadingCSS}>Categories</div>
             <div css={tutorialsLinksCSS}>
-              <div>Backend</div>
-              <div>Frontend</div>
-              <div>Career</div>
-              <div>Frontend</div>
-              <div>Devops</div>
-              <div>Product</div>
+              <Link to={"/tag/backend"} css={normalLink}>
+                <div>Backend</div>
+              </Link>
+              <Link to={"/tag/frontend"} css={normalLink}>
+                <div>Frontend</div>
+              </Link>
+              <Link to={"/tag/career"} css={normalLink}>
+                <div>Career</div>
+              </Link>
+              <Link to={"/tag/backend"} css={normalLink}>
+                <div>Backend</div>
+              </Link>
+              <Link to={"/tag/frontend"} css={normalLink}>
+                <div>Frontend</div>
+              </Link>
+              <Link to={"/tag/career"} css={normalLink}>
+                <div>Career</div>
+              </Link>
             </div>
           </div>
           <div css={quickLinksListCSS}>
             <div css={quickLinksHeadingCSS}>Quick Links</div>
             <div css={quickLinksCSS}>
-              <div>RSS</div>
+              <div>Github</div>
               <div>Twitter</div>
-              <div>Email</div>
             </div>
           </div>
         </div>
@@ -42,6 +54,11 @@ const Footer = () => {
     </div>
   )
 }
+
+const normalLink = css`
+  color: var(--mainTextColor);
+  text-decoration: none;
+`
 
 const authorNameCSS = css`
   font-weight: 900;

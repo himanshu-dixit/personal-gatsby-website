@@ -9,9 +9,9 @@ import { css } from "@emotion/react"
 function MenuComponent({ isMobile }) {
   return (
     <div css={[menu, isMobile ? mobileMenu : desktopMenu]}>
-      {/*<Link to={"/work"}>Work</Link>*/}
-      {/*<Link to={"/services"}>Services</Link>*/}
-      {/*<Link to={"/contact"}>Essays</Link>*/}
+      <Link to={"/work"}>Work</Link>
+      <Link to={"/services"}>Services</Link>
+      <Link to={"mailto:hello@himanshudixit.me"}>Contact</Link>
     </div>
   )
 }

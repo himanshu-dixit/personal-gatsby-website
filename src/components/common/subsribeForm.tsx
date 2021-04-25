@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
 import { addMember } from "../../utils/api"
+import { validateEmail } from "../../utils/common"
 
 export function SubscribeForm() {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
+    if(!validateEmail(email)){
+      alert("Please enter valid email.")
+      return
+    }
     addMember(email, email).then(() => {
       setEmailSent(true)
     })
@@ -57,7 +62,7 @@ const newsLetterJoinButtonCSS = css`
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
-
+  cursor: pointer;
   color: #fff;
   @media (max-width: 600px) {
     margin-left: 0rem;
