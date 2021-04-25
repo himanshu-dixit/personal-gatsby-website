@@ -1,101 +1,37 @@
 import React, { useEffect, useState } from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { css } from "@emotion/react"
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Herocomponent } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
-
 import { Curvy } from "../components/homepage/curvy"
-import { Center } from "../components/center"
+import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
 import { SubscribeForm } from "../components/common/subsribeForm"
-import { UpvoteIndicator } from "../components/atoms/upvoteIndicator"
 import { PastWork } from "../components/common/projectList"
 import { SITE_CONFIG } from "../../metaData"
 import { getPostData } from "../utils/api"
+import { ArticlesList } from "../components/blog/articleList"
 
-const ArticleItem = (props: any) => {
-  const { item } = props
-  const { title, meta, desc, link, rating } = item
-
+const PopularContentSection = () => {
+  const contentOut = SITE_CONFIG.homepage.popular.map((article, index) => {
+    return (
+      <li key={index} css={popularContentItem}>
+        <ArrowSVG />
+        <a href={article.link}>{article.title}</a>
+      </li>
+    )
+  })
   return (
-    <div css={articleItemContainer}>
-      <Link to={link}>
-        <div css={articleItemTitle()} id={"article-title"}>
-          {title}
-        </div>
-        <div css={articleInfoContainer}>
-          <div css={articleInfoMetaContainer}>
-            <div>{meta}</div>
-            <UpvoteIndicator upvotes={rating} />
-          </div>
-          <div css={articleDesc}>{desc}</div>
-          <div css={articleItemReadMore}>
-            <a href={link} id={"article-read-more"}>
-              Read More{" "}
-              <ArrowSVG color={"var(--mainTextColor)"} id={"article-arrow"} />
-            </a>
-          </div>
-        </div>
-      </Link>
+    <div css={popularContentContainer}>
+      <div css={popularContentHeading}>Popular Content</div>
+      <ul css={popularContentList}>{contentOut}</ul>
     </div>
   )
 }
-
-const articleItemReadMore = css`
-  margin-top: 4rem;
-  a {
-    color: inherit;
-  }
-  #article-arrow {
-    display: none;
-  }
-`
-const articleInfoContainer = css`
-  margin-top: 10rem;
-`
-const articleInfoMetaContainer = css`
-  display: flex;
-  color: var(--mainTextColor);
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16rem;
-`
-
-const articleDesc = css`
-  margin-top: 12rem;
-  font-family: Gilroy;
-  font-size: 16px;
-`
-const articleItemContainer = css`
-  :hover #article-title,
-  :hover #article-read-more {
-    color: var(--primaryPink);
-  }
-  :hover #article-title {
-    color: var(--primaryPink);
-  }
-  :hover #article-arrow {
-    display: initial;
-  }
-
-  &:not(:first-child) {
-    margin-top: 64rem;
-  }
-`
-const articleItemTitle = () => css`
-  color: var(--mainTextColor);
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: 900;
-  font-size: 18rem;
-`
-
 const TagsSection = () => {
   const tagsOut = SITE_CONFIG.homepage.tags.map(tag => {
     return (
@@ -111,6 +47,143 @@ const TagsSection = () => {
     </div>
   )
 }
+const NewsLetterCard = () => {
+  return (
+    <div css={newsLetterContainer}>
+      <div css={newsLetterInfo}>
+        <div css={newsLetterInfoText}>
+          <div css={newsLetterHeading}>
+            Follow my journey of building tech products
+          </div>
+          <div css={newsLetterFollowInfo}>
+            <div>30+ community of engineers, developers, product makers</div>
+            <div>Content for nerds on engineering and product</div>
+            <div>
+              In-depth resources from{" "}
+              <span css={newsLetterHighlightedInfo}>
+                idea, tech and building product
+              </span>
+            </div>
+          </div>
+        </div>
+        <div css={newsLetterEmoji}>
+          <HappyEmojiSvg />
+        </div>
+      </div>
+      {SubscribeForm()}
+    </div>
+  )
+}
+
+const MainContainer = ({ data }) => {
+  const [posts, setPosts] = useState([])
+  const [postData, setPostData] = useState({})
+
+  useEffect(() => {
+    getPostData().then(res => {
+      setPostData(res.data)
+    })
+  }, [])
+
+  useEffect(() => {
+    const { allMarkdownRemark: _posts } = data
+    const postsArr = []
+    for (let i = 0; i < _posts.nodes.length; i++) {
+      const post = _posts.nodes[i]
+      const title = post.frontmatter.title
+      const meta = post.frontmatter.description
+      const desc = post.excerpt
+      const slug = post.fields.slug
+
+      postsArr.push({
+        title: title,
+        meta: meta,
+        desc: desc,
+        link: slug,
+        rating: postData[slug.substr(1, Infinity)]?.upvote || 0,
+      })
+    }
+    setPosts([...postsArr])
+  }, [data, postData])
+
+  return (
+    <div css={mainContainer}>
+      <Center>
+        <PastWork />
+        <div
+          css={{
+            display: "flex",
+            marginTop: "72rem",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+          }}
+        >
+          <div css={content}>
+            {ArticlesList(posts)}
+            <NewsLetterCard />
+          </div>
+          <div css={sidebarContainer}>
+            <TagsSection />
+            <PopularContentSection />
+          </div>
+        </div>
+      </Center>
+    </div>
+  )
+}
+
+const BlogIndex = ({ data, location }) => {
+  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const posts = data.allMarkdownRemark.nodes
+
+  if (posts.length === 0) {
+    return (
+      <Layout location={location} title={siteTitle}>
+        <SEO title="All posts" />
+        <p>
+          No blog posts found. Add markdown posts to "content/blog" (or the
+          directory you specified for the "gatsby-source-filesystem" plugin in
+          gatsby-config.js).
+        </p>
+      </Layout>
+    )
+  }
+
+  return (
+    <>
+      <Herocomponent />
+      <MainContainer data={data} />
+      <Curvy isHeroBackground={true} />
+      <Footer />
+    </>
+  )
+}
+
+export default withSound(withTheme(BlogIndex))
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      nodes {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          description
+          rating
+        }
+      }
+    }
+  }
+`
 
 const tagsHeading = css`
   color: var(--primaryBlue);
@@ -161,22 +234,7 @@ const ArrowSVG = (props: any) => {
     </svg>
   )
 }
-const PopularContentSection = () => {
-  const contentOut = SITE_CONFIG.homepage.popular.map((article, index) => {
-    return (
-      <li key={index} css={popularContentItem}>
-        <ArrowSVG />
-        <a href={article.link}>{article.title}</a>
-      </li>
-    )
-  })
-  return (
-    <div css={popularContentContainer}>
-      <div css={popularContentHeading}>Popular Content</div>
-      <ul css={popularContentList}>{contentOut}</ul>
-    </div>
-  )
-}
+
 const popularContentList = css`
   margin: 0;
   margin-top: 24rem;
@@ -211,34 +269,6 @@ const popularContentContainer = css`
     padding: 0;
   }
 `
-
-const NewsLetterCard = () => {
-  return (
-    <div css={newsLetterContainer}>
-      <div css={newsLetterInfo}>
-        <div css={newsLetterInfoText}>
-          <div css={newsLetterHeading}>
-            Follow my journey of building tech products
-          </div>
-          <div css={newsLetterFollowInfo}>
-            <div>30+ community of engineers, developers, product makers</div>
-            <div>Content for nerds on engineering and product</div>
-            <div>
-              In-depth resources from{" "}
-              <span css={newsLetterHighlightedInfo}>
-                idea, tech and building product
-              </span>
-            </div>
-          </div>
-        </div>
-        <div css={newsLetterEmoji}>
-          <HappyEmojiSvg />
-        </div>
-      </div>
-      {SubscribeForm()}
-    </div>
-  )
-}
 
 const newsLetterContainer = css`
   margin-top: 96rem;
@@ -292,86 +322,7 @@ const newsLetterHighlightedInfo = css`
   border-bottom-style: solid;
   padding-bottom: 8rem;
 `
-const newsLetterFooter = css`
-  font-family: Cera Pro;
-  font-style: normal;
-  font-weight: normal;
-  margin-top: 18rem;
-  font-size: 16rem;
-  color: var(--contrastColor);
-`
 
-const MainContainer = ({ data }) => {
-  const [posts, setPosts] = useState([])
-  const [postData, setPostData] = useState({})
-
-  useEffect(() => {
-    getPostData().then(res => {
-      setPostData(res.data)
-    })
-  }, [])
-
-  useEffect(() => {
-    const { allMarkdownRemark: _posts } = data
-    const postsArr = []
-    for (let i = 0; i < _posts.nodes.length; i++) {
-      const post = _posts.nodes[i]
-      const title = post.frontmatter.title
-      const meta = post.frontmatter.description
-      const desc = post.excerpt
-      const slug = post.fields.slug
-
-      postsArr.push({
-        title: title,
-        meta: meta,
-        desc: desc,
-        link: slug,
-        rating: postData[slug.substr(1, Infinity)]?.upvote || 0,
-      })
-    }
-    setPosts([...postsArr])
-  }, [data, postData])
-
-  const articlesOut = posts.map(item => {
-    return <ArticleItem item={item} />
-  })
-
-  return (
-    <div css={mainContainer}>
-      <Center>
-        <PastWork />
-        <div
-          css={{
-            display: "flex",
-            marginTop: "72rem",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-          }}
-        >
-          <div css={content}>
-            <div css={articlesContainer}>
-              <div css={articlesContentHeading}>Recently published</div>
-              <div css={articlesList}>{articlesOut}</div>
-            </div>
-            <NewsLetterCard />
-          </div>
-          <div css={sidebarContainer}>
-            <TagsSection />
-            <PopularContentSection />
-          </div>
-        </div>
-      </Center>
-    </div>
-  )
-}
-
-const articlesList = css`
-  margin-top: 44rem;
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-`
 const mainContainer = css`
   background: var(--primaryBackground);
   margin-top: -36rem;
@@ -382,71 +333,9 @@ const mainContainer = css`
   flex-wrap: wrap;
 `
 const content = css``
-const articlesContainer = css`
-  max-width: 712rem;
-`
-const articlesContentHeading = css`
-  font-family: Cera Pro;
-  color: var(--primaryBlue);
-  font-size: 19rem;
-  font-weight: bold;
-`
+
 const sidebarContainer = css`
   @media (max-width: 600px) {
     margin-top: 48rem;
-  }
-`
-
-const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
-
-  if (posts.length === 0) {
-    return (
-      <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
-        <Bio />
-        <p>
-          No blog posts found. Add markdown posts to "content/blog" (or the
-          directory you specified for the "gatsby-source-filesystem" plugin in
-          gatsby-config.js).
-        </p>
-      </Layout>
-    )
-  }
-
-  return (
-    <>
-      <Herocomponent />
-      <MainContainer data={data} />
-      <Curvy isHeroBackground={true} />
-      <Footer />
-    </>
-  )
-}
-
-export default withSound(withTheme(BlogIndex))
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-          rating
-        }
-      }
-    }
   }
 `

@@ -7,7 +7,7 @@ import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 
 import { Curvy } from "../components/homepage/curvy"
-import { Center } from "../components/center"
+import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 
 const Content = ({}) => {
@@ -24,29 +24,39 @@ const Content = ({}) => {
           <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
-            <span style={{color: "var(--primaryPink)"}}>Build MVP</span>Track your team's workload and velocity.
+            <span id={"highlight"}>Build MVP</span>Track your team's workload
+            and velocity.
             <br />
-            <span style={{color: "var(--primaryPink)"}}>Scale system/Layout foundation.</span> Cycles run on an automated
-            schedule,so you can focus on your work.
+            <span id={"highlight"}>Scale system/Layout foundation.</span> Cycles
+            run on an automated schedule,so you can focus on your work.
             <br />
-            <span style={{color: "var(--primaryPink)"}}>Created E2E Product.</span>
+            <span id={"highlight"}>Ship E2E Product.</span>
           </div>
 
           <h2 css={headingCss}>Some traits</h2>
 
           <div css={sectionText}>
-            <strong>MVP</strong>Track your team's workload and velocity.
+            <strong id={"highlight-normal"}>Performance/UI Obsessed</strong>
+            Track your team's workload and velocity.
             <br />
-            Scale system/Layout foundation. Cycles run on an automated
-            schedule,so you can focus on your work.
+            <strong id={"highlight-normal"}>Polyglot</strong> Cycles run on an
+            automated schedule,so you can focus on your work.
             <br />
-            Created E2E Product.
+            <strong id={"highlight-normal"}>Code quality</strong>Created E2E
+            Product.
           </div>
 
           <h2 css={headingCss}>Why we should work together?</h2>
 
           <div css={sectionText}>
-            <strong>MVP</strong>Track your team's workload and velocity.
+            <strong id={"highlight-normal"}>You're startup</strong>Track your
+            team's workload and velocity.
+            <br />
+            <strong id={"highlight-normal"}>You're blazing fast</strong>Track
+            your team's workload and velocity.
+            <br />
+            <strong id={"highlight-normal"}>You're building a team</strong>Track
+            your team's workload and velocity.
             <br />
             Scale system/Layout foundation. Cycles run on an automated
             schedule,so you can focus on your work.
@@ -137,6 +147,19 @@ const mainContainerCSS = css`
   position: relative;
   color: var(--mainTextColor);
   flex-wrap: wrap;
+
+  #highlight {
+    color: var(--primaryPink);
+    text-decoration: underline;
+    margin-right: 12px;
+    font-weight: 600;
+  }
+
+  #highlight-normal {
+    text-decoration: underline;
+    margin-right: 12px;
+    font-weight: 600;
+  }
 `
 
 export default withSound(withTheme(ServicePage))

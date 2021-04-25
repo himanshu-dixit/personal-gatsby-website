@@ -7,7 +7,7 @@ import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 
 import { Curvy } from "../components/homepage/curvy"
-import { Center } from "../components/center"
+import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 
 const Content = ({}) => {

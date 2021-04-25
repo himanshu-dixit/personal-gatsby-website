@@ -5,7 +5,7 @@ import { css } from "@emotion/react"
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
 import BlogFeaturedSection from "../components/blog/featuredSection"
-import { Center } from "../components/center"
+import { Center } from "../components/common/center"
 import { Curvy } from "../components/homepage/curvy"
 import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
@@ -271,6 +271,8 @@ const BlogPostTemplate = ({ data, location }) => {
   useEffect(() => {
     doPostAction(slug, "views")
   }, [])
+
+  console.log(data)
   return (
     <>
       <BlogFeaturedSection data={data} />
@@ -341,7 +343,7 @@ const mainContentCSS = css`
 export default withSound(withTheme(BlogPostTemplate))
 
 export const pageQuery = graphql`
-query($tag: String) {
+  query($tag: String) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

@@ -144,8 +144,8 @@ export const AboutMeHero = (): JSX.Element => {
               I’m engineer and do mOrE tHAn just write code
               <br />
               I have been coding professionally for last 5 years.
-              <br />
-              I specialize in building E2E product. I have worked with YC and built system handling billions of request.
+              <br />I specialize in building E2E product. I have worked with YC
+              and built system handling billions of request.
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { Center } from "../center"
+import { Center } from "./center"
 import { css } from "@emotion/react"
 import React from "react"
 
