@@ -22,7 +22,7 @@ export const BlogFeaturedSection = ({ data }): JSX.Element => {
         <Navbar />
 
         <div css={heroMainContentCSS}>
-          <div css={postTypeCSS}>{postType}</div>
+          <div css={postTypeCSS}>Post</div>
           <div css={postTitleCSS}>{postTitle}</div>
           <div css={postDateCSS}>{postDate}</div>
         </div>

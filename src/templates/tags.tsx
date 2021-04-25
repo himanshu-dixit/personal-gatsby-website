@@ -15,6 +15,7 @@ import { doPostAction, getPostData } from "../utils/api"
 import { Herocomponent, TagHero } from "../components/common/hero"
 import { PastWork } from "../components/common/projectList"
 import { ArticlesList } from "../components/blog/articleList"
+import SEO from "../components/seo"
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
@@ -329,6 +330,7 @@ const TagTemplate = pageProps => {
 
   return (
     <>
+      <SEO title={`${tag} | Himanshu Dixit`} />
       <TagHero tagName={tag.toLowerCase()} />
       <MainContainer data={data} />
       <Curvy isHeroBackground={true} />

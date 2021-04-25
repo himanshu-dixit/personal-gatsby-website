@@ -13,13 +13,14 @@ import { HappyEmojiSvg } from "../constants/icons"
 import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 import { addMember, doPostAction } from "../utils/api"
 import { validateEmail } from "../utils/common"
+import SEO from "../components/seo"
 
 const NewsLetterCard = () => {
   const [email, setEmail] = useState("")
   const [joinNewsletter, setJoinNewsLetter] = useState(false)
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    if(!validateEmail(email)){
+    if (!validateEmail(email)) {
       alert("Please enter valid email.")
       return
     }
@@ -83,9 +84,7 @@ const NewsLetterCard = () => {
             </div>
           )}
           {emailSent && (
-            <div css={emailSentCSS}>
-              Email sent to your inbox. Please confirm it.
-            </div>
+            <div css={emailSentCSS}>❤️ ❤️ Welcome to the family</div>
           )}
         </div>
       )}
@@ -272,14 +271,18 @@ const newsLetterCardContainerCSS = css`
 `
 
 const BlogPostTemplate = ({ data, location }) => {
-  const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+  const { markdownRemark: post } = data
   const slug = data.markdownRemark.fields.slug
+
+  const postTitle = post.frontmatter.title
+  const postType = post.frontmatter.type
+
   useEffect(() => {
     doPostAction(slug, "views")
   }, [])
   return (
     <>
+      <SEO title={`${postTitle} | ${postType} `} />
       <BlogFeaturedSection data={data} />
       {/*<MainContainer data={data}/>*/}
       <div css={mainContentCSS}>
@@ -295,11 +298,14 @@ const BlogPostTemplate = ({ data, location }) => {
                 itemProp="articleBody"
               />
             </article>
+
             <div css={upvoteMobile}>
               <UpvoteIndicatorVertical slug={slug} />
             </div>
+
             <NewsLetterCard />
           </div>
+
           <div css={upvoteDesktop}>
             <UpvoteIndicatorVertical slug={slug} />
           </div>

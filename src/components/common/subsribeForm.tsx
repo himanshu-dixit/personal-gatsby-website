@@ -7,7 +7,7 @@ export function SubscribeForm() {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {
-    if(!validateEmail(email)){
+    if (!validateEmail(email)) {
       alert("Please enter valid email.")
       return
     }
@@ -34,7 +34,7 @@ export function SubscribeForm() {
           </div>
         </>
       )}
-      {emailSent && <div>❤️ ❤️ Thanks for becoming part of the family.</div>}
+      {emailSent && <div>❤️ ❤️ Welcome to the family.</div>}
     </div>
   )
 }

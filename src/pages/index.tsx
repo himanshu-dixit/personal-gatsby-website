@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/react"
+import { Helmet } from "react-helmet"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Herocomponent } from "../components/common/hero"
@@ -107,28 +109,31 @@ const MainContainer = ({ data }) => {
   }, [data, postData])
 
   return (
-    <div css={mainContainer}>
-      <Center>
-        <PastWork />
-        <div
-          css={{
-            display: "flex",
-            marginTop: "72rem",
-            justifyContent: "space-between",
-            flexWrap: "wrap",
-          }}
-        >
-          <div css={content}>
-            {ArticlesList(posts)}
-            <NewsLetterCard />
+    <>
+      <SEO title={"Himanshu Dixit | Fullstack polyglot and builder"} />
+      <div css={mainContainer}>
+        <Center>
+          <PastWork />
+          <div
+            css={{
+              display: "flex",
+              marginTop: "72rem",
+              justifyContent: "space-between",
+              flexWrap: "wrap",
+            }}
+          >
+            <div css={content}>
+              {ArticlesList(posts)}
+              <NewsLetterCard />
+            </div>
+            <div css={sidebarContainer}>
+              <TagsSection />
+              <PopularContentSection />
+            </div>
           </div>
-          <div css={sidebarContainer}>
-            <TagsSection />
-            <PopularContentSection />
-          </div>
-        </div>
-      </Center>
-    </div>
+        </Center>
+      </div>
+    </>
   )
 }
 

@@ -8,6 +8,7 @@ import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 import { PastWork } from "../components/common/projectList"
+import SEO from "../components/seo"
 
 const work = [
   {
@@ -306,6 +307,7 @@ const mainContainerCSS = css`
 const WorkPage = () => {
   return (
     <>
+      <SEO title={"Past Work | Himanshu Dixit"} />
       <WorkHeroComponent />
       <Content />
       <Curvy isHeroBackground={true} />

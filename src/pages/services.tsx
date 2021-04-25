@@ -9,6 +9,7 @@ import { withSound } from "../hoc/sound"
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
+import SEO from "../components/seo"
 
 const Content = ({}) => {
   return (
@@ -75,6 +76,7 @@ const Content = ({}) => {
 const ServicePage = () => {
   return (
     <>
+      <SEO title={"Services | Himanshu Dixit"} />
       <ServicesHeroComponent />
       <Content />
       <Curvy isHeroBackground={true} />
