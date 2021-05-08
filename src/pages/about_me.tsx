@@ -15,9 +15,13 @@ const Content = ({}) => {
   return (
     <div css={mainContainerCSS}>
       <Center>
+
+        <div css={{         marginTop: "28rem",}}>
+          ️⚠️ ️I'm currently working on my own dev tool startup and not looking for work of any sort.
+        </div>
         <div
           css={{
-            marginTop: "72rem",
+            marginTop: "48rem",
             justifyContent: "space-between",
             flexWrap: "wrap",
           }}
@@ -32,17 +36,17 @@ const Content = ({}) => {
             <span id={"highlight"}>Ship E2E Product.</span>My polyglot skills is my swiss knife.
           </div>
 
-          <h2 css={headingCss}>Some traits</h2>
+          {/*<h2 css={headingCss}>Some traits</h2>*/}
 
-          <div css={sectionText}>
-            <strong id={"highlight"}>Performance/UI Obsessed</strong>Track your team's workload and velocity.
-            <br />
-            <strong id={"highlight"}>Polyglot Engineer</strong>Cycles run on an
-            automated schedule,so you can focus on your work.
-            <br />
-            <strong id={"highlight"}>Clean code</strong>Created E2E
-            Product.
-          </div>
+          {/*<div css={sectionText}>*/}
+          {/*  <strong id={"highlight"}>Performance/UI Obsessed</strong>Track your team's workload and velocity.*/}
+          {/*  <br />*/}
+          {/*  <strong id={"highlight"}>Polyglot Engineer</strong>Cycles run on an*/}
+          {/*  automated schedule,so you can focus on your work.*/}
+          {/*  <br />*/}
+          {/*  <strong id={"highlight"}>Clean code</strong>Created E2E*/}
+          {/*  Product.*/}
+          {/*</div>*/}
 
           <h2 css={headingCss}>Why we should work together?</h2>
 
