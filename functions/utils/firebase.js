@@ -7,7 +7,7 @@ const initializeFirebase = () => {
       credential: admin.credential.cert(serviceAccount),
     })
   } catch (e) {
-    console.log("Already initialized")
+    console.log("GTM already initialized")
   }
   return admin
 }

@@ -10,7 +10,7 @@ function MenuComponent({ isMobile }) {
   return (
     <div css={[menu, isMobile ? mobileMenu : desktopMenu]}>
       <Link to={"/work"}>Work</Link>
-      <Link to={"/services"}>Services</Link>
+      <Link to={"/about_me"}>Services</Link>
       <a href={"mailto:hello@himanshudixit.me"}>Contact</a>
     </div>
   )
@@ -19,9 +19,13 @@ function MenuComponent({ isMobile }) {
 function RightSection() {
   return (
     <div css={rightSection}>
+
       <div>
+        <Link to={"https://airtable.com/shrZenNAupoKW07uj"} target={"_blank"}>
         <BookMark />
+        </Link>
       </div>
+
       <div>
         <Speaker />
       </div>

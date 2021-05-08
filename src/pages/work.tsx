@@ -150,7 +150,7 @@ const Content = ({}) => {
       <Center>
         <div css={interestedInWorking}>Interested in working?</div>
         <div css={buttonContainer}>
-          <Link to={"/services"}>
+          <Link to={"/about_me"}>
             <div css={[pinkButton, normalButton]}>My Services</div>
           </Link>
 

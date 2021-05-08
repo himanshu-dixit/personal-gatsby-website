@@ -90,7 +90,7 @@ export const WorkHeroComponent = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>My Work</h1>
             <div css={knowLink}>
-              <Link to={"/services"}>Services</Link>
+              <Link to={"/about_me"}>Services</Link>
               <Link to={"/"}>Blog</Link>
             </div>
           </div>
