@@ -13,7 +13,7 @@ import SEO from "../components/seo"
 const work = [
   {
     name: "Crusher",
-    date: "2020",
+    date: "2021",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.<br/>
@@ -26,7 +26,7 @@ const work = [
   },
   {
     name: "Headout",
-    date: "2020",
+    date: "2019-21",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -38,8 +38,8 @@ const work = [
     rightAligned: true,
   },
   {
-    name: "Signoz",
-    date: "2020",
+    name: "Consulting",
+    date: "2021",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -52,7 +52,7 @@ const work = [
   },
   {
     name: "Social API",
-    date: "2020",
+    date: "2017",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -65,7 +65,7 @@ const work = [
   },
   {
     name: "Sveet",
-    date: "2020",
+    date: "2018",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -78,7 +78,7 @@ const work = [
   },
   {
     name: "Rizort",
-    date: "2020",
+    date: "2019",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -91,7 +91,7 @@ const work = [
   },
   {
     name: "Tapnar",
-    date: "2020",
+    date: "2015",
     backgroundImage: "/images/background/pinkred1.png",
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
@@ -101,7 +101,7 @@ const work = [
                     so you can focus on your work.`,
     tags: "Frontend,Backend",
     rightAligned: false,
-  },
+  }
 ]
 
 function WorkList() {
