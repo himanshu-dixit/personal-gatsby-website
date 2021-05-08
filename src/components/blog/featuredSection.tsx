@@ -8,7 +8,7 @@
 // @ts-ignore
 import React, { useEffect, useState } from "react"
 import { css } from "@emotion/react"
-import { Navbar } from "../common/Navbar"
+import { Navbar } from "../common/navbar"
 
 export const BlogFeaturedSection = ({ data }): JSX.Element => {
   const { markdownRemark: post } = data

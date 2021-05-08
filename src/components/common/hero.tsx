@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { Curvy } from "../homepage/curvy"
-import { Navbar } from "./Navbar"
+import { Navbar } from "./navbar"
 import {
   BookSVG,
   EmailSVG,
