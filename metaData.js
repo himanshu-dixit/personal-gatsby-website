@@ -13,7 +13,7 @@ export const SITE_CONFIG = {
       { title: "Writing to create value", link: "#" },
     ],
   },
-  email: "hello@himanshudixit.me",
+  email: "hello@himanshud.com",
   socialMediaURLs: {
     twitter: "https://twitter.com/1x_engineer",
     github: "https://github.com/himanshu-dixit",

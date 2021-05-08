@@ -26,7 +26,7 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTaglineSecondary}>building open-ended ecosystem</h1>
             <div css={knowLink}>
               <Link to={"about_me"}>Know about me</Link>
-              <a href={"mailto:hello@himanshudixit.me"}>Get in touch</a>
+              <a href={"mailto:hello@himanshud.com"}>Get in touch</a>
             </div>
           </div>
           <div css={jammingText}>
@@ -63,7 +63,7 @@ export const Herocomponent = (): JSX.Element => {
               </a>
             </div>
             <div id="email">
-              <a href="mailto:hello@himanshudixit.me" target="_blank">
+              <a href="mailto:hello@himanshud.com" target="_blank">
                 <EmailSVG />
               </a>
             </div>
@@ -141,11 +141,11 @@ export const AboutMeHero = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I’m engineer and do mOrE tHAn just write code
+              I do mOrE tHAn just write code
               <br />
               I have been coding professionally for last 5 years.
-              <br />I specialize in building E2E product. I have worked with YC
-              and built system handling billions of request.
+              <br />I specialize in building E2E product. I have worked with YC and high growth startups.
+              And built system handling billions of request.
             </div>
           </div>
         </div>

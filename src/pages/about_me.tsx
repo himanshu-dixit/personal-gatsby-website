@@ -25,44 +25,49 @@ const Content = ({}) => {
           <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
-            <span id={"highlight"}>Build MVP</span>Track your team's workload
-            and velocity.
+            <span id={"highlight"}>Build MVP</span>High fidelity prototying, Building system and implementing growth hacks are my things.
             <br />
-            <span id={"highlight"}>Scale system/Layout foundation.</span> Cycles
-            run on an automated schedule,so you can focus on your work.
+            <span id={"highlight"}>Scale system/Layout foundation.</span>Implement best practices from open-source and startups > 500mn$.
             <br />
-            <span id={"highlight"}>Ship E2E Product.</span>
+            <span id={"highlight"}>Ship E2E Product.</span>My polyglot skills is my swiss knife.
           </div>
 
           <h2 css={headingCss}>Some traits</h2>
 
           <div css={sectionText}>
-            <strong id={"highlight-normal"}>Performance/UI Obsessed</strong>
-            Track your team's workload and velocity.
+            <strong id={"highlight"}>Performance/UI Obsessed</strong>Track your team's workload and velocity.
             <br />
-            <strong id={"highlight-normal"}>Polyglot</strong> Cycles run on an
+            <strong id={"highlight"}>Polyglot Engineer</strong>Cycles run on an
             automated schedule,so you can focus on your work.
             <br />
-            <strong id={"highlight-normal"}>Code quality</strong>Created E2E
+            <strong id={"highlight"}>Clean code</strong>Created E2E
             Product.
           </div>
 
           <h2 css={headingCss}>Why we should work together?</h2>
 
           <div css={sectionText}>
-            <strong id={"highlight-normal"}>You're startup</strong>Track your
-            team's workload and velocity.
+            <strong id={"highlight"}>You're startup</strong>I love making stuff and it's like playground to me.
             <br />
-            <strong id={"highlight-normal"}>You're blazing fast</strong>Track
-            your team's workload and velocity.
+            <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your speed
             <br />
-            <strong id={"highlight-normal"}>You're building a team</strong>Track
-            your team's workload and velocity.
+            <strong id={"highlight"}>You're building a team</strong>and need someone to guide team with best practices.
             <br />
-            Scale system/Layout foundation. Cycles run on an automated
-            schedule,so you can focus on your work.
+            <strong id={"highlight"}>Scale system/Layout foundation</strong>
             <br />
-            Created E2E Product.
+            <strong id={"highlight"}>Created 6+ E2E Product.</strong>
+          </div>
+
+          <h2 css={headingCss}>Why we shouldn't work together?</h2>
+
+          <div css={sectionText}>
+           You're looking for  <strong id={"highlight"}>someone who have built super massive system</strong>
+            <br />
+            <strong id={"highlight"}>You're looking for manager</strong>and not contributor. I haven't managed team > 4.
+            <br />
+            <strong id={"highlight"}>You're value your ego more than startup</strong> When I work on product I want it
+            to succeed and i often suggest changes.
+
           </div>
 
           <Center>
@@ -72,7 +77,7 @@ const Content = ({}) => {
                 <div css={[pinkButton, normalButton]}>My Work</div>
               </Link>
 
-              <a href={"mailto:hello@himanshudixit.me"}>
+              <a href={"mailto:hello@himanshud.com"}>
                 <div css={pinkButton}>Contact</div>
               </a>
             </div>

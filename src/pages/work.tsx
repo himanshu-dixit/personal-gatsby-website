@@ -154,7 +154,7 @@ const Content = ({}) => {
             <div css={[pinkButton, normalButton]}>My Services</div>
           </Link>
 
-          <a href={"mailto:hello@himanshudixit.me"}>
+          <a href={"mailto:hello@himanshud.com"}>
             <div css={pinkButton}>Contact</div>
           </a>
         </div>
