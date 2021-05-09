@@ -127,7 +127,7 @@ function WorkList() {
               <div id={"date"}>{item.date}</div>
             </div>
 
-            <div id={"content-section"} dangerouslySetInnerHTML={{innerHTML:item.desc}}></div>
+            <div id={"content-section"} dangerouslySetInnerHTML={{__html:item.desc}}></div>
 
             <div id={"tags-section"}>
               {item.tags.split(",").map(tag => (
