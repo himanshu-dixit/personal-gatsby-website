@@ -1,66 +1,3 @@
-/* CSS Custom Properties Definitions */
-html,
-body {
-  font-size: 1px !important;
-  font-family: "Gilroy";
-  overflow-x: hidden;
-}
-#___gatsby {
-  font-size: 15rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Cera Pro";
-}
-
-body {
-  margin: 0;
-}
-
-* {
-  box-sizing: border-box;
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-a {
-  color: var(--primaryPink);
-}
-.blinking-cursor {
-  font-weight: 100;
-  font-size: 16px;
-  margin-left: -2px;
-  margin-right: 2px;
-  color: var(--mainTextColor);
-  animation: 1.2s blink step-end infinite;
-}
-
-@keyframes blink {
-  from,
-  to {
-    color: transparent;
-  }
-  50% {
-    color: var(--mainTextColor);
-  }
-}
-
-@keyframes playerAnimation {
-  from,
-  to {
-    fill: var(--primaryPink);
-  }
-  50% {
-    fill: var(--primaryBlue);
-  }
-}
-
-
 
 
 @font-face {
@@ -173,3 +110,68 @@ a {
   font-display: swap;
   font-style: normal;
 }
+
+
+/* CSS Custom Properties Definitions */
+html,
+body {
+  font-size: 1px !important;
+  font-family: "Gilroy";
+  overflow-x: hidden;
+}
+#___gatsby {
+  font-size: 15rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cera Pro";
+}
+
+body {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--primaryPink);
+}
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 16px;
+  margin-left: -2px;
+  margin-right: 2px;
+  color: var(--mainTextColor);
+  animation: 1.2s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+  50% {
+    color: var(--mainTextColor);
+  }
+}
+
+@keyframes playerAnimation {
+  from,
+  to {
+    fill: var(--primaryPink);
+  }
+  50% {
+    fill: var(--primaryBlue);
+  }
+}
+
+
