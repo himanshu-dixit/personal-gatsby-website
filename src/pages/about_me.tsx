@@ -29,11 +29,11 @@ const Content = ({}) => {
           <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
-            <span id={"highlight"}>Build MVP</span>High fidelity prototying, Building system and implementing growth hacks are my things.
+            <span id={"highlight"}>Ship MVP fast</span>High fidelity prototying, building system and delivering results are my things.
             <br />
-            <span id={"highlight"}>Scale system/Layout foundation.</span>Implement best practices from open-source and startups > 500mn$.
+            <span id={"highlight"}>Scale system/Create solid foundation</span>Implement practices from open-source and growth startups
             <br />
-            <span id={"highlight"}>Ship E2E Product.</span>My polyglot skills is my swiss knife.
+            <span id={"highlight"}>Ship E2E Product</span> been involved in every stage of product building.
           </div>
 
           {/*<h2 css={headingCss}>Some traits</h2>*/}
@@ -51,25 +51,24 @@ const Content = ({}) => {
           <h2 css={headingCss}>Why we should work together?</h2>
 
           <div css={sectionText}>
-            <strong id={"highlight"}>You're startup</strong>I love making stuff and it's like playground to me.
+            <strong id={"highlight"}>You're startup</strong>
             <br />
             <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your speed
             <br />
-            <strong id={"highlight"}>You're building a team</strong>and need someone to guide team with best practices.
+            <strong id={"highlight"}>I'm polyglot</strong>and can choose tools according to the job
+
             <br />
-            <strong id={"highlight"}>Scale system/Layout foundation</strong>
-            <br />
-            <strong id={"highlight"}>Created 6+ E2E Product.</strong>
+            Having  <strong id={"highlight"}>built 6+ Product</strong> I can help in choosing right stack to deliver best results
           </div>
 
           <h2 css={headingCss}>Why we shouldn't work together?</h2>
 
           <div css={sectionText}>
-           You're looking for  <strong id={"highlight"}>someone who have built super massive system</strong>
+           You're looking for  <strong id={"highlight"}>someone who has built massive systems</strong>
             <br />
-            <strong id={"highlight"}>You're looking for manager</strong>and not contributor. I haven't managed team > 4.
+            You're <strong id={"highlight"}>looking for manager</strong>and not IC. I haven't managed team > 4.
             <br />
-            <strong id={"highlight"}>You're value your ego more than startup</strong> When I work on product I want it
+            You <strong id={"highlight"}> value your ego more than your startup</strong> When I work on product I want it
             to succeed and i often suggest changes.
 
           </div>
@@ -109,7 +108,7 @@ const headingCss = css`
 `
 
 const sectionText = css`
-  font-size: 16.5rem;
+  font-size: 16rem;
   line-height: 32rem;
   margin: 16rem 0 60rem 0;
 `
@@ -159,11 +158,14 @@ const mainContainerCSS = css`
   color: var(--mainTextColor);
   flex-wrap: wrap;
 
+   
+    
   #highlight {
     color: var(--primaryPink);
     text-decoration: underline;
     margin-right: 12px;
     font-weight: 600;
+        opacity: 1;
   }
 
   #highlight-normal {

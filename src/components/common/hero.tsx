@@ -68,6 +68,8 @@ export const Herocomponent = (): JSX.Element => {
               </a>
             </div>
             <img
+              height={372}
+              width={356}
               src={"/images/standing_person.png"}
               css={personalIllustration}
             />
@@ -141,7 +143,7 @@ export const AboutMeHero = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I do mOrE tHAn just write code
+              I'm Himanshu. I am a full stack engineer, currently building tools for dev.
               <br />
               I have been coding professionally for last 5 years.
               <br />I specialize in building E2E product. I have worked with YC and high growth startups.
