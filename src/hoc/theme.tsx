@@ -44,9 +44,6 @@ export const withTheme = (Component: ReactElement): (props) => JSX.Element => {
       <div css={[cssVariableForTheme, transition]}>
         <ThemeContext.Provider value={contextValue}>
           <Component {...props} />
-          <Helmet>
-            <script src={"/handle-dark-mode.js"}/>
-          </Helmet>
         </ThemeContext.Provider>
       </div>
     )
