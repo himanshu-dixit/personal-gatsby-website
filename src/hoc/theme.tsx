@@ -1,6 +1,7 @@
-import React, { ReactElement, useState } from "react"
+import React, { ReactElement, useEffect, useState } from "react"
 import { Theme, ThemeContext } from "../context/theme"
 import { css } from "@emotion/react"
+import {Helmet} from "react-helmet";
 import {
   convertThemeObjectToStyle,
   GLOBAL_CSS_VAR_DARK,
@@ -12,12 +13,10 @@ const transition = css`
     transition: all 180ms, color 150ms;
   }
 `
-export const withTheme = (Component: ReactElement): ReactElement => {
+export const withTheme = (Component: ReactElement): (props) => JSX.Element => {
   return props => {
     const [theme, setTheme] = useState(
-      typeof localStorage !== "undefined"
-        ? localStorage.getItem("theme")
-        : Theme.Dark
+      Theme.Dark
     )
     const toggleTheme = () => {
       const nextTheme = theme === Theme.Dark ? Theme.Light : Theme.Dark
@@ -31,10 +30,23 @@ export const withTheme = (Component: ReactElement): ReactElement => {
         theme === Theme.Dark ? GLOBAL_CSS_VAR_DARK : GLOBAL_CSS_VAR_LIGHT
       )}
     `
+
+    // This for initial hydration. Other logic must be present to initiate things.
+    useEffect(()=>{
+      const theme =  localStorage.getItem("theme");
+      if(theme){
+        setTheme(theme)
+      }
+    },[])
+
+
     return (
       <div css={[cssVariableForTheme, transition]}>
         <ThemeContext.Provider value={contextValue}>
           <Component {...props} />
+          <Helmet>
+            <script src={"/handle-dark-mode.js"}/>
+          </Helmet>
         </ThemeContext.Provider>
       </div>
     )
