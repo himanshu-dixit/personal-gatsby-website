@@ -41,7 +41,7 @@ export const withTheme = (Component: ReactElement): (props) => JSX.Element => {
 
 
     return (
-      <div css={[cssVariableForTheme, transition]}>
+      <div css={[typeof (window) !== 'undefined' && cssVariableForTheme, transition]}>
         <ThemeContext.Provider value={contextValue}>
           <Component {...props} />
         </ThemeContext.Provider>

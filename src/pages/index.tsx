@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/react"
-import { Helmet } from "react-helmet"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { Herocomponent } from "../components/common/hero"
@@ -117,7 +115,7 @@ const MainContainer = ({ data }) => {
           <div
             css={{
               display: "flex",
-              marginTop: "72rem",
+              marginTop: "84rem",
               justifyContent: "space-between",
               flexWrap: "wrap",
             }}
