@@ -69,7 +69,6 @@ export const Herocomponent = (): JSX.Element => {
             </div>
             <img
               height={372}
-              width={356}
               src={"/images/standing_person.png"}
               css={personalIllustration}
             />

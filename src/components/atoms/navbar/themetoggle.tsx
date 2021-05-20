@@ -30,6 +30,7 @@ const toggleButton = css`
 const lightModeButton = css`
   svg {
     margin-left: 23px;
+    opacity: 1;
   }
 `
 
@@ -47,7 +48,7 @@ export function ThemeToggle(props) {
 
   return (
     <div
-      css={[toggleButton, theme == Theme.Light && lightModeButton]}
+      css={[toggleButton, theme == Theme.Light ? lightModeButton : null]}
       onClick={handleClick}
     >
       <svg
