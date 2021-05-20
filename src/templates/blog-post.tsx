@@ -261,7 +261,7 @@ const newsLetterHeaderLikedThisArticleCSS = css`
 `
 
 const newsLetterCardContainerCSS = css`
-  border: 2rem solid var(--mainTextColor01);
+  border: 2rem solid var(--likedArticleBorder);
   border-radius: 12rem;
   padding: 12rem 20rem 22rem 20rem;
   //max-width: 650rem;

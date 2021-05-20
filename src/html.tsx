@@ -3,20 +3,26 @@ import PropTypes from "prop-types"
 import { GLOBAL_CSS_VAR_DARK, GLOBAL_CSS_VAR_LIGHT } from "./constants/styling"
 
 const handleStyleHydration = (GLOBAL_CSS_VAR_LIGHT, GLOBAL_CSS_VAR_DARK)=>{
+  // If you want native OS theme mode. Uncomment next line and remove next-to next line
+  // const isOSDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isOSDarkMode = true;
+
   const convertThemeObjectToStyle = object => {
     return Object.keys(object)
       .map(key => `--${key}: ${object[key]}`)
       .join(";")
   }
-  const theme = localStorage.getItem("theme") || 'dark';
-  const colors = theme === "dark" ? GLOBAL_CSS_VAR_DARK : GLOBAL_CSS_VAR_LIGHT;
+  const themeInLS = localStorage.getItem("theme") ;
+
+  const finalTheme = themeInLS ? themeInLS : (isOSDarkMode) ? "dark" : "light";
+  const colors = finalTheme === "dark" ? GLOBAL_CSS_VAR_DARK : GLOBAL_CSS_VAR_LIGHT;
   const cssVarToString = `
     :root{
       ${convertThemeObjectToStyle(colors)}
     }
   `;
 
-  console.log("User theme preference saved loading", theme)
+  console.log("User theme preference", finalTheme)
   const style = document.createElement('style');
   style.type = 'text/css';
   style.innerHTML = cssVarToString;
@@ -36,7 +42,7 @@ export default function HTML(props) {
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         {props.headComponents}
-        <script type="text/javascript" dangerouslySetInnerHTML={{__html: `(${String(handleStyleHydration)})(${JSON.stringify(GLOBAL_CSS_VAR_LIGHT )}, ${JSON.stringify(GLOBAL_CSS_VAR_DARK )})`}}/>
+        <script type="text/javascript" dangerouslySetInnerHTML={{__html: `(${handleStyleHydration})(${JSON.stringify(GLOBAL_CSS_VAR_LIGHT )}, ${JSON.stringify(GLOBAL_CSS_VAR_DARK )})`}}/>
       </head>
       <body {...props.bodyAttributes}>
 

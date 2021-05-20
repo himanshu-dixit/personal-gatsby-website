@@ -44,9 +44,10 @@ export function ThemeToggle(props) {
     playSound(soundObject)
     toggleTheme()
   }
+
   return (
     <div
-      css={[toggleButton, theme === Theme.Light && lightModeButton]}
+      css={[toggleButton, theme == Theme.Light && lightModeButton]}
       onClick={handleClick}
     >
       <svg

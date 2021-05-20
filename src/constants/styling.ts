@@ -36,6 +36,7 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   workNormalCOLOR = "#0E0F14",
   blogFollowBorder = "#13a7c4",
   blogJoinBorder = "#d72590",
+  likedArticleBorder="#253546",
 
   // Upvote color, Don't edit
   fire01 = "#97aec6",
@@ -84,6 +85,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   workNormalCOLOR = "#fff",
   blogFollowBorder = "#13a7c4",
   blogJoinBorder = "#d72590",
+  likedArticleBorder="#191919",
 
   // Upvote color, Don't edit
   fire01 = "#232C35",
