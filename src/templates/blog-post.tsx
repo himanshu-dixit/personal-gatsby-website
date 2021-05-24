@@ -69,7 +69,7 @@ const NewsLetterCard = () => {
       {joinNewsletter && (
         <div>
           {!emailSent && (
-            <div css={newsLetterInputParentCSS}>
+            <div css={newsLetterInputParentCSS} style={{ maxWidth: "100%" }}>
               <input
                 css={newsLetterInputCSS}
                 placeholder={"Your Email"}
@@ -130,7 +130,8 @@ const newsLetterInputCSS = css`
   border: 2px solid var(--newsLetterInputBorder);
   border-radius: 8rem;
   padding: 8rem 20rem;
-  min-width: 340rem;
+  width: 380rem;
+  max-width: 100%;
   font-family: Cera Pro;
   font-style: normal;
   font-size: 15rem;
@@ -344,6 +345,7 @@ const mainContentArticleCSS = css`
   font-size: 16px;
   line-height: 32px;
   color: var(--mainTextColor01);
+  width: 100%;
 `
 const mainContentCSS = css`
   background: var(--primaryBackground);

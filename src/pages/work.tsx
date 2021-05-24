@@ -180,6 +180,7 @@ const interestedInWorking = css`
 const buttonContainer = css`
   display: flex;
   margin: 0rem 0 20rem 0;
+  flex-wrap: wrap;
   a {
     text-decoration: none;
   }
@@ -206,6 +207,10 @@ const pinkButton = css`
   font-style: normal;
   font-weight: 900;
   font-size: 15rem;
+
+  @media only screen and (max-width: 500px) {
+    margin-top: 20px;
+  }
 `
 
 const pastWorkCss = css`
@@ -244,6 +249,13 @@ const workItemImage = css`
   max-width: 660px;
   display: flex;
   align-items: center;
+
+  @media only screen and (max-width: 500px) {
+    height: 320rem;
+    > img {
+      max-width: 100%;
+    }
+  }
 `
 
 const workItemDesc = css`
@@ -256,8 +268,8 @@ const workItemDesc = css`
   justify-content: center;
 
   @media (max-width: 600px) {
-    margin-left: 24rem;
-    margin-right: 24rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
     margin-bottom: 48rem;
   }
 

@@ -122,6 +122,7 @@ const interestedInWorking = css`
 const buttonContainer = css`
   display: flex;
   margin: 0rem 0 20rem 0;
+      flex-wrap: wrap;
   a {
     text-decoration: none;
     color: var(--workNormalCOLOR);
@@ -147,6 +148,9 @@ const pinkButton = css`
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;
+    @media only screen and (max-width: 500px){
+    margin-top: 20px;
+  }
 `
 
 const mainContainerCSS = css`
