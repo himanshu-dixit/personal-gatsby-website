@@ -1,15 +1,14 @@
-
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1>
   Gatsby's personal website
 </h1>
 
-
 Personal website is interactive personal portfolio + blog built using Gastby SSG. The website is designed and developed by Himanshu and Utkarsh.
 
 **Few features**
+
 - Dark mode support.
--  Upvote counter like medium with rate limited
+- Upvote counter like medium with rate limited
 - Project showcase + blog
 - Responsive
 - Newsletter support to build fanbase
@@ -19,11 +18,9 @@ The project was built using **React TS on Gatsby**. For styling **CSS Var + Emot
 
 The project is best suited to be deployed on Netlify. Can be deployed anywhere.
 
-
 **Deploy on netlify**
 [
 ![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
-
 
 Coming support- Deploy on vercel
 
@@ -40,13 +37,13 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
     ├── node_modules
     ├── functions
     ├── src
-	├──── components
-	├──── contenxt
-	├──── hoc
-	├──── pages
-	├──── styling
-	├──── template
-	├──── utils
+    ├──── components
+    ├──── contenxt
+    ├──── hoc
+    ├──── pages
+    ├──── styling
+    ├──── template
+    ├──── utils
     ├── .gitignore
     ├── .prettierrc
     ├── gatsby-browser.js
@@ -74,11 +71,10 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.com/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
 
-9. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+9.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 10. **`README.md`**: A text file containing useful reference information about your project.
 
 ## 🎓 Support this
 
 If you like this, don't forget to star the repo.
-

@@ -25,6 +25,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   newsLetterJoinBackground = "linear-gradient(180deg, #FA2F90 0%, #FA2F90 100%);",
   newsLetterJoinBorder = "#ffffff",
 
+  scrollBG = "#E9F8FF",
+  scrollBorder = "#95a5b3",
+
   // Homepage, other colors
   proectNewLabel = "#969CA3",
 
@@ -36,7 +39,7 @@ export enum GLOBAL_CSS_VAR_LIGHT {
   workNormalCOLOR = "#0E0F14",
   blogFollowBorder = "#13a7c4",
   blogJoinBorder = "#d72590",
-  likedArticleBorder="#253546",
+  likedArticleBorder = "#253546",
 
   // Upvote color, Don't edit
   fire01 = "#97aec6",
@@ -64,6 +67,9 @@ export enum GLOBAL_CSS_VAR_DARK {
   mainTextColor = "#F2F2F2",
   mainTextColor01 = "#DAD8D8",
 
+  scrollBG = "#0a0c0c",
+  scrollBorder = "#283746",
+
   // Hero header right color
   contentContainerWidth = "1080px",
   headerIconColor = "#3A434B",
@@ -85,7 +91,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   workNormalCOLOR = "#fff",
   blogFollowBorder = "#13a7c4",
   blogJoinBorder = "#d72590",
-  likedArticleBorder="#191919",
+  likedArticleBorder = "#191919",
 
   // Upvote color, Don't edit
   fire01 = "#232C35",

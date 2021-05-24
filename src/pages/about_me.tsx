@@ -73,7 +73,7 @@ const Content = ({}) => {
 
           </div>
 
-          <Center>
+
             <div css={interestedInWorking}>Interested in working?</div>
             <div css={buttonContainer}>
               <Link to={"/work"}>
@@ -84,7 +84,7 @@ const Content = ({}) => {
                 <div css={pinkButton}>Contact</div>
               </a>
             </div>
-          </Center>
+
         </div>
       </Center>
     </div>

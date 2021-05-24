@@ -19,10 +19,9 @@ function MenuComponent({ isMobile }) {
 function RightSection() {
   return (
     <div css={rightSection}>
-
       <div>
         <Link to={"https://airtable.com/shrZenNAupoKW07uj"} target={"_blank"}>
-        <BookMark />
+          <BookMark />
         </Link>
       </div>
 

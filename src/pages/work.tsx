@@ -101,7 +101,7 @@ const work = [
                     so you can focus on your work.`,
     tags: "Frontend,Backend",
     rightAligned: false,
-  }
+  },
 ]
 
 function WorkList() {
@@ -127,7 +127,10 @@ function WorkList() {
               <div id={"date"}>{item.date}</div>
             </div>
 
-            <div id={"content-section"} dangerouslySetInnerHTML={{__html:item.desc}}></div>
+            <div
+              id={"content-section"}
+              dangerouslySetInnerHTML={{ __html: item.desc }}
+            ></div>
 
             <div id={"tags-section"}>
               {item.tags.split(",").map(tag => (

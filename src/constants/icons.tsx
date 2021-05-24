@@ -166,3 +166,28 @@ export function MusicSVG(props) {
     </svg>
   )
 }
+
+export function NextSVG(props) {
+  return (
+    <svg
+      width={8}
+      height={8}
+      viewBox="0 0 10 10"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <g clipPath="url(#prefix__clip0)">
+        <path
+          d="M7.714 4.29a.961.961 0 00-.164-.13L3.674.283a.969.969 0 00-1.37 1.37L5.644 4.99 2.288 8.347a.968.968 0 101.369 1.37L7.55 5.822a.96.96 0 00.446-.832.962.962 0 00-.282-.701z"
+          fill="#FF46B5"
+        />
+      </g>
+      <defs>
+        <clipPath id="prefix__clip0">
+          <path fill="#fff" d="M0 0h10v10H0z" />
+        </clipPath>
+      </defs>
+    </svg>
+  )
+}

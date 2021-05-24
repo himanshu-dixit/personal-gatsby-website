@@ -1,5 +1,3 @@
-
-
 @font-face {
   font-family: "Cera Pro";
   src: url("/fonts/CeraPro/Cera_Pro_Medium.woff2") format("woff2");
@@ -14,7 +12,6 @@
   font-display: swap;
   font-style: italic;
 }
-
 
 @font-face {
   font-family: "Cera Pro";
@@ -38,8 +35,6 @@
   font-display: swap;
 }
 
-
-
 @font-face {
   font-family: "Gilroy";
   src: url("/fonts/Gilroy/Gilroy-UltraLight.woff2") format("woff2");
@@ -47,7 +42,6 @@
   font-display: swap;
   font-style: normal;
 }
-
 
 @font-face {
   font-family: "Gilroy";
@@ -65,8 +59,6 @@
   font-style: normal;
 }
 
-
-
 @font-face {
   font-family: "Gilroy";
   src: url("/fonts/Gilroy/Gilroy-Medium.woff2") format("woff2");
@@ -74,8 +66,6 @@
   font-display: swap;
   font-style: normal;
 }
-
-
 
 @font-face {
   font-family: "Gilroy";
@@ -85,14 +75,12 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "Gilroy";
   src: url("/fonts/Gilroy/Gilroy-Bold.woff2") format("woff2");
   font-weight: 700;
   font-style: normal;
 }
-
 
 @font-face {
   font-family: "Gilroy";
@@ -102,7 +90,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: "Gilroy";
   src: url("/fonts/Gilroy/Gilroy-Black.woff2") format("woff2");
@@ -110,7 +97,6 @@
   font-display: swap;
   font-style: normal;
 }
-
 
 /* CSS Custom Properties Definitions */
 html,
@@ -173,5 +159,3 @@ a {
     fill: var(--primaryBlue);
   }
 }
-
-
