@@ -68,7 +68,6 @@ const Content = ({}) => {
             You're <strong id={"highlight"}>looking for manager</strong>. I haven't managed team > 4. I love building stuff and goes when you start to manage people.
             <br />
             <strong id={"highlight"}>Your ego >> startup</strong> I build products and put efforts to improve it. But some founders can be idiotic assholes.
-            <br /><strong id={"highlight"}>You not startup with money</strong>.
 
           </div>
 
