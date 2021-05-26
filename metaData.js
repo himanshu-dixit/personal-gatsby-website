@@ -1,16 +1,12 @@
 export const SITE_CONFIG = {
   homepage: {
     tags: [
-      { title: "test" },
-      { title: "Devops", link: "#" },
-      { title: "Frontend", link: "#" },
+      { title: "Devops", link: "/tags/devops/" },
+      { title: "AWS", link: "/tags/aws/" },
     ],
     popular: [
-      { title: "Writing to create value", link: "#" },
-      { title: "Writing to create value", link: "#" },
-      { title: "Writing to create value", link: "#" },
-      { title: "Writing to create value", link: "#" },
-      { title: "Writing to create value", link: "#" },
+      { title: "Fixing Ambiguous AWS ELB 504 at scale", link: "/aws-504-error-at-scale" },
+
     ],
   },
   email: "hello@himanshud.com",

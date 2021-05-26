@@ -17,7 +17,7 @@ const Content = ({}) => {
       <Center>
 
         <div css={{         marginTop: "28rem",}}>
-          ️⚠️ ️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work of any sort.
+          ️⚠️ &nbsp;&nbsp;&nbsp;️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work of any sort.
         </div>
         <div
           css={{
@@ -33,7 +33,7 @@ const Content = ({}) => {
             <br />
             <span id={"highlight"}>Scale system/Create solid foundation</span>Implement practices from open-source and growth startups
             <br />
-            <span id={"highlight"}>Ship E2E Product</span> been involved in every stage of product building.
+            <span id={"highlight"}>Ship E2E Products</span> been involved in every stage of product building.
           </div>
 
           {/*<h2 css={headingCss}>Some traits</h2>*/}
@@ -53,23 +53,22 @@ const Content = ({}) => {
           <div css={sectionText}>
             <strong id={"highlight"}>You're startup</strong>
             <br />
-            <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your speed
+            <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your iteration speed
             <br />
-            <strong id={"highlight"}>I'm polyglot</strong>and can choose tools according to the job
+            <strong id={"highlight"}>I'm polyglot</strong>and choose tools according to the job
 
             <br />
             Having  <strong id={"highlight"}>built 6+ Product</strong> I can help in choosing right stack to deliver best results
           </div>
 
-          <h2 css={headingCss}>Why we shouldn't work together?</h2>
+          <h2 css={headingCss}>Why we might not be a good fit?</h2>
 
           <div css={sectionText}>
-           You're looking for  <strong id={"highlight"}>someone who has built massive systems</strong>
+
+            You're <strong id={"highlight"}>looking for manager</strong>. I haven't managed team > 4. I love building stuff and goes when you start to manage people.
             <br />
-            You're <strong id={"highlight"}>looking for manager</strong>and not IC. I haven't managed team > 4.
-            <br />
-            You <strong id={"highlight"}> value your ego more than your startup</strong> When I work on product I want it
-            to succeed and i often suggest changes.
+            <strong id={"highlight"}>Your ego >> startup</strong> I build products and put efforts to improve it. But some founders can be idiotic assholes.
+            <br /><strong id={"highlight"}>You not startup with money</strong>.
 
           </div>
 

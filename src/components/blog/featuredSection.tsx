@@ -55,6 +55,7 @@ const postTitleCSS = css`
   font-size: 24rem;
   color: var(--mainTextColor);
   margin-top: 14rem;
+  max-width: 700px;
 `
 const postDateCSS = css`
   margin-top: 12rem;

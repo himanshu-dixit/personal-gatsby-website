@@ -272,7 +272,6 @@ const MainContainer = ({ data }) => {
   const [posts, setPosts] = useState([])
   const [postData, setPostData] = useState({})
 
-  console.log(data)
   useEffect(() => {
     getPostData().then(res => {
       setPostData(res.data)
@@ -306,7 +305,7 @@ const MainContainer = ({ data }) => {
         <div
           css={{
             display: "flex",
-            marginTop: "72rem",
+            paddingTop: "72rem",
             justifyContent: "space-between",
             flexWrap: "wrap",
           }}

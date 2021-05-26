@@ -22,8 +22,8 @@ export const Herocomponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-            <h1 css={heroTagline}>Full stack engineer</h1>
-            <h1 css={heroTaglineSecondary}>building tools for developers</h1>
+            <h1 css={heroTagline}>I'm Full stack engineer</h1>
+            <h1 css={heroTaglineSecondary}>building tools for devs creating next big thing</h1>
             <div css={knowLink}>
               <Link to={"about_me"}>Know about me</Link>
               <a href={"mailto:hello@himanshud.com"}>Get in touch</a>

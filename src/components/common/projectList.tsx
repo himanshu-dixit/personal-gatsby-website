@@ -90,35 +90,31 @@ export function PastWork() {
 export const PAST_PROJECTS = [
   {
     name: "Cofounder",
-    desc: "Crusher",
-    isNew: true,
+    desc: "Crusher - No-code testing",
+    isNew: false,
   },
   ,
   {
-    name: "Consultant",
-    desc: "TEst | YC ",
-    isNew: true,
+    name: "Product consultant",
+    desc: "YC & Stealth Startup",
+    isNew: false,
   },
   {
     name: "Full stack engineer",
     desc: "Headout",
-    isNew: true,
+    isNew: false,
   },
   {
-    name: "FS Engineer",
-    desc: "Rizort",
-    isNew: true,
+    name: "Full Stack Dev",
+    desc: "Rizort.com",
+    isNew: false,
   },
   {
-    name: "Writing to create value",
-    desc: "Frontend | Headout",
-    isNew: true,
+    name: "Sveet.io",
+    desc: "Cofunder",
+    isNew: false,
   },
-  {
-    name: "Cofounder",
-    desc: "Crusher",
-    isNew: true,
-  },
+
 ]
 export const ProjectItem = (props: any) => {
   const { item } = props
