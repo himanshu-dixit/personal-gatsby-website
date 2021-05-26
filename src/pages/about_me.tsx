@@ -17,7 +17,7 @@ const Content = ({}) => {
       <Center>
 
         <div css={{         marginTop: "28rem",}}>
-          ️⚠️ &nbsp;&nbsp;&nbsp;️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work of any sort.
+          ️⚠️ &nbsp;&nbsp;&nbsp;️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work.
         </div>
         <div
           css={{
