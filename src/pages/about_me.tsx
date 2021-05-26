@@ -152,6 +152,7 @@ const pinkButton = css`
 `
 
 const mainContainerCSS = css`
+font-family: "Gilroy";
   background: var(--primaryBackground);
   margin-top: -36rem;
   padding-bottom: 136rem;

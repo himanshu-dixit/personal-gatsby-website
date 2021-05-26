@@ -82,7 +82,7 @@ const articleInfoContainer = css`
 const articleInfoMetaContainer = css`
   display: flex;
   color: var(--mainTextColor);
-  font-family: Cera Pro;
+  font-family: "Gilroy";
   font-style: normal;
   font-weight: 500;
   font-size: 16rem;

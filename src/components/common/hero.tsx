@@ -309,7 +309,7 @@ const knowLink = css`
 `
 
 const serviceDesc = css`
-  font-family: Cera Pro;
+  font-family: Gilroy;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;

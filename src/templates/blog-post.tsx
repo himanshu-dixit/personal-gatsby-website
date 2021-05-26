@@ -339,13 +339,14 @@ const upvoteMobile = css`
 `
 const mainContentArticleCSS = css`
   flex: 1;
-  font-family: Cera Pro;
+
   font-style: normal;
   max-width: 680rem;
   font-size: 16px;
   line-height: 32px;
   color: var(--mainTextColor01);
   width: 100%;
+  font-family: Gilroy;
 `
 const mainContentCSS = css`
   background: var(--primaryBackground);

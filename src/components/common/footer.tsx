@@ -2,7 +2,7 @@ import { Center } from "./center"
 import { css } from "@emotion/react"
 import React from "react"
 import { Link } from "gatsby"
-
+import {SITE_CONFIG} from "../../../metaData"
 const Footer = () => {
   return (
     <div css={footerContainerCSS}>
@@ -22,31 +22,20 @@ const Footer = () => {
           <div css={tutorialsLinksListCSS}>
             <div css={tutorialsLinksHeadingCSS}>Categories</div>
             <div css={tutorialsLinksCSS}>
-              <Link to={"/tag/backend"} css={normalLink}>
-                <div>Backend</div>
+              <Link to={"/tags/devops"} css={normalLink}>
+                <div>Devops</div>
               </Link>
-              <Link to={"/tag/frontend"} css={normalLink}>
-                <div>Frontend</div>
+              <Link to={"/tags/aws"} css={normalLink}>
+                <div>AWS</div>
               </Link>
-              <Link to={"/tag/career"} css={normalLink}>
-                <div>Career</div>
-              </Link>
-              <Link to={"/tag/backend"} css={normalLink}>
-                <div>Backend</div>
-              </Link>
-              <Link to={"/tag/frontend"} css={normalLink}>
-                <div>Frontend</div>
-              </Link>
-              <Link to={"/tag/career"} css={normalLink}>
-                <div>Career</div>
-              </Link>
+
             </div>
           </div>
           <div css={quickLinksListCSS}>
             <div css={quickLinksHeadingCSS}>Quick Links</div>
             <div css={quickLinksCSS}>
-              <div>Github</div>
-              <div>Twitter</div>
+              <a href={SITE_CONFIG.socialMediaURLs.github} target={"_blank"}><div>Github</div></a>
+              <a href={SITE_CONFIG.socialMediaURLs.twitter} target={"_blank"}><div>Twitter</div></a>
             </div>
           </div>
         </div>
@@ -124,6 +113,9 @@ const quickLinksHeadingCSS = css`
 `
 const quickLinksCSS = css`
   margin-top: 20rem;
+  a{
+      color: var(--mainTextColor);
+  }
   > div {
     &:not(:first-child) {
       margin-top: 12rem;
