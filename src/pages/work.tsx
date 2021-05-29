@@ -14,8 +14,8 @@ const work = [
   {
     name: "Crusher",
     date: "2021",
-    backgroundImage: "/images/background/pinkred1.png",
-    image: "/images/work/1.png",
+    background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
+    image: "/images/work/headout.png",
     desc: `   Velocity and estimates.<br/>
                     Track your team's workload and velocity.
 
@@ -27,7 +27,7 @@ const work = [
   {
     name: "Headout",
     date: "2019-21",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -40,7 +40,7 @@ const work = [
   {
     name: "Consulting",
     date: "2021",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -53,7 +53,7 @@ const work = [
   {
     name: "Social API",
     date: "2017",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #5CC8A8 0%, #B38FFF 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -64,9 +64,9 @@ const work = [
     rightAligned: true,
   },
   {
-    name: "Sveet",
+    name: "Sveet.io",
     date: "2018",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -79,7 +79,7 @@ const work = [
   {
     name: "Rizort",
     date: "2019",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -92,7 +92,7 @@ const work = [
   {
     name: "Tapnar",
     date: "2015",
-    backgroundImage: "/images/background/pinkred1.png",
+    background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
     image: "/images/work/1.png",
     desc: `   Velocity and estimates.\n
                     Track your team's workload and velocity.
@@ -117,9 +117,9 @@ function WorkList() {
         <div css={[workItem, item.rightAligned && workItemReverse]}>
           <div
             css={[workItemImage, item.rightAligned && workItemImageReverse]}
-            style={{ backgroundImage: `url('${item.backgroundImage}')` }}
+            style={{ background: item.background }}
           >
-            <img src={item.image} />
+            <img src={item.image} style={{width: "90%", height: "76%", borderBottomRightRadius: 16, borderTopRightRadius:16, objectFit: 'cover'}}/>
           </div>
           <div css={workItemDesc}>
             <div id={"top-section"}>
