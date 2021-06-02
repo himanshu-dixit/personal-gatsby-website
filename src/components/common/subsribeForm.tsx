@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import { addMember } from "../../utils/api"
 import { validateEmail } from "../../utils/common"
 
-export function SubscribeForm() {
+export function SubscribeForm(): JSX.Element {
   const [email, setEmail] = useState("")
   const [emailSent, setEmailSent] = useState(false)
   const onSubmit = () => {

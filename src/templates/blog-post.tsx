@@ -15,7 +15,7 @@ import { addMember, doPostAction } from "../utils/api"
 import { validateEmail } from "../utils/common"
 import SEO from "../components/seo"
 
-const NewsLetterCard = () => {
+const NewsLetterCard = (): JSX.Element => {
   const [email, setEmail] = useState("")
   const [joinNewsletter, setJoinNewsLetter] = useState(false)
   const [emailSent, setEmailSent] = useState(false)

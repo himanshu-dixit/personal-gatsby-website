@@ -1,13 +1,12 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-export const Curvy = (props: any) => {
+export const Curvy = (props: any): JSX.Element => {
   const { isHeroBackground } = props
   return (
     <div css={waveContainer}>
       <svg
         viewBox="0 0 1440 50"
-        xmlns="http://www.w3.org/2000/svg"
         css={curve(isHeroBackground)}
       >
         <g clip-path="url(#clip0)">

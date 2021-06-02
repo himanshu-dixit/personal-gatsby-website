@@ -104,7 +104,7 @@ const work = [
   },
 ]
 
-function WorkList() {
+function WorkList(): JSX.Element {
   return (
     <div
       css={{

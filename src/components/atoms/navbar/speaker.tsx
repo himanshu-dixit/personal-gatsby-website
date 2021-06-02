@@ -2,6 +2,7 @@ import { css } from "@emotion/react"
 import { Sound, useSound } from "../../../context/sound.ts"
 import { getSoundInstance, playSound } from "../../../utils/sound"
 import * as React from "react"
+import { ReactElement } from "react"
 
 const speaker = css`
   cursor: pointer;
@@ -11,7 +12,7 @@ const speaker = css`
   }
 `
 
-export function Speaker(props) {
+export function Speaker(props): ReactElement {
   const { sound, toggleSound } = useSound()
 
   const soundInstance = getSoundInstance(

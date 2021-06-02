@@ -16,7 +16,7 @@ import { SITE_CONFIG } from "../../metaData"
 import { getPostData } from "../utils/api"
 import { ArticlesList } from "../components/blog/articleList"
 
-const PopularContentSection = () => {
+const PopularContentSection = (): JSX.Element => {
   const contentOut = SITE_CONFIG.homepage.popular.map((article, index) => {
     return (
       <li key={index} css={popularContentItem}>
