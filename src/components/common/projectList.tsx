@@ -90,13 +90,13 @@ export function PastWork() {
 export const PAST_PROJECTS = [
   {
     name: "Cofounder",
-    desc: "Crusher - No-code testing",
+    desc: "Crusher.dev",
     isNew: false,
   },
   ,
   {
-    name: "Product consultant",
-    desc: "YC & Stealth Startup",
+    name: "Consultant",
+    desc: "YC & Stealth Startups",
     isNew: false,
   },
   {
@@ -105,13 +105,18 @@ export const PAST_PROJECTS = [
     isNew: false,
   },
   {
-    name: "Full Stack Dev",
+    name: "Full stack engineer",
     desc: "Rizort.com",
     isNew: false,
   },
   {
     name: "Sveet.io",
-    desc: "Cofunder",
+    desc: "Cofounder",
+    isNew: false,
+  },
+  {
+    name: "Open source contributor",
+    desc: "Social API",
     isNew: false,
   },
 
