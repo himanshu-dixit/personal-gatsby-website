@@ -1,6 +1,7 @@
 ---
 title: Design system Consistency, Adaptability and Velocity - Design, Viewports and Dev
 date: "2021-05-27"
+type: Learning
 description: My experience of working over with and creating different design system
 rating: 67
 tags: ["aws","devops"]

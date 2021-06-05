@@ -1,6 +1,7 @@
 ---
 title: Fixing Ambiguous AWS ELB 504 at scale - Timeouts can make or break your server
 date: "2020-08-12"
+type: Snippet
 description: Timeout of framework and proxy can lead to different sort of problem.
 rating: 67
 tags: ["aws","devops"]
