@@ -3,7 +3,7 @@ import { css } from "@emotion/react"
 import React from "react"
 import { Link } from "gatsby"
 import {SITE_CONFIG} from "../../../metaData"
-const Footer = () => {
+const Footer = () : JSX.Element=> {
   return (
     <div css={footerContainerCSS}>
       <Center customCSS={footerMainContainerCSS}>

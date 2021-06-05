@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { ReactElement, useEffect, useState } from "react"
 import { css } from "@emotion/react"
 import { Sound, useSound } from "../../context/sound.ts"
 import { getSoundInstance, playSound } from "../../utils/sound"
@@ -68,7 +68,7 @@ const FireCSSByClickCount = [
   `,
 ]
 
-export function UpvoteIndicator({ upvotes }) {
+export function UpvoteIndicator({ upvotes }): ReactElement  {
   const [clickCount, setClickCOunt] = useState(0)
   const handleClick = () => {
     clickCount < 3 && setClickCOunt(clickCount + 1)
@@ -112,7 +112,7 @@ export function UpvoteIndicatorVertical({ slug }) {
   ) : null
 }
 
-const FireSVG = (props: any) => {
+const FireSVG = (props: any): ReactElement  => {
   return (
     <svg
       height={16}

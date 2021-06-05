@@ -16,7 +16,7 @@ function MenuComponent({ isMobile }) {
   )
 }
 
-function RightSection() {
+function RightSection(): JSX.Element {
   return (
     <div css={rightSection}>
       <div>

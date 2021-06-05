@@ -25,7 +25,7 @@ const hidden = css`
   visibility: hidden;
 `
 
-export function PastWork() {
+export function PastWork(): JSX.Element {
   const [marginOffset, setMarginOffset] = useState(-80)
   const [scrollIndex, setScrollIndex] = useState(0)
   const [maxOffset, setMaxOffset] = useState(0)

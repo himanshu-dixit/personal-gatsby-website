@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 
-import { AboutMeHero, ServicesHeroComponent } from "../components/common/hero"
+import { AboutMeHero } from "../components/common/hero"
 import { withTheme } from "../hoc/theme"
 import { withSound } from "../hoc/sound"
 
@@ -11,7 +11,7 @@ import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 import SEO from "../components/seo"
 
-const Content = ({}) => {
+const Content = () => {
   return (
     <div css={mainContainerCSS}>
       <Center>
@@ -29,11 +29,11 @@ const Content = ({}) => {
           <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
-            <span id={"highlight"}>Ship MVP fast</span>High fidelity prototying, building system and delivering results are my things.
+            <span id={"highlight"}>Ship MVP </span>High fidelity prototying, building system and delivering results are my things.
             <br />
             <span id={"highlight"}>Scale system/Create solid foundation</span>Implement practices from open-source and growth startups
             <br />
-            <span id={"highlight"}>Ship E2E Products</span> been involved in every stage of product building.
+            <span id={"highlight"}>Ship E2E Products</span> I have knack on design and building product. <br/>We can talk about design, SE architecture and everything in between.
           </div>
 
           {/*<h2 css={headingCss}>Some traits</h2>*/}
@@ -51,7 +51,7 @@ const Content = ({}) => {
           <h2 css={headingCss}>Why we should work together?</h2>
 
           <div css={sectionText}>
-            <strong id={"highlight"}>You're startup</strong>
+            <strong id={"highlight"}>You're early/growth startup</strong>
             <br />
             <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your iteration speed
             <br />
@@ -65,14 +65,21 @@ const Content = ({}) => {
 
           <div css={sectionText}>
 
-            You're <strong id={"highlight"}>looking for manager</strong>. I haven't managed team > 4. I love building stuff and goes when you start to manage people.
+            You're <strong id={"highlight"}>looking for manager</strong>. I haven't managed team > 4. And I love building which goes away when you manage people.
             <br />
-            <strong id={"highlight"}>Your ego >> startup</strong> I build products and put efforts to improve it. But some founders can be idiotic assholes.
+            <strong id={"highlight"}>Your ego >> startup</strong>
 
           </div>
 
+          <h2 css={headingCss}>How can we start?</h2>
 
-            <div css={interestedInWorking}>Interested in working?</div>
+          <div css={sectionText}>
+            Ideal way is to collabrate for 2-3 days on small project in your startup. <br/>
+            This way we can find if we're great team.
+          </div>
+
+
+          <div css={interestedInWorking}>Interested in working?</div>
             <div css={buttonContainer}>
               <Link to={"/work"}>
                 <div css={[pinkButton, normalButton]}>My Work</div>
@@ -103,6 +110,7 @@ const ServicePage = () => {
 
 const headingCss = css`
   font-weight: 900;
+  opacity: 0.8;
 `
 
 const sectionText = css`
@@ -165,8 +173,8 @@ font-family: "Gilroy";
     
   #highlight {
     color: var(--primaryPink);
-    text-decoration: underline;
-    margin-right: 12px;
+  
+    margin-right: 8px;
     font-weight: 600;
         opacity: 1;
   }

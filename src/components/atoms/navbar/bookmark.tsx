@@ -1,5 +1,6 @@
 import { css } from "@emotion/react"
 import * as React from "react"
+import { ReactElement } from "react"
 
 const bookmark = css`
   path {
@@ -7,7 +8,7 @@ const bookmark = css`
   }
 `
 
-export function BookMark(props) {
+export function BookMark(props): ReactElement  {
   return (
     <svg
       width={15}

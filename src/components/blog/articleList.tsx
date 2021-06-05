@@ -1,7 +1,7 @@
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
 import { UpvoteIndicator } from "../atoms/upvoteIndicator"
-import React from "react"
+import React, { ReactElement } from "react"
 
 const ArticleItem = (props: {
   item: {
@@ -11,7 +11,7 @@ const ArticleItem = (props: {
     link: string
     rating: string
   }
-}) => {
+}): ReactElement  => {
   const { item } = props
   const { title, meta, desc, link, rating } = item
 

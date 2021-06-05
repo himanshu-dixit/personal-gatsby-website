@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-const Center = (props: any) => {
+const Center = (props: any): JSX.Element => {
   const { children, customCSS } = props
 
   return <div css={[containerCSS, customCSS]}>{children}</div>

@@ -2,6 +2,7 @@ import { Theme, useTheme } from "../../../context/theme"
 import { getSoundInstance, playSound } from "../../../utils/sound"
 import * as React from "react"
 import { css } from "@emotion/react"
+import { ReactElement } from "react"
 
 const toggle = css`
   #toogle-circle {
@@ -34,7 +35,7 @@ const lightModeButton = css`
   }
 `
 
-export function ThemeToggle(props) {
+export function ThemeToggle(props): ReactElement  {
   const { theme, toggleTheme } = useTheme()
 
   const soundObject = getSoundInstance(
