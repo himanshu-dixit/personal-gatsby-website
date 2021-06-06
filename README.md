@@ -29,7 +29,7 @@ The project is best suited to be deployed on Netlify. Can be deployed anywhere.
 3.) Create firebase account and set all keys to environment variable.
 
 [
-![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
+![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himanshu-dixit/personal-gatsby-website)
 
 
 
