@@ -21,7 +21,7 @@ const cert = type !== "undefined" ? JSON.stringify({
   auth_uri,
   token_uri,
   auth_provider_x509_cert_url,
-  client_x509_cert_url}) : require("../secrets/serviceAccountKey.json")
+  client_x509_cert_url}) :"";
 
 
 const initializeFirebase = () => {
