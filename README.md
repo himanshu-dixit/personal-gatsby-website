@@ -1,9 +1,9 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1>
-  Gatsby's personal starter kit
+  Personal gastby website
 </h1>
 
-This is interactive personal portfolio + blog built using Gastby SSG. The website is designed and developed by Himanshu and Utkarsh.
+This is interactive personal portfolio + blog built using Gastby SSG + lambda. The website is desinged and developed by Himanshu and Utkarsh.
 
 **Features**
 
