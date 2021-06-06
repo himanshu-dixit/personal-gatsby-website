@@ -3,6 +3,7 @@ import { css } from "@emotion/react"
 import React from "react"
 import { Link } from "gatsby"
 import {SITE_CONFIG} from "../../../metaData"
+
 const Footer = () : JSX.Element=> {
   return (
     <div css={footerContainerCSS}>
@@ -15,7 +16,7 @@ const Footer = () : JSX.Element=> {
             </div>
           </div>
           <div css={authorCopyRightCSS}>
-            <span>© 2020-21. Himanshu Dixit. All rights reserved.</span>
+            <span> Designed & Built by <a href={"https://himanshud.com"}> Himanshu</a>  & <a href={"https://utkarsh.work"}> Utkarsh</a> </span>
           </div>
         </div>
         <div css={footerLinksSectionCSS}>
@@ -63,7 +64,8 @@ const authorThanksCSS = css`
 const authorCopyRightCSS = css`
   margin-top: 52rem;
   color: #6e7377;
-  font-size: 15rem;
+  font-size: 13rem;
+  font-weight: 400;
   color: var(--mainTextColor01);
 `
 const footerMainContainerCSS = css`

@@ -1,14 +1,16 @@
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <h1>
-  Gatsby's personal website
+  Gatsby's personal starter kit
 </h1>
 
-Personal website is interactive personal portfolio + blog built using Gastby SSG. The website is designed and developed by Himanshu and Utkarsh.
+This is interactive personal portfolio + blog built using Gastby SSG. The website is designed and developed by Himanshu and Utkarsh.
 
-**Few features**
+**Features**
 
 - Dark mode support.
-- Upvote counter like medium with rate limited
+- Upvote counter like medium with rate limited on FE
+- Lambda support for adding dynamic functionality
+- Blog
 - Project showcase + blog
 - Responsive
 - Newsletter support to build fanbase
@@ -18,16 +20,23 @@ The project was built using **React TS on Gatsby**. For styling **CSS Var + Emot
 
 The project is best suited to be deployed on Netlify. Can be deployed anywhere.
 
-**Deploy on netlify**
+## 🚀 How to deploy
+
+1.) Fork the repo
+
+2.) Add project to netlify.
+
+3.) Create firebase account and set all keys to environment variable.
+
 [
 ![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-blog)
 
-Coming support- Deploy on vercel
+
 
 ## 🚀 How it works?
 
 The tutorial how various components was built will be coming soon.
-Aspect design, FE and BE aspect overview.
+I will try to address design, FE and BE aspects.
 
 ## 🧐 What's inside?
 
@@ -77,4 +86,4 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 
 ## 🎓 Support this
 
-If you like this, don't forget to star the repo.
+If you like this, don't forget to star the repo. Also, please backlink to our website to show your support. Be nice :).
