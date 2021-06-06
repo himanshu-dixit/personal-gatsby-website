@@ -18,7 +18,7 @@ This is interactive personal portfolio + blog built using Gastby SSG + lambda. T
 
 The project was built using **React TS on Gatsby**. For styling **CSS Var + Emotion JS** was used. For basic BE, Firebase + lambda were used.
 
-The project is best suited to be deployed on Netlify. Can be deployed anywhere.
+The project is best suited to be deployed on Netlify, it is fast and easy. Although, it can be deployed on any JAMstack infra.
 
 ## 🚀 How to deploy
 
