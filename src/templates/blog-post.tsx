@@ -44,7 +44,7 @@ const NewsLetterCard = (): JSX.Element => {
       <span css={newsLetterFollowMobile}>Consider following me on</span>
       <div css={newsLetterContentContainerCSS}>
         <div css={newsLetterContentCSS}>
-          <div>Get interesting bits in your unbox</div>
+          <div>Get interesting bits in your inbox</div>
           <div>
             Subscribe to newsletter
             <br />
