@@ -16,7 +16,8 @@ const Footer = () : JSX.Element=> {
             </div>
           </div>
           <div css={authorCopyRightCSS}>
-            <span> Designed & Built by <a href={"https://himanshud.com"}> Himanshu</a>  & <a href={"https://utkarsh.work"}> Utkarsh</a> </span>
+            <span> Designed & Built by <a href={"https://himanshud.com"}> Himanshu</a>  & <a href={"https://utkarsh.work"}> Utkarsh</a> </span><br />
+            Source code at <a href="https://github.com/himanshu-dixit/personal-gatsby-website"/>Github</a>
           </div>
         </div>
         <div css={footerLinksSectionCSS}>
