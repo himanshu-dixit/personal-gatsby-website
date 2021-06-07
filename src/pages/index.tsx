@@ -53,10 +53,9 @@ const NewsLetterCard = () => {
       <div css={newsLetterInfo}>
         <div css={newsLetterInfoText}>
           <div css={newsLetterHeading}>
-            I you build product, subscribe to newsletter
+            Newsletter that dives in know how of product building
           </div>
           <div css={newsLetterFollowInfo}>
-            <div>I'm full stack engineer with knack in product building</div>
             <div>I know what it takes to build scalable product which are beautiful</div>
             <div>
               I share my learnings & tinkering in{" "}
@@ -65,7 +64,7 @@ const NewsLetterCard = () => {
               </span>
             </div>
             <div>
-              I publish quality article every week.
+              You can expect quality article every week.
             </div>
           </div>
         </div>
