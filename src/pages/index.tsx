@@ -53,16 +53,19 @@ const NewsLetterCard = () => {
       <div css={newsLetterInfo}>
         <div css={newsLetterInfoText}>
           <div css={newsLetterHeading}>
-            Follow my journey of building tech products
+            I you build product, subscribe to newsletter
           </div>
           <div css={newsLetterFollowInfo}>
-            <div>30+ community of engineers, developers, product makers</div>
-            <div>Content for nerds on engineering and product</div>
+            <div>I'm full stack engineer with knack in product building</div>
+            <div>I know what it takes to build scalable product which are beautiful</div>
             <div>
-              In-depth resources from{" "}
+              I share my learnings & tinkering in{" "}
               <span css={newsLetterHighlightedInfo}>
-                idea, tech and building product
+                design, dev and everything @ product
               </span>
+            </div>
+            <div>
+              I publish quality article every week.
             </div>
           </div>
         </div>

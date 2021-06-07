@@ -34,7 +34,7 @@ const NewsLetterCard = (): JSX.Element => {
         <HappyEmojiSvg width={68} />
         <div>
           <span css={newsLetterHeaderLikedThisArticleCSS}>
-            Liked the article?
+            Liked this article? Show me some love✨
           </span>
           <span css={newsLetterHeaderFollowTextCSS}>
             {/*Consider following me on*/}
@@ -44,11 +44,11 @@ const NewsLetterCard = (): JSX.Element => {
       <span css={newsLetterFollowMobile}>Consider following me on</span>
       <div css={newsLetterContentContainerCSS}>
         <div css={newsLetterContentCSS}>
-          <div>Get interesting bits, I share them regulary</div>
+          <div>Get interesting bits in your unbox</div>
           <div>
-            Join community of 40+ product builder
+            Subscribe to newsletter
             <br />
-            sharing insights and session regularly
+            I share insights of product building weekly
           </div>
         </div>
         <div css={newsLetterActionsCSS}>
