@@ -17,8 +17,10 @@ const work = [
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/crusher.jpg",
     position: "Founder",
-    desc: ``,
-    tags: "Design,Engineering, Startup, Open Source",
+    desc: `Building open-source no-code web testing. It's like testing on steroid.<br/>
+    Developer don't need to create framework, write/manage boring selenium script. <br/>Now integrate UI and user testing for 60+ configuration in < 5 mins.<br/>
+    `,
+    tags: "figma,engineering, product, open source, kubernetes, terraform",
     rightAligned: false,
   },
   {
@@ -27,54 +29,73 @@ const work = [
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/headout.jpg",
     position: "Full stack engineer",
-    desc: `
-          `,
-    tags: "Frontend,Backend, Devops",
+    desc: `Worked and led several project e2e across frontend, backend and devops
+   `,
+    tags: "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
     rightAligned: true,
   },
   {
     name: "Consulting",
     date: "2021",
+    position: "Full stack engineer",
     background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
     image: "/images/work/consulting.jpg",
-    desc: ``,
-    tags: "Frontend,Backend",
+    desc: `Consulted YC startups in dev tool space to help with MVP development till demo day.`,
+    tags: "Frontend,Backend, React, Webpack, Javascript, NextJS",
     rightAligned: false,
   },
   {
     name: "Social API",
     date: "2017",
+    position: "Open source contributor",
     background: `linear-gradient(180deg, #5CC8A8 0%, #B38FFF 100%)`,
     image: "/images/work/social_api.jpg",
-    desc: ` `,
-    tags: "PHP,oAuth,Symfony,Drupal",
+    desc: `Built open-ended ecosystem of Login + Auto posting integration for Drupal
+    <br/>
+    Created framework to add new social network < 5 mins
+    <br/>
+    Added support for over 30+ network. Used by 6000 > websites.
+    `,
+    tags: "PHP,oAuth,Symfony,Drupal, Doctrine",
     rightAligned: true,
   },
   {
     name: "Sveet.io",
     date: "2018",
+    position: "Cofounder",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/sveet.jpg",
-    desc: ``,
-    tags: "React,Go, Socket.io",
+    desc: `Built in-dine ordering system and loyalty system to retarget visitors for cafes/QSR. <br/>
+        Piloted in 3 cafes and processed 4000+ ordered. <br/>
+        Built entire design and PWA e2e using react, go and socket.io
+   `,
+    tags: "React,Go, Socket.io, PWA, Design, Sentry, Gin",
     rightAligned: false,
   },
   {
     name: "Rizort",
     date: "2019",
+    position: "Full stack engineer",
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/rizort.jpg",
-    desc: ``,
-    tags: "Frontend,Backend",
+    desc: `Designed and built E2E conceirge app in <10 days  <br/>
+        Created vacation experience UI and revamped checkout page.<br/>
+        Built e2e system to automatically adjust price based on competitor analysis for 2000+ entities
+   `,
+    tags: "Frontend,Backend, Data Modelling, ELT",
     rightAligned: true,
   },
   {
     name: "Tapnar",
     date: "2015",
+    position: "Founder",
     background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
     image: "/images/work/tapnar.jpg",
-    desc: ``,
-    tags: "Frontend,Backend",
+    desc: `Created social network to ceate and share meme from youtube + 50 social network.<br/>
+    Used FFMPEG to create memes, added support for font overlay and effects.
+    Built other system on PHP+MySQL.
+    `,
+    tags: "FFmpeg, Imagemagick, Jquery, PHP, MySQL",
     rightAligned: false,
   },
 ]
@@ -101,6 +122,7 @@ function WorkList(): JSX.Element {
               <div id={"name"}>{item.name}</div>
               <div id={"date"}>{item.date}</div>
             </div>
+            <div>{item.position}</div>
 
             <div
               id={"content-section"}
@@ -279,6 +301,7 @@ const workItemDesc = css`
   #tags-section {
     margin-top: 24rem;
     display: flex;
+    flex-wrap: wrap;
     #tag {
       background: var(--tagBackground);
       color: var(tagColor);
@@ -288,6 +311,7 @@ const workItemDesc = css`
       display: flex;
       padding: 3px 12px;
       margin-right: 16px;
+      margin-bottom: 10px;
     }
   }
 
