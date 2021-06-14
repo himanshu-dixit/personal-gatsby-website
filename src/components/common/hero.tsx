@@ -25,8 +25,8 @@ export const Herocomponent = (): JSX.Element => {
             <h1 css={heroTagline}>I'm Full stack engineer</h1>
             <h1 css={heroTaglineSecondary}>building tools for devs creating next big thing</h1>
             <div css={knowLink}>
-              <Link to={"about_me"}>Know about me</Link>
-              <a href={"mailto:hello@himanshud.com"}>Get in touch</a>
+              <Link to={"about_me"}>About me</Link>
+              <a href={"mailto:hello@himanshud.com"}>Contact</a>
             </div>
           </div>
           <div css={jammingText}>
@@ -115,8 +115,8 @@ export const ServicesHeroComponent = (): JSX.Element => {
             <div css={serviceDesc}>
               I’m Himanshu.I’m full stack engineer, 2 times founder.
               <br />
-              <br />  I build scalable and user centric product by creating well
-              layed out architecture.  I have worked with High growth companies
+              <br />I build scalable and user centric product by creating well
+              layed out architecture.I have worked with High growth companies
               and YC stratups. These were across consumer and SAAS space.
               <br />
               <br />
