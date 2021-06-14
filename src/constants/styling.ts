@@ -85,7 +85,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   // Upvote sound
 
   tagColor = "#fff",
-  tagBackground = "#0b1218",
+  tagBackground = "#2b3338",
   workNormalBG = "#1D2021",
   workNormalBORDER = "#3C535B",
   workNormalCOLOR = "#fff",

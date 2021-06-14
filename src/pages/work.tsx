@@ -131,6 +131,10 @@ function WorkList(): JSX.Element {
               id={"content-section"}
               dangerouslySetInnerHTML={{ __html: item.desc }}
             ></div>
+     <br/>
+            <div style={{textDecoration: 'underline', cursor: "pointer"}}>
+              Read case study
+            </div>
 
             <div id={"tags-section"}>
               {item.tags.split(",").map(tag => (
