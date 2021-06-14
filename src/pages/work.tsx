@@ -15,38 +15,29 @@ const work = [
     name: "Crusher",
     date: "2021",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
-    image: "/images/work/headout.png",
-    desc: `   Velocity and estimates.<br/>
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
-    tags: "Frontend,Backend",
+    image: "/images/work/crusher.jpg",
+    position: "Founder",
+    desc: ``,
+    tags: "Design,Engineering, Startup, Open Source",
     rightAligned: false,
   },
   {
     name: "Headout",
     date: "2019-21",
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
-    tags: "Frontend,Backend",
+    image: "/images/work/headout.jpg",
+    position: "Full stack engineer",
+    desc: `
+          `,
+    tags: "Frontend,Backend, Devops",
     rightAligned: true,
   },
   {
     name: "Consulting",
     date: "2021",
     background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
+    image: "/images/work/consulting.jpg",
+    desc: ``,
     tags: "Frontend,Backend",
     rightAligned: false,
   },
@@ -54,38 +45,26 @@ const work = [
     name: "Social API",
     date: "2017",
     background: `linear-gradient(180deg, #5CC8A8 0%, #B38FFF 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
-    tags: "Frontend,Backend",
+    image: "/images/work/social_api.jpg",
+    desc: ` `,
+    tags: "PHP,oAuth,Symfony,Drupal",
     rightAligned: true,
   },
   {
     name: "Sveet.io",
     date: "2018",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
-    tags: "Frontend,Backend",
+    image: "/images/work/sveet.jpg",
+    desc: ``,
+    tags: "React,Go, Socket.io",
     rightAligned: false,
   },
   {
     name: "Rizort",
     date: "2019",
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
+    image: "/images/work/rizort.jpg",
+    desc: ``,
     tags: "Frontend,Backend",
     rightAligned: true,
   },
@@ -93,12 +72,8 @@ const work = [
     name: "Tapnar",
     date: "2015",
     background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
-    image: "/images/work/1.png",
-    desc: `   Velocity and estimates.\n
-                    Track your team's workload and velocity.
-
-                    Automated. Cycles run on an automated schedule,<br/>
-                    so you can focus on your work.`,
+    image: "/images/work/tapnar.jpg",
+    desc: ``,
     tags: "Frontend,Backend",
     rightAligned: false,
   },
@@ -150,6 +125,12 @@ const Content = ({}) => {
       <Center>
         <WorkList />
       </Center>
+
+      <Center>
+        <div css={pastWorkCss}>
+          View my other Project
+        </div>
+      </Center>
       <Center>
         <div css={interestedInWorking}>Interested in working?</div>
         <div css={buttonContainer}>
@@ -162,11 +143,7 @@ const Content = ({}) => {
           </a>
         </div>
       </Center>
-      <Center>
-        <div css={pastWorkCss}>
-          <PastWork />
-        </div>
-      </Center>
+
     </div>
   )
 }
@@ -215,6 +192,11 @@ const pinkButton = css`
 
 const pastWorkCss = css`
   margin-top: 48rem;
+  color: var(--primaryPink);
+  font-weight: 600;
+  text-decoration: underline;
+  text-align: right;
+  cursor: pointer;
 `
 
 const workItemReverse = css`
@@ -249,6 +231,7 @@ const workItemImage = css`
   max-width: 660px;
   display: flex;
   align-items: center;
+  box-shadow: 1px 5px 24px -1px #cccccc1f;
 
   @media only screen and (max-width: 500px) {
     height: 320rem;
