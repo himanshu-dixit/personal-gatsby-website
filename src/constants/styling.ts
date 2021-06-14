@@ -58,9 +58,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
 
 export enum GLOBAL_CSS_VAR_DARK {
   // Fundamental color
-  heroBackground = "#0a0c0c",
-  primaryBackground = "#0a0a0a",
-  tagsBackground = "#0B1116",
+  heroBackground = "#111517",
+  primaryBackground = "#0e1011",
+  tagsBackground = "#111517",
   contrastColor = "#fff",
   primaryBlue = "#00C4EB",
   primaryPink = "#FF46B5",
@@ -85,7 +85,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   // Upvote sound
 
   tagColor = "#fff",
-  tagBackground = "#0b1218",
+  tagBackground = "#2b3338",
   workNormalBG = "#1D2021",
   workNormalBORDER = "#3C535B",
   workNormalCOLOR = "#fff",

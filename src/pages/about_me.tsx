@@ -31,7 +31,7 @@ const Content = () => {
           <div css={sectionText}>
             <span id={"highlight"}>Ship MVP </span>High fidelity prototying, building system and delivering results are my things.
             <br />
-            <span id={"highlight"}>Scale system/Create solid foundation</span>Implement practices from open-source and growth startups
+            <span id={"highlight"}>Architect systems and scale it</span>Implement practices from open-source and growth startups
             <br />
             <span id={"highlight"}>Ship E2E Products</span> I have knack on design and building product. <br/>We can talk about design, SE architecture and everything in between.
           </div>
@@ -55,7 +55,7 @@ const Content = () => {
             <br />
             <strong id={"highlight"}>You're blazing fast</strong>and needs someone to match your iteration speed
             <br />
-            <strong id={"highlight"}>I'm polyglot</strong>and choose tools according to the job
+            <strong id={"highlight"}>I'm polyglot</strong>and can choose tools according to the job
 
             <br />
             Having  <strong id={"highlight"}>built 6+ Product</strong> I can help in choosing right stack to deliver best results
@@ -169,11 +169,11 @@ font-family: "Gilroy";
   color: var(--mainTextColor);
   flex-wrap: wrap;
 
-   
-    
+
+
   #highlight {
     color: var(--primaryPink);
-  
+
     margin-right: 8px;
     font-weight: 600;
         opacity: 1;
