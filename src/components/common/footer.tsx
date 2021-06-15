@@ -2,9 +2,9 @@ import { Center } from "./center"
 import { css } from "@emotion/react"
 import React from "react"
 import { Link } from "gatsby"
-import {SITE_CONFIG} from "../../../metaData"
+import { SITE_CONFIG } from "../../../metaData"
 
-const Footer = () : JSX.Element=> {
+const Footer = (): JSX.Element => {
   return (
     <div css={footerContainerCSS}>
       <Center customCSS={footerMainContainerCSS}>
@@ -16,8 +16,20 @@ const Footer = () : JSX.Element=> {
             </div>
           </div>
           <div css={authorCopyRightCSS}>
-            <span> Designed & Built by <a href={"https://himanshud.com"}> Himanshu</a>  & <a href={"https://utkarsh.work"}> Utkarsh</a> </span><br />
-            <span> Source code at <a href="https://github.com/himanshu-dixit/personal-gatsby-website">Github</a></span>
+            <span>
+              {" "}
+              Designed & Built by{" "}
+              <a href={"https://himanshud.com"}> Himanshu</a> &{" "}
+              <a href={"https://utkarsh.work"}> Utkarsh</a>{" "}
+            </span>
+            <br />
+            <span>
+              {" "}
+              Source code at{" "}
+              <a href="https://github.com/himanshu-dixit/personal-gatsby-website">
+                Github
+              </a>
+            </span>
           </div>
         </div>
         <div css={footerLinksSectionCSS}>
@@ -30,14 +42,17 @@ const Footer = () : JSX.Element=> {
               <Link to={"/tags/aws"} css={normalLink}>
                 <div>AWS</div>
               </Link>
-
             </div>
           </div>
           <div css={quickLinksListCSS}>
             <div css={quickLinksHeadingCSS}>Quick Links</div>
             <div css={quickLinksCSS}>
-              <a href={SITE_CONFIG.socialMediaURLs.github} target={"_blank"}><div>Github</div></a>
-              <a href={SITE_CONFIG.socialMediaURLs.twitter} target={"_blank"}><div>Twitter</div></a>
+              <a href={SITE_CONFIG.socialMediaURLs.github} target={"_blank"}>
+                <div>Github</div>
+              </a>
+              <a href={SITE_CONFIG.socialMediaURLs.twitter} target={"_blank"}>
+                <div>Twitter</div>
+              </a>
             </div>
           </div>
         </div>
@@ -116,8 +131,8 @@ const quickLinksHeadingCSS = css`
 `
 const quickLinksCSS = css`
   margin-top: 20rem;
-  a{
-      color: var(--mainTextColor);
+  a {
+    color: var(--mainTextColor);
   }
   > div {
     &:not(:first-child) {

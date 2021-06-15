@@ -31,8 +31,6 @@ The project is best suited to be deployed on Netlify, it is fast and easy. Altho
 [
 ![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himanshu-dixit/personal-gatsby-website)
 
-
-
 ## 🚀 How it works?
 
 The tutorial how various components was built will be coming soon.

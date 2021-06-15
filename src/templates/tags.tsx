@@ -17,7 +17,6 @@ import { PastWork } from "../components/common/projectList"
 import { ArticlesList } from "../components/blog/articleList"
 import SEO from "../components/seo"
 
-
 const MainContainer = ({ data }) => {
   const [posts, setPosts] = useState([])
   const [postData, setPostData] = useState({})
@@ -77,7 +76,7 @@ const TagTemplate = pageProps => {
     doPostAction(slug, "views")
   }, [])
 
-  const title = tag.substr(0,1).toUpperCase()+tag.substr(1,Infinity)
+  const title = tag.substr(0, 1).toUpperCase() + tag.substr(1, Infinity)
 
   return (
     <>

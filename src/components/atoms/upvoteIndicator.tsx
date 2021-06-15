@@ -68,7 +68,7 @@ const FireCSSByClickCount = [
   `,
 ]
 
-export function UpvoteIndicator({ upvotes }): ReactElement  {
+export function UpvoteIndicator({ upvotes }): ReactElement {
   const [clickCount, setClickCOunt] = useState(0)
   const handleClick = () => {
     clickCount < 3 && setClickCOunt(clickCount + 1)
@@ -112,7 +112,7 @@ export function UpvoteIndicatorVertical({ slug }) {
   ) : null
 }
 
-const FireSVG = (props: any): ReactElement  => {
+const FireSVG = (props: any): ReactElement => {
   return (
     <svg
       height={16}

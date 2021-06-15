@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     title: `Himanshu Dixit`,
-
   },
   plugins: [
     "gatsby-plugin-slug",

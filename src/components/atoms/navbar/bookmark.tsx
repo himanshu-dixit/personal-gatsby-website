@@ -8,7 +8,7 @@ const bookmark = css`
   }
 `
 
-export function BookMark(props): ReactElement  {
+export function BookMark(props): ReactElement {
   return (
     <svg
       width={15}

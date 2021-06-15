@@ -23,7 +23,9 @@ export const Herocomponent = (): JSX.Element => {
         <div id={"hero-content"}>
           <div>
             <h1 css={heroTagline}>I'm Full stack engineer</h1>
-            <h1 css={heroTaglineSecondary}>building tools for devs creating next big thing</h1>
+            <h1 css={heroTaglineSecondary}>
+              building tools for devs creating next big thing
+            </h1>
             <div css={knowLink}>
               <Link to={"about_me"}>About me</Link>
               <a href={"mailto:hello@himanshud.com"}>Contact</a>
@@ -142,11 +144,11 @@ export const AboutMeHero = (): JSX.Element => {
           <div>
             <h1 css={[worHeroTagline]}>About Me</h1>
             <div css={serviceDesc}>
-              I'm Himanshu. I am a full stack generalist with solid knack in FE. <br/>
-              I have been coding for last 8 years and professionaly for last 5 years. I'm currently building tools
-              for dev.
+              I'm Himanshu. I am a full stack generalist with solid knack in FE.{" "}
               <br />
-              I specialize in building E2E product. I have worked with YC
+              I have been coding for last 8 years and professionaly for last 5
+              years. I'm currently building tools for dev.
+              <br />I specialize in building E2E product. I have worked with YC
               and high growth startups. And built system handling billions of
               request.
             </div>

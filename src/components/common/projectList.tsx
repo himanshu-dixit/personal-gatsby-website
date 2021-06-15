@@ -119,7 +119,6 @@ export const PAST_PROJECTS = [
     desc: "Social API",
     isNew: false,
   },
-
 ]
 export const ProjectItem = (props: any) => {
   const { item } = props

@@ -35,7 +35,7 @@ const lightModeButton = css`
   }
 `
 
-export function ThemeToggle(props): ReactElement  {
+export function ThemeToggle(props): ReactElement {
   const { theme, toggleTheme } = useTheme()
 
   const soundObject = getSoundInstance(

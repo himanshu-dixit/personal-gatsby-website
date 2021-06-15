@@ -56,16 +56,17 @@ const NewsLetterCard = () => {
             Newsletter that dives in know how of product building
           </div>
           <div css={newsLetterFollowInfo}>
-            <div>I know what it takes to build scalable products which are beautiful</div>
+            <div>
+              I know what it takes to build scalable products which are
+              beautiful
+            </div>
             <div>
               I share my learnings & tinkering in{" "}
               <span css={newsLetterHighlightedInfo}>
                 design, dev and everything @ product
               </span>
             </div>
-            <div>
-              You can expect quality article every week.
-            </div>
+            <div>You can expect quality article every week.</div>
           </div>
         </div>
         <div css={newsLetterEmoji}>

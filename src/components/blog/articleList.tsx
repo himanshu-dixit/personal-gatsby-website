@@ -11,7 +11,7 @@ const ArticleItem = (props: {
     link: string
     rating: string
   }
-}): ReactElement  => {
+}): ReactElement => {
   const { item } = props
   const { title, meta, desc, link, rating } = item
 

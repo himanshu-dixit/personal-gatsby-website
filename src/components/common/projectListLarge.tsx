@@ -1,7 +1,6 @@
 import React from "react"
 import { css } from "@emotion/react"
 
-
 export const ProjectItem = (props: any) => {
   const { item } = props
   const { name, desc, isNew } = item
@@ -16,7 +15,6 @@ export const ProjectItem = (props: any) => {
     </div>
   )
 }
-
 
 const projectItemDescCSS = css`
   margin-top: 3rem;

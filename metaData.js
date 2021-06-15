@@ -5,8 +5,10 @@ export const SITE_CONFIG = {
       { title: "AWS", link: "/tags/aws/" },
     ],
     popular: [
-      { title: "Fixing Ambiguous AWS ELB 504 at scale", link: "/aws-504-error-at-scale" },
-
+      {
+        title: "Fixing Ambiguous AWS ELB 504 at scale",
+        link: "/aws-504-error-at-scale",
+      },
     ],
   },
   email: "hello@himanshud.com",

@@ -10,7 +10,7 @@ const logoSVG = css`
   }
 `
 
-export function LogoComponent(props): ReactElement  {
+export function LogoComponent(props): ReactElement {
   return (
     <svg
       viewBox="0 0 172 20"

@@ -47,8 +47,7 @@ const NewsLetterCard = (): JSX.Element => {
           <div>Get interesting bits in your inbox</div>
           <div>
             Subscribe to newsletter
-            <br />
-            I share insights of product building weekly
+            <br />I share insights of product building weekly
           </div>
         </div>
         <div css={newsLetterActionsCSS}>

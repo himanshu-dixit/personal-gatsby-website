@@ -7,7 +7,6 @@ import { withSound } from "../hoc/sound"
 import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
-import { PastWork } from "../components/common/projectList"
 import SEO from "../components/seo"
 
 const work = [
@@ -31,7 +30,8 @@ const work = [
     position: "Full stack engineer",
     desc: `Worked and led several project e2e across frontend, backend and devops
    `,
-    tags: "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
+    tags:
+      "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
     rightAligned: true,
   },
   {
@@ -115,7 +115,17 @@ function WorkList(): JSX.Element {
             css={[workItemImage, item.rightAligned && workItemImageReverse]}
             style={{ background: item.background }}
           >
-            <img src={item.image} style={{width: "90%", height: "76%", borderBottomRightRadius: 16, borderTopRightRadius:16, objectFit: 'cover'}}/>
+            <img
+              loading="lazy"
+              src={item.image}
+              style={{
+                width: "90%",
+                height: "76%",
+                borderBottomRightRadius: 16,
+                borderTopRightRadius: 16,
+                objectFit: "cover",
+              }}
+            />
           </div>
           <div css={workItemDesc}>
             <div id={"top-section"}>
@@ -128,8 +138,8 @@ function WorkList(): JSX.Element {
               id={"content-section"}
               dangerouslySetInnerHTML={{ __html: item.desc }}
             ></div>
-     <br/>
-            <div style={{textDecoration: 'underline', cursor: "pointer"}}>
+            <br />
+            <div style={{ textDecoration: "underline", cursor: "pointer" }}>
               Read case study
             </div>
 
@@ -153,9 +163,7 @@ const Content = ({}) => {
       </Center>
 
       <Center>
-        <div css={pastWorkCss}>
-          View my other Project
-        </div>
+        <div css={pastWorkCss}>View my other projects</div>
       </Center>
       <Center>
         <div css={interestedInWorking}>Interested in working?</div>
@@ -169,7 +177,6 @@ const Content = ({}) => {
           </a>
         </div>
       </Center>
-
     </div>
   )
 }
@@ -219,7 +226,7 @@ const pinkButton = css`
 const pastWorkCss = css`
   margin-top: 48rem;
   color: var(--primaryPink);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: underline;
   text-align: right;
   cursor: pointer;

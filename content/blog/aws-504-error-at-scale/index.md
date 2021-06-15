@@ -4,7 +4,7 @@ date: "2020-08-12"
 type: Snippet
 description: Timeout of framework and proxy can lead to different sort of problem.
 rating: 67
-tags: ["aws","devops"]
+tags: ["aws", "devops"]
 ---
 
 <img src="https://backstage.headout.com/wp-content/uploads/2021/04/ezgif-2-423490eb1f31.gif" width="100%"/>
@@ -17,8 +17,7 @@ Furthermore, all this and various other stuff managed by a team of ~20 pro engin
 
 At Headout, we maintain a dedicated channel for all kinds of technical bugs, we call it #bug-alert. The idea is each week person from every team like QA, Frontend, and backend solves urgent production bugs.
 
-Hard to reproduce! 🤕🤕
--------------------------------------------------------------------------------------------------------------------------------------------
+## Hard to reproduce! 🤕🤕
 
 Now back to the problem, the request failing was both random and unusual. No of these requests was relatively low initially and then increased suddenly. Here is the graph of the issue at ELB.
 
@@ -32,23 +31,20 @@ The issue was challenging to reproduce, which made it harder to debug and solve.
 2.  Change the proxy library that we were using, some users reported a memory leak in the library.
 3.  Bypass internal proxy altogether.
 
-Debugging the issue
--------------------
+## Debugging the issue
 
 To understand this issue, we should look at our architecture. We currently use AWS services for our infra, particularly Elastic beanstalk and a variety of other services.
 
-*However, we are currently migrating to Kubernetes-based solution to have more control of our system.*
+_However, we are currently migrating to Kubernetes-based solution to have more control of our system._
 
-Our current architecture
-------------------------
+## Our current architecture
 
 <img src="https://backstage.headout.com/wp-content/uploads/2021/04/headout-aws-request-architecture-1024x592.png" width="100%"/>
 
 We have one public Nginx layer that routes the public traffic to internal services. At various layers, we have an internal proxy to handle the traffic. During mid-august, we migrated from our react-based SSR framework to Next.JS through a staged rollout deployment.\
 During this whole time, the stage rollout traffic being handled by our react server which was taking care of proxy.
 
-Digging up the logs!📖
---------------------------------------------------------------------------------
+## Digging up the logs!📖
 
 During the log lookup, we noticed one thing. The response, processing time, transfer time for the request coming to ELB was -1. Moreover, the field of the target host was blank.
 
@@ -64,8 +60,7 @@ HTTP/1.0" "Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/
 
 It meant the request was never going to the upstream server. Our server health state did not correlate to this.
 
-Finding the root cause
-----------------------
+## Finding the root cause
 
 While reading up the logs, it appeared that AWS Load Balancer pre-opens connection with the upstream server. It is done so the server can respond fast to the client.
 
@@ -75,29 +70,26 @@ By default, the default connection time is 60 seconds.
 
 **Fault at NodeJS**
 
-
 We have various frameworks that we use Spring, Django, Express, and other frameworks in different languages. Most of the frameworks have the 60s as the default connection timeout. NodeJS, on the other hand, keep a connection active for only 5sec. More about it
 
 So although the connection seems to be established earlier, it was closed by NodeJS. When a new request comes to the server, it is instantly rejected by ELB.
 
-Solving the problem ✨✨
-------------------------------------------------------------------------------------------------------------------------------------------
+## Solving the problem ✨✨
 
 There were various ways to solve this problem. We decided to go with the first one.
 
 1.  Increase KeepAliveTimeout at NodeJS application from 5 sec to 60 seconds. Use can use the following code in the NodeJS applications:
-    -   Keep-alive timeout sets default timeout connection where the request is not passing. Where header timeout represent time till which ongoing request will be kept alive.
-    -   Ideally you should have headersTimeout = keepAliveTimeout + time taken by largest request serverInstance.keepAliveTimeout = 61 * 1000; serverInstance.headersTimeout = 65 * 1000;
+    - Keep-alive timeout sets default timeout connection where the request is not passing. Where header timeout represent time till which ongoing request will be kept alive.
+    - Ideally you should have headersTimeout = keepAliveTimeout + time taken by largest request serverInstance.keepAliveTimeout = 61 _ 1000; serverInstance.headersTimeout = 65 _ 1000;
 2.  Decrease keepalive timeout at ELB setting to 5 seconds. However, this is not an ideal approach.
 3.  Move from layer five proxy to layer seven proxy. Layer 5 proxy is like a virtual server that has to establish a connection between client and server to handle requests.
 
 <img src="https://backstage.headout.com/wp-content/uploads/2021/04/alb-after-1024x638.png" width="100%"/>
 
-Learning
---------
+## Learning
 
 It was a very unexpected and random infra issue. One takeaway was:- you should always read the logs very carefully. It is super helpful in finding the root cause.
 
 Also, it is important to look at the default configurations of frameworks. Integration between different systems can lead to issues which one would have not imagined otherwise.
 
-*Btw, We are now moving to ALB with Kubernetes and solving other complex problems at Backend, Frontend, and DevOps to handle these scales very efficiently.*
+_Btw, We are now moving to ALB with Kubernetes and solving other complex problems at Backend, Frontend, and DevOps to handle these scales very efficiently._
