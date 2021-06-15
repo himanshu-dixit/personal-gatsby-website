@@ -69,8 +69,8 @@ const work = [
     position: "Cofounder",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/sveet.jpg",
-    desc: `Ordering in cafes, sucks? We built mobile app to order and deliver to your table in 5 mins<br/>
-        And loyalty system to retarget visitors for cafes/QSR.<br/>
+    desc: `Ordering in cafes sucks, right? We built mobile app to order and deliver food to your table in 5 mins<br/>
+        For business, a loyalty system to retarget visitors for cafes/QSR.<br/>
         Integrated with differeny POS across cafe, theatres and hotels.<br/>
         Piloted in 3 cafes and processed 4000+ ordered. <br/>
         Built entire design and PWA e2e using react, go and socket.io
