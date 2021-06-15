@@ -16,8 +16,8 @@ const work = [
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/crusher.jpg",
     position: "Founder",
-    desc: `Building open-source no-code web testing. It's like testing on steroid.<br/>
-    Developer don't need to create framework, write/manage boring selenium script. <br/>Now integrate UI and user testing for 60+ configuration in < 5 mins.<br/>
+    desc: `Testing is hard and frustrating. We're building open-source no-code web testing. It's like testing on steroid.<br/>
+    Developer don't need to create framework, write boring scripts. <br/>Testing which earlier took several day, now is 5 mins job.<br/>
     `,
     tags: "figma,engineering, product, open source, kubernetes, terraform",
     rightAligned: false,
@@ -28,7 +28,9 @@ const work = [
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/headout.jpg",
     position: "Full stack engineer",
-    desc: `Worked and led several project e2e across frontend, backend and devops
+    desc: `Worked as full stack dev for US based travel startup processing over 10mn$ GMV/month. <br/>
+    Worked on executed crucial project e2e to increase CVR, onboard new supply partner, improve performance and architecting system.<br/>
+    Worked solo and on team e2e across frontend, backend and devops.
    `,
     tags:
       "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
@@ -40,7 +42,9 @@ const work = [
     position: "Full stack engineer",
     background: `linear-gradient(180deg, #FFEE59 0%, #AADC6A 100%)`,
     image: "/images/work/consulting.jpg",
-    desc: `Consulted YC startups in dev tool space to help with MVP development till demo day.`,
+    desc: `Consulted YC startups in dev tool spaces and one 500 startup. Worked on Webpack, Ant Design and devops.<br/>
+    For detailed outlook on what I did, get in touch with me.
+    `,
     tags: "Frontend,Backend, React, Webpack, Javascript, NextJS",
     rightAligned: false,
   },
@@ -54,7 +58,7 @@ const work = [
     <br/>
     Created framework to add new social network < 5 mins
     <br/>
-    Added support for over 30+ network. Used by 6000 > websites.
+    Added support for over 30+ network. Currently used by 6000 > websites.
     `,
     tags: "PHP,oAuth,Symfony,Drupal, Doctrine",
     rightAligned: true,
@@ -65,7 +69,9 @@ const work = [
     position: "Cofounder",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/sveet.jpg",
-    desc: `Built in-dine ordering system and loyalty system to retarget visitors for cafes/QSR. <br/>
+    desc: `Ordering in cafes, sucks? We built mobile app to order and deliver to your table in 5 mins<br/>
+        And loyalty system to retarget visitors for cafes/QSR.<br/>
+        Integrated with differeny POS across cafe, theatres and hotels.<br/>
         Piloted in 3 cafes and processed 4000+ ordered. <br/>
         Built entire design and PWA e2e using react, go and socket.io
    `,
@@ -78,8 +84,9 @@ const work = [
     position: "Full stack engineer",
     background: `linear-gradient(180deg, #F253B2 0%, #FF9D7E 100%)`,
     image: "/images/work/rizort.jpg",
-    desc: `Designed and built E2E conceirge app in <10 days  <br/>
-        Created vacation experience UI and revamped checkout page.<br/>
+    desc: `Designed and built E2E conceirge app in <10 days.<br/>
+        Created vacation experience UI and revamped checkout page in early stages.<br/>
+        Worked closely with experience founders.<br/>
         Built e2e system to automatically adjust price based on competitor analysis for 2000+ entities
    `,
     tags: "Frontend,Backend, Data Modelling, ELT",
