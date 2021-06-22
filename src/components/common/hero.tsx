@@ -13,6 +13,7 @@ import {
   MusicSVG,
   TwitterSVG,
 } from "../../constants/icons"
+import {SITE_CONFIG} from "../../../metaData"
 
 export const Herocomponent = (): JSX.Element => {
   return (
@@ -40,27 +41,27 @@ export const Herocomponent = (): JSX.Element => {
           </div>
           <div css={personalStatusContainer}>
             <div id="twitter">
-              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.twitter} target="_blank">
                 <TwitterSVG />{" "}
               </a>
             </div>
             <div id="book">
-              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.books}  target="_blank">
                 <BookSVG />{" "}
               </a>
             </div>
             <div id="github">
-              <a href="https://github.com/himanshu-dixit" target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.github}target="_blank">
                 <Github />{" "}
               </a>
             </div>
             <div id="insta">
-              <a href="https://instagram.com/1xengineer" target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.instagram} target="_blank">
                 <InstaSVG />
               </a>
             </div>
             <div id="music">
-              <a href="https://twitter.com/1x_engineer" target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.music} target="_blank">
                 <MusicalSVG />
               </a>
             </div>
