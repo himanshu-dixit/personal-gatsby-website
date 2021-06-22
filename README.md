@@ -9,6 +9,7 @@ This is interactive personal portfolio + blog built using Gastby SSG + lambda. T
 
 - Dark mode support.
 - Upvote counter like medium with rate limited on FE
+- Comments system using utterance.
 - Lambda support for adding dynamic functionality
 - Blog
 - Project showcase + blog
@@ -26,10 +27,14 @@ The project is best suited to be deployed on Netlify, it is fast and easy. Altho
 
 2.) Add project to netlify.
 
-3.) Create firebase account and set all keys to environment variable.
+3.) Create firebase account and deploy the app.
 
 [
 ![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/himanshu-dixit/personal-gatsby-website)
+
+4.) Change metaData for configuration.
+
+5.) To enable comments, change the repo and install utterance to your repo.
 
 ## 🚀 How it works?
 

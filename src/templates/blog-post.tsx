@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/react"
+import { SITE_CONFIG } from "../../metaData"
 
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
@@ -14,6 +15,7 @@ import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 import { addMember, doPostAction } from "../utils/api"
 import { validateEmail } from "../utils/common"
 import SEO from "../components/seo"
+import { Theme, useTheme } from "../context/theme"
 
 const NewsLetterCard = (): JSX.Element => {
   const [email, setEmail] = useState("")
@@ -273,13 +275,35 @@ const newsLetterCardContainerCSS = css`
 const BlogPostTemplate = ({ data, location }) => {
   const { markdownRemark: post } = data
   const slug = data.markdownRemark.fields.slug
+  const { theme } = useTheme()
 
   const postTitle = post.frontmatter.title
   const postType = post.frontmatter.type
-
   useEffect(() => {
     doPostAction(slug, "views")
   }, [])
+
+  useEffect(() => {
+    if (!SITE_CONFIG.enableComments) return
+    const commentBox = document.querySelector("#comments")
+    commentBox.innerHTML = ""
+    const script = document.createElement("script")
+    script.src = "https://utteranc.es/client.js"
+    script.async = true
+    script.setAttribute("issue-term", "pathname")
+    script.setAttribute(
+      "theme",
+      theme === Theme.Dark ? "dark-blue" : "github-light"
+    )
+    script.setAttribute("repo", SITE_CONFIG.githubRepo)
+    script.setAttribute("crossorigin", "anonymous")
+
+    commentBox.appendChild(script)
+
+    return () => {
+      commentBox.innerHTML = ""
+    }
+  }, [theme])
   return (
     <>
       <SEO title={`${postTitle} | ${postType} `} />
@@ -304,6 +328,8 @@ const BlogPostTemplate = ({ data, location }) => {
             </div>
 
             <NewsLetterCard />
+
+            <div id="comments" css={comments}></div>
           </div>
 
           <div css={upvoteDesktop}>
@@ -352,6 +378,10 @@ const mainContentCSS = css`
   color: var(--mainTextColor);
   padding-top: 64rem;
   padding-bottom: 108rem;
+`
+
+const comments = css`
+  margin-top: 32px;
 `
 export default withSound(withTheme(BlogPostTemplate))
 
