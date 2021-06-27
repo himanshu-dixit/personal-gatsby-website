@@ -8,6 +8,7 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@notionhq/client": "^0.2.0",
     "firebase": "^8.4.1",
     "firebase-admin": "^9.6.0",
     "gatsby": "^2.8",
