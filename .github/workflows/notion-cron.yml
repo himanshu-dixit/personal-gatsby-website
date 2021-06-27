@@ -3,6 +3,9 @@ name: Run notion to generate md file
 on:
   schedule:
     - cron:  '1/5 * * * *'
+  push:
+    branches:
+      - main
 
 jobs:
   build:
