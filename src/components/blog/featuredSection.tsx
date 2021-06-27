@@ -14,7 +14,7 @@ export const BlogFeaturedSection = ({ data }): JSX.Element => {
   const { markdownRemark: post } = data
   const postTitle = post.frontmatter.title
   const postDate = post.frontmatter.date
-  const postType = post.frontmatter.type
+  const  postType= post.frontmatter.type
 
   return (
     <>
@@ -22,7 +22,7 @@ export const BlogFeaturedSection = ({ data }): JSX.Element => {
         <Navbar />
 
         <div css={heroMainContentCSS}>
-          <div css={postTypeCSS}>Post</div>
+          <div css={postTypeCSS}>{postType.toLowerCase()}</div>
           <div css={postTitleCSS}>{postTitle}</div>
           <div css={postDateCSS}>{postDate}</div>
         </div>
@@ -36,6 +36,7 @@ const postTypeCSS = css`
   font-style: normal;
   font-weight: normal;
   font-size: 16rem;
+  text-transform: capitalize;
 
   color: var(--primaryPink);
 `
