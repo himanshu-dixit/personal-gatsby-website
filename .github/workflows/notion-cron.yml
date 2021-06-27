@@ -1,10 +1,8 @@
-name: Deploy Crusher app
+name: Run notion to generate md file
 
 on:
-  release:
-    types: [published, edited]
-
-  workflow_dispatch:
+  schedule:
+    - cron:  '1/5 * * * *'
 
 jobs:
   build:
