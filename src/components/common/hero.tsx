@@ -23,22 +23,22 @@ export const Herocomponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-            <h1 css={heroTagline}>I'm Full stack engineer</h1>
+            <h1 css={heroTagline}>I'm Engineer + Designer</h1>
             <h1 css={heroTaglineSecondary}>
-              building tools for devs creating next big thing
+              building weapons for dev aka devtools
             </h1>
             <div css={knowLink}>
               <Link to={"about_me"}>About me</Link>
               <a href={"mailto:hello@himanshud.com"}>Contact</a>
             </div>
           </div>
-          <div css={jammingText}>
+          {/* <div css={jammingText}>
             Last jammed to{" "}
             <div>
               <MusicSVG />
               <span>Mera man lage - 3:00</span>
             </div>
-          </div>
+          </div> */}
           <div css={personalStatusContainer}>
             <div id="twitter">
               <a href={SITE_CONFIG.socialMediaURLs.twitter} target="_blank">

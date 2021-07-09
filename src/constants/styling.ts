@@ -58,9 +58,9 @@ export enum GLOBAL_CSS_VAR_LIGHT {
 
 export enum GLOBAL_CSS_VAR_DARK {
   // Fundamental color
-  heroBackground = "#111517",
-  primaryBackground = "#0e1011",
-  tagsBackground = "#111517",
+  heroBackground = "#16191b",
+  primaryBackground = "#121517",
+  tagsBackground = "#192023",
   contrastColor = "#fff",
   primaryBlue = "#00C4EB",
   primaryPink = "#FF46B5",

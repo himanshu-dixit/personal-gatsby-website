@@ -118,7 +118,7 @@ const MainContainer = ({ data }) => {
           <div
             css={{
               display: "flex",
-              marginTop: "84rem",
+              marginTop: "112rem",
               justifyContent: "space-between",
               flexWrap: "wrap",
             }}
@@ -338,7 +338,7 @@ const mainContainer = css`
   background: var(--primaryBackground);
   margin-top: -36rem;
   padding-bottom: 216rem;
-  padding-top: 84rem;
+  padding-top: 96rem;
   position: relative;
   color: var(--mainTextColor);
   flex-wrap: wrap;
