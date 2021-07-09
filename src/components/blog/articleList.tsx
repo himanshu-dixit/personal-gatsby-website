@@ -1,6 +1,6 @@
 import { css } from "@emotion/react"
 import { Link } from "gatsby"
-import { UpvoteIndicator } from "../atoms/upvoteIndicator"
+import { UpvoteIndicator } from "../common/upvoteIndicator"
 import React, { ReactElement } from "react"
 
 const ArticleItem = (props: {

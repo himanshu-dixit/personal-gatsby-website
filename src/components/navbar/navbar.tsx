@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
-import { BookMark } from "../atoms/navbar/bookmark"
-import { Speaker } from "../atoms/navbar/speaker"
-import { ThemeToggle } from "../atoms/navbar/themetoggle"
-import { LogoComponent } from "../atoms/logo"
 import { css } from "@emotion/react"
+import { BookMark } from "./bookmark"
+import { Speaker } from "./speaker"
+import { ThemeToggle } from "./themetoggle"
+import { LogoComponent } from "../common/logo"
 
 function MenuComponent({ isMobile }) {
   return (
@@ -34,11 +34,11 @@ function RightSection(): JSX.Element {
 }
 
 const tagline = css`
-  font-size: 16rem;
+  font-size: 14rem;
   height: 20rem;
   font-family: "Cera Pro";
   margin-top: -22rem;
-  font-weight: 600;
+  font-weight: 400;
   span {
   }
   #make-text {

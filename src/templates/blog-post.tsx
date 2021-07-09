@@ -11,7 +11,7 @@ import { Curvy } from "../components/homepage/curvy"
 import { Footer } from "../components/common/footer"
 import { HappyEmojiSvg } from "../constants/icons"
 
-import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
+import { UpvoteIndicatorVertical } from "../components/common/upvoteIndicator"
 import { addMember, doPostAction } from "../utils/api"
 import { validateEmail } from "../utils/common"
 import SEO from "../components/seo"

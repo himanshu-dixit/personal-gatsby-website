@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { css } from "@emotion/react"
 import { Curvy } from "../homepage/curvy"
-import { Navbar } from "./navbar"
+import { Navbar } from "../navbar/navbar"
 import {
   BookSVG,
   EmailSVG,
@@ -23,7 +23,7 @@ export const Herocomponent = (): JSX.Element => {
 
         <div id={"hero-content"}>
           <div>
-            <h1 css={heroTagline}>I'm Engineer + Designer</h1>
+            <h1 css={heroTagline}>I'm Engineer + designer</h1>
             <h1 css={heroTaglineSecondary}>
               building weapons for dev aka devtools
             </h1>
@@ -300,7 +300,7 @@ const knowLink = css`
   font-size: 14px;
   line-height: 19px;
   /* identical to box height */
-  margin-top: 0rem;
+  margin-top: 24rem;
   margin-bottom: 56rem;
   text-decoration-line: underline;
   a:last-child {

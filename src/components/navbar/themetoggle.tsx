@@ -1,5 +1,5 @@
-import { Theme, useTheme } from "../../../context/theme"
-import { getSoundInstance, playSound } from "../../../utils/sound"
+import { Theme, useTheme } from "../../context/theme"
+import { getSoundInstance, playSound } from "../../utils/sound"
 import * as React from "react"
 import { css } from "@emotion/react"
 import { ReactElement } from "react"

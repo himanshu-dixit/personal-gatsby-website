@@ -4,16 +4,11 @@ import { css } from "@emotion/react"
 
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
-import BlogFeaturedSection from "../components/blog/featuredSection"
 import { Center } from "../components/common/center"
 import { Curvy } from "../components/homepage/curvy"
 import { Footer } from "../components/common/footer"
-import { HappyEmojiSvg } from "../constants/icons"
-
-import { UpvoteIndicatorVertical } from "../components/atoms/upvoteIndicator"
 import { doPostAction, getPostData } from "../utils/api"
-import { Herocomponent, TagHero } from "../components/common/hero"
-import { PastWork } from "../components/common/projectList"
+import { TagHero } from "../components/common/hero"
 import { ArticlesList } from "../components/blog/articleList"
 import SEO from "../components/seo"
 

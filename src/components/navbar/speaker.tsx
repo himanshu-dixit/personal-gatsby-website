@@ -1,6 +1,6 @@
 import { css } from "@emotion/react"
-import { Sound, useSound } from "../../../context/sound.ts"
-import { getSoundInstance, playSound } from "../../../utils/sound"
+import { Sound, useSound } from "../../context/sound"
+import { getSoundInstance, playSound } from "../../utils/sound"
 import * as React from "react"
 import { ReactElement } from "react"
 
