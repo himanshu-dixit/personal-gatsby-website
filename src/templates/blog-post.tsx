@@ -318,10 +318,6 @@ const BlogPostTemplate = ({ data, location }) => {
               itemScope
               itemType="http://schema.org/Article"
             >
-              <section
-                dangerouslySetInnerHTML={{ __html: post.html }}
-                itemProp="articleBody"
-              />
               <MDXRenderer>{post.body}</MDXRenderer>
             </article>
 

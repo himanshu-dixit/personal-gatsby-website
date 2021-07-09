@@ -117,3 +117,5 @@ export function ThemeToggle(props): ReactElement {
     </div>
   )
 }
+
+export default ThemeToggle
