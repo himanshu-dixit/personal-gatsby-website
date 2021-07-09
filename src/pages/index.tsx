@@ -89,7 +89,7 @@ const MainContainer = ({ data }) => {
   }, [])
 
   useEffect(() => {
-    const { allMarkdownRemark: _posts } = data
+    const { allMdx: _posts } = data
     const postsArr = []
     for (let i = 0; i < _posts.nodes.length; i++) {
       const post = _posts.nodes[i]
@@ -140,7 +140,7 @@ const MainContainer = ({ data }) => {
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  const posts = data.allMarkdownRemark.nodes
+  const posts = data.allMdx.nodes
 
   if (posts.length === 0) {
     return (
@@ -174,7 +174,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       nodes {
         excerpt
         fields {
@@ -188,7 +188,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    tagsGroup: allMarkdownRemark(limit: 2000) {
+    tagsGroup: allMdx(limit: 2000) {
       group(field: frontmatter___tags) {
         fieldValue
       }

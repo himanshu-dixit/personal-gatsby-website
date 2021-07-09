@@ -11,7 +11,7 @@ import { css } from "@emotion/react"
 import { Navbar } from "../common/navbar"
 
 export const BlogFeaturedSection = ({ data }): JSX.Element => {
-  const { markdownRemark: post } = data
+  const { mdx: post } = data
   const postTitle = post.frontmatter.title
   const postDate = post.frontmatter.date
   const  postType= post.frontmatter.type

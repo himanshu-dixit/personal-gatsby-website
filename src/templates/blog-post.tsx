@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import { css } from "@emotion/react"
 import { SITE_CONFIG } from "../../metaData"
-
+import { MDXRenderer } from "gatsby-plugin-mdx"
 import { withSound } from "../hoc/sound"
 import { withTheme } from "../hoc/theme"
 import BlogFeaturedSection from "../components/blog/featuredSection"
@@ -273,8 +273,9 @@ const newsLetterCardContainerCSS = css`
 `
 
 const BlogPostTemplate = ({ data, location }) => {
-  const { markdownRemark: post } = data
-  const slug = data.markdownRemark.fields.slug
+  console.log(data)
+  const { mdx: post } = data
+  const slug = data.mdx.fields.slug
   const { theme } = useTheme()
 
   const postTitle = post.frontmatter.title
@@ -321,6 +322,7 @@ const BlogPostTemplate = ({ data, location }) => {
                 dangerouslySetInnerHTML={{ __html: post.html }}
                 itemProp="articleBody"
               />
+              <MDXRenderer>{post.body}</MDXRenderer>
             </article>
 
             <div css={upvoteMobile}>
@@ -396,22 +398,21 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       fields {
         slug
       }
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         type
-        rating
         date(formatString: "MMMM DD, YYYY")
         description
       }
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -419,7 +420,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }

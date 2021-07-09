@@ -28,13 +28,13 @@ const MainContainer = ({ data }) => {
   }, [])
 
   useEffect(() => {
-    const { allMarkdownRemark: _posts } = data
+    const { allMdx: _posts } = data
     const postsArr = []
     for (let i = 0; i < _posts.edges.length; i++) {
       const post = _posts.edges[i].node
       const title = post.frontmatter.title
       const meta = post.frontmatter.description
-      const desc = post.excerpt
+      const desc = ""
       const slug = post.fields.slug
 
       postsArr.push({
@@ -42,7 +42,6 @@ const MainContainer = ({ data }) => {
         meta: meta,
         desc: desc,
         link: slug,
-        rating: postData[slug.substr(1, Infinity)]?.upvote || 0,
       })
     }
     setPosts([...postsArr])
@@ -107,7 +106,7 @@ export default withSound(withTheme(TagTemplate))
 
 export const pageQuery = graphql`
   query($tag: String) {
-    allMarkdownRemark(
+    allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
@@ -123,7 +122,6 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
-            rating
           }
         }
       }
