@@ -44,12 +44,6 @@ export const withTheme = (
 
       const finalTheme = themeInLS ? themeInLS : isOSDarkMode ? "dark" : "light"
       setTheme(finalTheme !== "light" ? Theme.Dark : Theme.Light)
-
-      console.log(
-        finalTheme !== "light" ? Theme.Dark : Theme.Light,
-        Theme[finalTheme],
-        Theme
-      )
     }, [])
 
     return (

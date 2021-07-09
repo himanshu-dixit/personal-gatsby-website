@@ -273,7 +273,6 @@ const newsLetterCardContainerCSS = css`
 `
 
 const BlogPostTemplate = ({ data, location }) => {
-  console.log(data)
   const { mdx: post } = data
   const slug = data.mdx.fields.slug
   const { theme } = useTheme()
