@@ -3,8 +3,7 @@ const fs = require('fs');
 
 // Initializing a client
 const notion = new Client({
-  // auth: process.env.NOTION_TOKEN,
-  auth: "secret_OjDmEsINQmskjO7ima9XCDYSj5sDMVGolx9bEN7z7KO"
+  auth: process.env.NOTION_TOKEN,
 })
 
 async function getPagesInDB() {
