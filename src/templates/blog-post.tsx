@@ -154,14 +154,16 @@ const buttonCSS = css`
   background: var(--primaryBlue);
   color: var(--contrastColor);
   min-width: 136rem;
-  padding: 3rem;
+  padding: 0rem;
   text-align: center;
   font-weight: bold;
   font-size: 15rem;
+  line-height: 32rem;
 `
 
 const newsLetterContentContainerCSS = css`
   display: flex;
+  line-height: 32rem;
   margin-top: 16rem;
 
   @media (min-width: 600px) {
@@ -178,7 +180,8 @@ const newsLetterContentCSS = css`
   flex-direction: column;
   justify-content: space-between;
   padding-right: 20rem;
-  font-size: 15rem;
+  font-size: 14rem;
+  line-height: 1.6;
   @media (max-width: 600px) {
     min-width: 100%;
   }
@@ -254,7 +257,7 @@ const newsLetterHeaderCSS = css`
 `
 
 const newsLetterHeaderLikedThisArticleCSS = css`
-  font-size: 22rem;
+  font-size: 20rem;
   color: var(--mainTextColor);
 
   @media (max-width: 600px) {
@@ -270,6 +273,9 @@ const newsLetterCardContainerCSS = css`
   font-family: Cera Pro;
   margin-top: 64rem;
   font-style: normal;
+  *{
+    line-height: 30rem;
+  }
 `
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -361,14 +367,21 @@ const upvoteMobile = css`
 `
 const mainContentArticleCSS = css`
   flex: 1;
-
   font-style: normal;
   max-width: 680rem;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 30px;
   color: var(--mainTextColor01);
   width: 100%;
   font-family: Gilroy;
+  
+  h1,h2,h3,h4,h5,h6{
+    margin: 40rem 0 20rem 0;
+  }
+  
+  *{
+    line-height: 37px;
+  }
 `
 const mainContentCSS = css`
   background: var(--primaryBackground);

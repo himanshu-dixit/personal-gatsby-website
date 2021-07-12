@@ -21,7 +21,7 @@ const Content = () => {
         </div>
         <div
           css={{
-            marginTop: "48rem",
+            marginTop: "60rem",
             justifyContent: "space-between",
             flexWrap: "wrap",
           }}
@@ -114,9 +114,9 @@ const headingCss = css`
 `
 
 const sectionText = css`
-  font-size: 16rem;
-  line-height: 32rem;
-  margin: 16rem 0 60rem 0;
+  font-size: 16.2rem;
+  line-height: 33rem;
+  margin: 16rem 0 72rem 0;
 `
 
 const interestedInWorking = css`
@@ -164,7 +164,7 @@ font-family: "Gilroy";
   background: var(--primaryBackground);
   margin-top: -36rem;
   padding-bottom: 136rem;
-  padding-top: 28rem;
+  padding-top: 36rem;
   position: relative;
   color: var(--mainTextColor);
   flex-wrap: wrap;

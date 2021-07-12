@@ -10,7 +10,6 @@ import {
   Github,
   InstaSVG,
   MusicalSVG,
-  MusicSVG,
   TwitterSVG,
 } from "../../constants/icons"
 import {SITE_CONFIG} from "../../../metaData"
@@ -315,8 +314,8 @@ const serviceDesc = css`
   font-family: Gilroy;
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 16.2px;
+  line-height: 34px;
   /* identical to box height */
   margin-top: 28rem;
   margin-bottom: 56rem;

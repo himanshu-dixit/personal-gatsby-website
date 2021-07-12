@@ -91,7 +91,7 @@ export enum GLOBAL_CSS_VAR_DARK {
   workNormalCOLOR = "#fff",
   blogFollowBorder = "#13a7c4",
   blogJoinBorder = "#d72590",
-  likedArticleBorder = "#191919",
+  likedArticleBorder = "#848484",
 
   // Upvote color, Don't edit
   fire01 = "#232C35",

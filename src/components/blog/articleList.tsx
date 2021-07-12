@@ -43,7 +43,7 @@ const articleItemTitle = () => css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 900;
-  font-size: 18rem;
+  font-size: 20rem;
 `
 
 export function ArticlesList(posts: any[]) {
