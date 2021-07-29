@@ -273,7 +273,7 @@ const newsLetterCardContainerCSS = css`
   font-family: Cera Pro;
   margin-top: 64rem;
   font-style: normal;
-  *{
+  * {
     line-height: 30rem;
   }
 `
@@ -374,12 +374,17 @@ const mainContentArticleCSS = css`
   color: var(--mainTextColor01);
   width: 100%;
   font-family: Gilroy;
-  
-  h1,h2,h3,h4,h5,h6{
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 40rem 0 20rem 0;
   }
-  
-  *{
+
+  * {
     line-height: 37px;
   }
 `

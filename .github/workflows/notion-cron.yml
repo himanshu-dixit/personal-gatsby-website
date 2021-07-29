@@ -2,7 +2,7 @@ name: Run notion to generate md file
 
 on:
   schedule:
-    - cron:  '1/5 * * * *'
+    - cron: "1/5 * * * *"
   push:
     branches:
       - master
@@ -34,5 +34,5 @@ jobs:
       - name: Commit to repo
         uses: EndBug/add-and-commit@v7
         with:
-          add: 'content'
-          message: 'Sync pages with notion'
+          add: "content"
+          message: "Sync pages with notion"

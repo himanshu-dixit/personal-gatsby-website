@@ -100,7 +100,7 @@ const mainContainer = css`
 export default withSound(withTheme(TagTemplate))
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     allMdx(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }

@@ -37,8 +37,9 @@ export function PastWork(): JSX.Element {
     const projectItemWidth = document.querySelector(".project-item").clientWidth
     setMarginOffset(-1 * projectItemWidth)
 
-    const containerWidth = document.querySelector(".project-containers")
-      .clientWidth
+    const containerWidth = document.querySelector(
+      ".project-containers"
+    ).clientWidth
 
     const elementsInContainer = Math.round(containerWidth / projectItemWidth)
 

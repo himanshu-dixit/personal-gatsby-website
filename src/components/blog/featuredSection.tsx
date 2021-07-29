@@ -14,7 +14,7 @@ export const BlogFeaturedSection = ({ data }): JSX.Element => {
   const { mdx: post } = data
   const postTitle = post.frontmatter.title
   const postDate = post.frontmatter.date
-  const  postType= post.frontmatter.type
+  const postType = post.frontmatter.type
 
   return (
     <>

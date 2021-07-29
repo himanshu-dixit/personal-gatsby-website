@@ -32,8 +32,7 @@ const work = [
     Worked on executed crucial project e2e to increase CVR, onboard new supply partner, improve performance and architecting system.<br/>
     Worked solo and on team e2e across frontend, backend and devops.
    `,
-    tags:
-      "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
+    tags: "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
     rightAligned: true,
   },
   {

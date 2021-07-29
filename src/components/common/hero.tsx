@@ -12,7 +12,7 @@ import {
   MusicalSVG,
   TwitterSVG,
 } from "../../constants/icons"
-import {SITE_CONFIG} from "../../../metaData"
+import { SITE_CONFIG } from "../../../metaData"
 
 export const Herocomponent = (): JSX.Element => {
   return (
@@ -45,12 +45,12 @@ export const Herocomponent = (): JSX.Element => {
               </a>
             </div>
             <div id="book">
-              <a href={SITE_CONFIG.socialMediaURLs.books}  target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.books} target="_blank">
                 <BookSVG />{" "}
               </a>
             </div>
             <div id="github">
-              <a href={SITE_CONFIG.socialMediaURLs.github}target="_blank">
+              <a href={SITE_CONFIG.socialMediaURLs.github} target="_blank">
                 <Github />{" "}
               </a>
             </div>

@@ -10,15 +10,22 @@ import { Curvy } from "../components/homepage/curvy"
 import { Center } from "../components/common/center"
 import { Footer } from "../components/common/footer"
 import SEO from "../components/seo"
+import { useContext } from "react"
+import { useTheme,Theme } from "../context/theme"
 
 const Content = () => {
+  const { theme, toggleTheme } = useTheme()
+
   return (
     <div css={mainContainerCSS}>
       <Center>
 
-        <div css={{         marginTop: "28rem",}}>
+        <div css={{         marginTop: "28rem", marginBottom: "56rem"}}>
           ️⚠️ &nbsp;&nbsp;&nbsp;️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work.
         </div>
+
+        <h2 css={headingCss}>My skills</h2>
+        <img src={theme === Theme.Dark ? "/assets/skills_dark.png" :  "/assets/skills_light.png"} width="100%" css={css` margin-top: 20px;`}/>
         <div
           css={{
             marginTop: "60rem",
@@ -26,7 +33,7 @@ const Content = () => {
             flexWrap: "wrap",
           }}
         >
-          <h2 css={headingCss}>What do I do?</h2>
+          {/* <h2 css={headingCss}>What do I do?</h2>
 
           <div css={sectionText}>
             <span id={"highlight"}>Ship MVP </span>High fidelity prototying, building system and delivering results are my things.
@@ -34,7 +41,7 @@ const Content = () => {
             <span id={"highlight"}>Architect systems and scale it</span>Implement practices from open-source and growth startups
             <br />
             <span id={"highlight"}>Ship E2E Products</span> I have knack on design and building product. <br/>We can talk about design, SE architecture and everything in between.
-          </div>
+          </div> */}
 
           {/*<h2 css={headingCss}>Some traits</h2>*/}
 

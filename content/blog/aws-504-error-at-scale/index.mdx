@@ -7,7 +7,10 @@ rating: 67
 tags: ["aws", "devops"]
 ---
 
-<img src="https://backstage.headout.com/wp-content/uploads/2021/04/ezgif-2-423490eb1f31.gif" width="100%"/>
+<img
+  src="https://backstage.headout.com/wp-content/uploads/2021/04/ezgif-2-423490eb1f31.gif"
+  width="100%"
+/>
 
 During mid-august, some of the traffic at Headout started receiving very unusual errors. There were instances of top-level documents not loading, stylesheets not loading, and icons not loading.
 
@@ -21,7 +24,10 @@ At Headout, we maintain a dedicated channel for all kinds of technical bugs, we 
 
 Now back to the problem, the request failing was both random and unusual. No of these requests was relatively low initially and then increased suddenly. Here is the graph of the issue at ELB.
 
-<img src="https://backstage.headout.com/wp-content/uploads/2021/04/alb-before-1024x615.png" width="100%"/>
+<img
+  src="https://backstage.headout.com/wp-content/uploads/2021/04/alb-before-1024x615.png"
+  width="100%"
+/>
 
 The issue was challenging to reproduce, which made it harder to debug and solve. It was like finding a needle in the haystack. We tried the brute force approach to find the problem.
 
@@ -39,7 +45,10 @@ _However, we are currently migrating to Kubernetes-based solution to have more c
 
 ## Our current architecture
 
-<img src="https://backstage.headout.com/wp-content/uploads/2021/04/headout-aws-request-architecture-1024x592.png" width="100%"/>
+<img
+  src="https://backstage.headout.com/wp-content/uploads/2021/04/headout-aws-request-architecture-1024x592.png"
+  width="100%"
+/>
 
 We have one public Nginx layer that routes the public traffic to internal services. At various layers, we have an internal proxy to handle the traffic. During mid-august, we migrated from our react-based SSR framework to Next.JS through a staged rollout deployment.\
 During this whole time, the stage rollout traffic being handled by our react server which was taking care of proxy.
@@ -66,7 +75,10 @@ While reading up the logs, it appeared that AWS Load Balancer pre-opens connecti
 
 By default, the default connection time is 60 seconds.
 
-<img src="https://backstage.headout.com/wp-content/uploads/2021/04/elb-premptive-connection-1024x593.png" width="100%"/>
+<img
+  src="https://backstage.headout.com/wp-content/uploads/2021/04/elb-premptive-connection-1024x593.png"
+  width="100%"
+/>
 
 **Fault at NodeJS**
 
@@ -84,7 +96,10 @@ There were various ways to solve this problem. We decided to go with the first o
 2.  Decrease keepalive timeout at ELB setting to 5 seconds. However, this is not an ideal approach.
 3.  Move from layer five proxy to layer seven proxy. Layer 5 proxy is like a virtual server that has to establish a connection between client and server to handle requests.
 
-<img src="https://backstage.headout.com/wp-content/uploads/2021/04/alb-after-1024x638.png" width="100%"/>
+<img
+  src="https://backstage.headout.com/wp-content/uploads/2021/04/alb-after-1024x638.png"
+  width="100%"
+/>
 
 ## Learning
 
