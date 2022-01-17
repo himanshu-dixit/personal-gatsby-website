@@ -30,7 +30,7 @@ const projectItemNewLabelCSS = css`
 const projectsItemContainerCSS = css`
   background: var(--tagsBackground);
   padding: 12rem 14rem;
-  border-radius: 8rem;
+  border-radius: 6rem;
   min-width: 30%;
   color: var(--mainTextColor);
   font-family: Cera Pro;

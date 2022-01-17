@@ -53,7 +53,7 @@ const postTitleCSS = css`
   font-family: Cera Pro;
   font-style: normal;
   font-weight: 900;
-  font-size: 24rem;
+  font-size: 26rem;
   color: var(--mainTextColor);
   margin-top: 14rem;
   max-width: 700px;

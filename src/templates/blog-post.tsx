@@ -148,7 +148,7 @@ const joinButtonCSS = css`
 `
 
 const buttonCSS = css`
-  border-radius: 8rem;
+  border-radius: 4rem;
   cursor: pointer;
   border: 1px solid var(--blogFollowBorder);
   background: var(--primaryBlue);
@@ -369,7 +369,7 @@ const mainContentArticleCSS = css`
   flex: 1;
   font-style: normal;
   max-width: 680rem;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 30px;
   color: var(--mainTextColor01);
   width: 100%;

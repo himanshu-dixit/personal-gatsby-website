@@ -110,7 +110,7 @@ export function Navbar() {
       <div css={topBar}>
         <div>
           <Link to={"/"}>
-            <LogoComponent />
+            <LogoComponent height={"22"}/>
           </Link>
         </div>
         <MenuComponent isMobile={false} />

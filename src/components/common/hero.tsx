@@ -281,6 +281,7 @@ const heroTagline = css`
   margin: 0;
   margin-left: -3rem;
   margin-top: 84rem;
+  padding-top: 20rem;
 `
 const heroTaglineSecondary = css`
   font-family: Cera Pro;

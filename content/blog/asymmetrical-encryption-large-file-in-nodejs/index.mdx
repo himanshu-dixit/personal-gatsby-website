@@ -1,0 +1,105 @@
+---
+title: Implementing Assymetric encryption with power of symmetric encryption in NodeJS
+date: "2021-12-12"
+type: Snippet
+description: Digging deep into implementin crypto technique
+rating: 67
+tags: ["aws", "devops"]
+---
+
+import { Code,Code1, Code2, Code3 } from "./code.tsx"
+import Symmetric from "./symmetric_encryption.png"
+import Assymetric from "./asymmetric_encryption.png"
+
+<iframe src="https://giphy.com/embed/3o6fJbkBqrIj0MqV8Y" width="100%" height="350" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/therundownbet-funny-lol-3o6fJbkBqrIj0MqV8Y">via GIPHY</a></p>
+
+
+I love bumping into issue and then find solutions, it's activates kid inside me that want to learn more. It becomes like itch in your head that needs to go away.
+
+Few days back, I picked a project to create license key system for [crusher](https://crusher.dev).
+
+The goal was simple.
+
+- To create unique license for every user :D.
+- Must work with offline system, as we offer self hosting.
+- Only we should be able to create it. Encryption should be done by private key.
+
+I had previously worked with encryption, most of them were involved token and symmetric encryption for a storing tokens in db.
+
+But for our use case, we need both large data andr authenticity to work (only one entity can sign the encryption). It didn't work straight away.
+
+The issue was we wanted power of symmetric encryption with capabilties of asymmettics.
+
+## Let's get to the basics
+
+### Symmetric encryption
+
+In symmetric encryption both parties share the same key, they can encode/decode stuff using this. Here's a basic flow of how it would work.
+
+<img src={Symmetric} width={"100%"}/>
+
+Some common techniques are DES, AES, etc. This type of encryption is used when in high trust scenarios, where keys are not exposed.
+
+###  Asymmetric encryption
+Both parties have different key, the goal is to have exclusivity on either encryption/decryption side. It is to have exclusive decryption or proving authenticity.
+
+Two pair of keys are used which are mathematically related, two large prime modulus. As two are related and one is also public, therefore AES is generally computational heavy and also output due to cipher blocks can be large.
+
+<img src={Assymetric} width={"100%"}/>
+
+
+###  Talk is cheap, show me the code
+
+Code to run Assymetric encryption with various example
+
+Let's try to encrypt small data.
+
+> Hit run to see the output
+
+<Code1/>
+
+
+### Now with large data.
+
+<Code2/>
+
+>  Hit run to see the output
+
+Oops!! This doesn't work. One way to overcome is to increase modulus length, but doing so will take more time and require a larger buffer.
+Generally, AES will throw exception "The data is larger than the buffer".
+
+So how do we make things more secure if we have large data and one key is public. This can be quite common when system are offline, licensing system, etc.
+
+## Combining Asymmetric with Encryption
+
+I love this approach, it simple and sweet. Quite similiar to Intialization vector approach for making this secure.
+
+In this
+
+1.) We generate public/private key pair once.
+
+2.) Generate unique symmetric key each time for encryption.
+
+3.) Encode data using symmetric key.
+
+4.) Encode symmetric key.
+
+5.) Append data + encoded symmetric key with combination string.
+
+**This technique has advantage of both Symmetric and Assymetric encryption.**
+Code in Nodejs
+<Code3/>
+
+Voila!! We know have power of both symmetric and asymmetric encryption.
+
+## Libraries for this
+
+[Tink](https://developers.google.com/tink) is one of the most popular libraries for this. At this point they don't have NodeJS docs which forced me to implement this.
+It has tons of features including padding, algorithm, etc.
+
+**Food for thought**
+- Does SSL use symmetric or asymmetric encryption?
+
+- Should we encrypt JWT token with asymmetric encryption?
+
+- If DB gets compromised and key get compromised, how to do you prevent user info?

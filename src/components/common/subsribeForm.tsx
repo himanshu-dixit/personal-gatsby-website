@@ -58,7 +58,7 @@ const newsLetterJoinButtonCSS = css`
   padding: 6rem 20rem;
   min-width: 236rem;
   text-align: center;
-  border-radius: 8rem;
+  border-radius: 4rem;
   font-style: normal;
   font-weight: 900;
   font-size: 18rem;

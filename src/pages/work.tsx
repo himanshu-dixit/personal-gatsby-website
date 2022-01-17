@@ -32,7 +32,7 @@ const work = [
     Worked on executed crucial project e2e to increase CVR, onboard new supply partner, improve performance and architecting system.<br/>
     Worked solo and on team e2e across frontend, backend and devops.
    `,
-    tags: "React,Next, Tailwind, Style Component, Kotlin, Docker, Beanstalk, AWS, Kotlin, Java, Spring, Webpack, Django Admin",
+    tags: "React,Next, Tailwind, Styled Component, Docker, AWS, Kotlin, Java, Spring, Webpack",
     rightAligned: true,
   },
   {
@@ -68,11 +68,10 @@ const work = [
     position: "Cofounder",
     background: `linear-gradient(180deg, #759CE8 0%, #9F8FFF 100%)`,
     image: "/images/work/sveet.jpg",
-    desc: `Ordering in cafes sucks, right? We built mobile app to order and deliver food to your table in 5 mins<br/>
+    desc: `Ordering in cafes sucks, right? We built mobile PWA to order and deliver food to your table in 5 mins<br/>
         For business, a loyalty system to retarget visitors for cafes/QSR.<br/>
-        Integrated with differeny POS across cafe, theatres and hotels.<br/>
+        Integrated with different POS across cafe, theatres and hotels.<br/>
         Piloted in 3 cafes and processed 4000+ ordered. <br/>
-        Built entire design and PWA e2e using react, go and socket.io
    `,
     tags: "React,Go, Socket.io, PWA, Design, Sentry, Gin",
     rightAligned: false,
@@ -243,6 +242,9 @@ const workItemReverse = css`
   flex-direction: row-reverse;
   width: 100%;
   margin-top: 56rem;
+
+  height: 550rem;
+
   @media (max-width: 600px) {
     display: block;
   }
@@ -252,6 +254,8 @@ const workItem = css`
   display: flex;
   width: 100%;
   margin-top: 72rem;
+
+  height: 550rem;
   @media (max-width: 600px) {
     display: block;
   }
@@ -307,6 +311,8 @@ const workItemDesc = css`
       font-size: 28px;
       line-height: 63px;
       font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
       letter-spacing: -0.02em;
     }
   }
@@ -322,6 +328,7 @@ const workItemDesc = css`
       box-sizing: border-box;
       border-radius: 4px;
       display: flex;
+      font-size: 11.6px;
       padding: 3px 12px;
       margin-right: 16px;
       margin-bottom: 10px;

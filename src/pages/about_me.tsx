@@ -20,7 +20,7 @@ const Content = () => {
     <div css={mainContainerCSS}>
       <Center>
 
-        <div css={{         marginTop: "28rem", marginBottom: "56rem"}}>
+        <div css={{         marginTop: "40rem", marginBottom: "56rem"}}>
           ️⚠️ &nbsp;&nbsp;&nbsp;️I'm currently working my <Link to={"https://crusher.dev"}>dev tool startup</Link> and not looking for work.
         </div>
 
@@ -123,7 +123,7 @@ const headingCss = css`
 const sectionText = css`
   font-size: 16.2rem;
   line-height: 33rem;
-  margin: 16rem 0 72rem 0;
+  margin: 0rem 0 80rem 0;
 `
 
 const interestedInWorking = css`
