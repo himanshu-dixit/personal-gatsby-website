@@ -1,13 +1,20 @@
+
+
 name: CI
 
 on: [push]
 
 jobs:
-  build:
+  # This job will:
+  #   * deploy a draft every time there is a commit that is not on master branch
+  #   * comment on that commit with the deploy URL
+  deployCommitDraft:
+    name: Deploy draft to Netlify
     runs-on: ubuntu-latest
-
+    if: github.event_name == 'push' && github.ref != 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v1
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.4
@@ -25,17 +32,6 @@ jobs:
 
       - name: Run notion fetcher
         run: yarn build
-
-  # This job will:
-  #   * deploy a draft every time there is a commit that is not on master branch
-  #   * comment on that commit with the deploy URL
-  deployCommitDraft:
-    name: Deploy draft to Netlify
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' && github.ref != 'refs/heads/master'
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v1
 
       # ... your other build steps to produce a build directory
       # e.g. `npm run build` for create-react-app
@@ -63,6 +59,22 @@ jobs:
 
       # ... your other build steps to produce a build directory
       # e.g. `npm run build` for create-react-app
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.4
+        with:
+          node-version: 14.17.0
+
+      - name: Install yarn
+        run: npm install -g yarn
+
+      - name: Use cache for yarn if available
+        uses: c-hive/gha-yarn-cache@v1
+
+      - name: Install yarn dependencies
+        run: yarn install
+
+      - name: Run notion fetcher
+        run: yarn build
 
       - name: Deploy production to Netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
