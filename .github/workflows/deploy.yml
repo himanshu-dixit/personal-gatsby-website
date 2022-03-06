@@ -47,6 +47,13 @@ jobs:
           draft: true
           comment-on-commit: true
 
+      - name: Declare some variables
+        id: vars
+        shell: bash
+        run: |
+          echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+          echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+
       - name: Start crusher tests
         run: |
           curl --location --request POST 'https://backend.crusher.dev/projects/1054/tests/actions/run' \
@@ -54,7 +61,7 @@ jobs:
           --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDg5IiwidGVhbV9pZCI6NDE0LCJpYXQiOjE2NDU0MDg4NjEsImV4cCI6MTY3Njk0NDg2MX0.TO6TgdEOOkM_N05B_YrogMOvvdpzOBpIADdbPaZ-d6U" \
           --data-urlencode 'githubRepoName=himanshu-dixit/personal-gatsby-website' \
           --data-urlencode 'host=${{steps.netlify.outputs.preview-url}}' \
-          --data-urlencode 'githubCommitId=${{github.event.pull_request.head.sha}}'
+          --data-urlencode 'githubCommitId=${{ steps.vars.outputs.sha_short}}'
 
   # This job will:
   #   * deploy a production build every time there is a push only on the master branch
