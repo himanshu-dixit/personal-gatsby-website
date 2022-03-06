@@ -30,13 +30,14 @@ jobs:
       - name: Install yarn dependencies
         run: yarn install
 
-      - name: Run notion fetcher
+      - name: Build website
         run: yarn build
 
       # ... your other build steps to produce a build directory
       # e.g. `npm run build` for create-react-app
 
       - name: Deploy draft to Netlify
+        id: netlify
         uses: South-Paw/action-netlify-deploy@v1.2.0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
@@ -45,6 +46,15 @@ jobs:
           build-dir: './public'
           draft: true
           comment-on-commit: true
+
+      - name: Start crusher tests
+        run: |
+          curl --location --request POST 'https://backend.crusher.dev/projects/1054/tests/actions/run' \
+          --header 'Content-Type: application/x-www-form-urlencoded' \
+          --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDg5IiwidGVhbV9pZCI6NDE0LCJpYXQiOjE2NDU0MDg4NjEsImV4cCI6MTY3Njk0NDg2MX0.TO6TgdEOOkM_N05B_YrogMOvvdpzOBpIADdbPaZ-d6U" \
+          --data-urlencode 'githubRepoName=himanshu-dixit/personal-gatsby-website' \
+          --data-urlencode 'host=${{steps.netlify.outputs.preview-url}}' \
+          --data-urlencode 'githubCommitId=${{github.event.pull_request.head.sha}}'
 
   # This job will:
   #   * deploy a production build every time there is a push only on the master branch
@@ -73,7 +83,7 @@ jobs:
       - name: Install yarn dependencies
         run: yarn install
 
-      - name: Run notion fetcher
+      - name: Build website
         run: yarn build
 
       - name: Deploy production to Netlify
