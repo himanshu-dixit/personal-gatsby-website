@@ -57,7 +57,7 @@
   ],
   "license": "0BSD",
   "scripts": {
-    "build": "sudo gatsby build",
+    "build": "chmod -R 777 /github/home/.config && gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "netlify dev",
