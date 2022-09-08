@@ -11,3 +11,5 @@ jobs:
         with:
           putoutDir: 'src'
           pretteirDir: 'src'
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
