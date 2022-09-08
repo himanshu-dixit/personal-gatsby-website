@@ -11,5 +11,6 @@ jobs:
         with:
           putoutDir: 'src'
           pretteirDir: 'src'
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+      - name: Setup tmate session
+        if: success() || failure()
+        uses: mxschmitt/action-tmate@v3
