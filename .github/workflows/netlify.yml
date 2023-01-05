@@ -4,22 +4,21 @@
 name: Run crusher test
 
 on:
-  pull_request:
-  push:
+  deployment_status
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Get deployment URL
+        id: deployment
+        uses: dorshinar/get-deployment-url@master
+        timeout-minutes: 5
         with:
-          node-version: 14.15.4
-      - name: Start crusher tests
-        run: |
-          curl --location --request POST 'https://backend.crusher.dev/projects/1054/tests/actions/run' \
-          --header 'Content-Type: application/x-www-form-urlencoded' \
-          --cookie "token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNDg5IiwidGVhbV9pZCI6NDE0LCJpYXQiOjE2NDU0MDg4NjEsImV4cCI6MTY3Njk0NDg2MX0.TO6TgdEOOkM_N05B_YrogMOvvdpzOBpIADdbPaZ-d6U" \
-          --data-urlencode 'githubRepoName=himanshu-dixit/personal-gatsby-website' \
-          --data-urlencode 'githubCommitId=${{github.event.pull_request.head.sha}}'
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Run end-to-end tests
+        run: npm run test:e2e
+        env:
+          deployment: ${{ steps.deployment.outputs.deployment }}

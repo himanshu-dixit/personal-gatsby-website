@@ -2,7 +2,7 @@
   "name": "gatsby-starter-blog",
   "private": false,
   "description": "A personal website + blog built using gatsby",
-  "version": "1.0",
+  "version": "1.1",
   "author": "Himanshu <hudixt@gmail.com>",
   "dependencies": {
     "@emotion/core": "^11.0.0",
